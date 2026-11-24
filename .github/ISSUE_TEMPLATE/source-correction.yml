@@ -1,0 +1,16 @@
+name: 更正来源或步骤
+description: 报告过时、失效或错误的说明
+body:
+  - type: input
+    id: guide
+    attributes:
+      label: 指南路径和受影响段落
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 观察与参考证据
+      description: 请写出地区、工具版本或原始来源。
+    validations:
+      required: true

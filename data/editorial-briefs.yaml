@@ -1,0 +1,54 @@
+{
+  "zotero-deduplicate-library": {
+    "title": "怎样在 Zotero 合并重复条目并检查现有引用？",
+    "category": "learning",
+    "subcategory": "reference-management",
+    "personas": [
+      "student",
+      "researcher"
+    ],
+    "scenarios": [
+      "paper-reading"
+    ],
+    "estimated_time": "20–30 分钟",
+    "evidence": [
+      {
+        "title": "Zotero · Duplicate Detection",
+        "url": "https://www.zotero.org/support/duplicate_detection",
+        "note": "重复检测限于同一文库。通过 Duplicate Items 逐组核对并合并；合并可保留集合、标签，并由文字处理插件识别。"
+      },
+      {
+        "title": "Zotero · The Zotero Data Directory",
+        "url": "https://www.zotero.org/support/zotero_data",
+        "note": "本地数据库保存条目元数据等，操作大量条目前可参照文档做库备份。"
+      }
+    ],
+    "guardrail": "用虚构条目和测试文档演练，核对不同 DOI 或版本；对意外差异先停止，勿直接删除重复记录。"
+  },
+  "codex-instruction-eval": {
+    "title": "怎样用一组小样例验收一个 Codex Skill？",
+    "category": "ai",
+    "subcategory": "codex",
+    "personas": [
+      "software-engineer",
+      "researcher"
+    ],
+    "scenarios": [
+      "ai-productivity"
+    ],
+    "estimated_time": "30–45 分钟",
+    "evidence": [
+      {
+        "title": "OpenAI · Testing Agent Skills Systematically with Evals",
+        "url": "https://developers.openai.com/blog/eval-skills",
+        "note": "用可重复的情景、期望行为和明确的打分规则检查 Skills 的触发与执行。"
+      },
+      {
+        "title": "OpenAI · Using skills to accelerate OSS maintenance",
+        "url": "https://developers.openai.com/blog/skills-agents-sdk",
+        "note": "仓库级 Skill 的元数据决定发现，正文给出按任务复用的步骤，可辅以确定性命令。"
+      }
+    ],
+    "guardrail": "只用虚构输入和受控项目；记录模型和版本，避免将一次成功当作稳定保证。"
+  }
+}

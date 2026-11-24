@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Public source observation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "source_id",
+    "platform",
+    "kind",
+    "title",
+    "url",
+    "observed_at",
+    "event_at",
+    "event_basis",
+    "query",
+    "method",
+    "metrics"
+  ],
+  "properties": {
+    "source_id": {
+      "type": "string",
+      "pattern": "^src-[a-f0-9]{16}$"
+    },
+    "platform": {
+      "enum": [
+        "github",
+        "hackernews",
+        "rss",
+        "reddit",
+        "douyin",
+        "xiaohongshu",
+        "x",
+        "youtube",
+        "tiktok",
+        "other"
+      ]
+    },
+    "kind": {
+      "enum": [
+        "community",
+        "official",
+        "research",
+        "social"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 180
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://"
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "event_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "event_basis": {
+      "enum": [
+        "published",
+        "pushed",
+        "observed"
+      ]
+    },
+    "query": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "method": {
+      "enum": [
+        "public-api",
+        "rss",
+        "authorized-api",
+        "manual",
+        "authorized-export"
+      ]
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "stars": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "forks": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "points": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "comments": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "heat": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "likes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "views": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "saves": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "topic_key": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    }
+  }
+}

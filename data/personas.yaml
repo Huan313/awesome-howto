@@ -1,0 +1,30 @@
+{
+  "personas": {
+    "general-public": "公众",
+    "student": "学生",
+    "teacher": "教师",
+    "researcher": "研究人员",
+    "software-engineer": "软件工程师",
+    "healthcare-worker": "医疗工作者",
+    "office-worker": "职场人士",
+    "manager": "管理者",
+    "designer": "设计师",
+    "creator": "创作者",
+    "freelancer": "自由职业者",
+    "entrepreneur": "创业者",
+    "service-worker": "服务业从业者",
+    "parent": "家长",
+    "caregiver": "照护者",
+    "job-seeker": "求职者",
+    "retiree": "退休人士"
+  },
+  "age_groups": [
+    "0-12",
+    "13-17",
+    "18-24",
+    "25-34",
+    "35-44",
+    "45-59",
+    "60+"
+  ]
+}

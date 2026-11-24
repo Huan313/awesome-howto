@@ -1,0 +1,87 @@
+{
+  "life": {
+    "label": "生活",
+    "scenarios": [
+      "account-safety",
+      "device-backup"
+    ],
+    "keywords": [
+      "scam",
+      "phishing",
+      "backup",
+      "iphone",
+      "食品",
+      "诈骗",
+      "备份",
+      "家庭",
+      "整理"
+    ]
+  },
+  "learning": {
+    "label": "学习",
+    "scenarios": [
+      "skill-learning",
+      "paper-reading"
+    ],
+    "keywords": [
+      "spaced repetition",
+      "retrieval practice",
+      "study",
+      "learn",
+      "paper",
+      "复习",
+      "学习",
+      "论文"
+    ]
+  },
+  "ai": {
+    "label": "AI 技能",
+    "scenarios": [
+      "ai-productivity",
+      "fact-checking",
+      "project-release"
+    ],
+    "keywords": [
+      "codex",
+      "llm",
+      "generative ai",
+      "agent",
+      "prompt",
+      "chatgpt",
+      "人工智能",
+      "引用"
+    ]
+  },
+  "digital": {
+    "label": "数字技能",
+    "scenarios": [
+      "file-management"
+    ],
+    "keywords": [
+      "file management",
+      "version history",
+      "password manager",
+      "browser",
+      "文件",
+      "数字",
+      "存档"
+    ]
+  },
+  "work": {
+    "label": "职场成长",
+    "scenarios": [
+      "work-reporting",
+      "course-selection"
+    ],
+    "keywords": [
+      "work report",
+      "course",
+      "workflow",
+      "career",
+      "自动化",
+      "职场",
+      "课程",
+      "汇报"
+    ]
+  }
+}

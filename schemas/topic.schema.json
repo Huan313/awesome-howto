@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Topic queue entry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "topic_id",
+    "title",
+    "category",
+    "personas",
+    "scenarios",
+    "source_refs",
+    "first_seen",
+    "last_seen",
+    "score",
+    "signals",
+    "risk",
+    "status",
+    "decision_reason",
+    "existing_guide"
+  ],
+  "properties": {
+    "topic_id": {
+      "type": "string",
+      "pattern": "^topic-[a-f0-9]{16}$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 180
+    },
+    "category": {
+      "enum": [
+        "life",
+        "learning",
+        "ai",
+        "digital",
+        "work",
+        "unclassified"
+      ]
+    },
+    "personas": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "scenarios": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "source_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^src-[a-f0-9]{16}$"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "first_seen": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "last_seen": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "signals": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "demand",
+        "momentum",
+        "evidence",
+        "actionability",
+        "novelty"
+      ],
+      "properties": {
+        "demand": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "momentum": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "evidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "actionability": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "novelty": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        }
+      }
+    },
+    "risk": {
+      "enum": [
+        "low",
+        "high"
+      ]
+    },
+    "status": {
+      "enum": [
+        "research",
+        "candidate",
+        "observe",
+        "deferred",
+        "blocked",
+        "update-existing"
+      ]
+    },
+    "decision_reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "existing_guide": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    }
+  }
+}

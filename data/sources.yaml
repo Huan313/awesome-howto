@@ -1,0 +1,56 @@
+{
+  "github": {
+    "enabled": true,
+    "queries": [
+      "howto in:name,description",
+      "tutorial in:name,description",
+      "topic:llm",
+      "topic:learning",
+      "guide in:name"
+    ]
+  },
+  "hackernews": {
+    "enabled": true,
+    "limit": 50
+  },
+  "rss": {
+    "enabled": true,
+    "feeds": [
+      {
+        "name": "GitHub Changelog",
+        "url": "https://github.blog/changelog/feed/",
+        "kind": "official"
+      },
+      {
+        "name": "Python Insider",
+        "url": "https://blog.python.org/rss.xml",
+        "kind": "official"
+      },
+      {
+        "name": "arXiv cs.AI",
+        "url": "https://rss.arxiv.org/rss/cs.AI",
+        "kind": "research"
+      }
+    ]
+  },
+  "manual": {
+    "platforms": [
+      "xiaohongshu",
+      "douyin",
+      "x",
+      "youtube",
+      "tiktok",
+      "other"
+    ]
+  },
+  "reddit": {
+    "enabled_by": "ENABLE_REDDIT",
+    "communities": [
+      "learnprogramming",
+      "Productivity"
+    ]
+  },
+  "douyin": {
+    "enabled_by": "ENABLE_DOUYIN"
+  }
+}

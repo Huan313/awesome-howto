@@ -1,0 +1,46 @@
+name: Guide quality
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  PYTHONUTF8: '1'
+
+jobs:
+  quality:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.12.3'
+          cache: pip
+      - run: python -m pip install --disable-pip-version-check -r requirements.txt
+      - name: Check tests, schemas, Markdown and indexes
+        run: |
+          python -m unittest discover -s tests
+          python -m scripts.validate_guides
+          python -m scripts.build_index --check
+          python -m scripts.check_links
+      - name: Validate workflows and scan for secrets
+        run: |
+          bash scripts/ci_tools.sh actionlint gitleaks
+          out/ci-tools/actionlint -color
+          out/ci-tools/gitleaks dir --redact --no-banner --max-target-megabytes 2 .
+      - name: Check external editorial links
+        run: python -m scripts.check_links --external --strict
+      - name: Upload link check results
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: guide-quality-links
+          path: out/link-check.md
+          if-no-files-found: ignore
