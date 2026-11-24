@@ -25,3 +25,5 @@
 在仓库根目录打开 Codex，输入 `$trend-scout` 或其他 [项目 Skills](docs/automation-guide.md#本地-codex-skills)。投稿前读 [贡献指南](CONTRIBUTING.md)、[证据分级](docs/evidence-grading.md) 和 [安全政策](docs/safety-policy.md)。索引显示每篇指南的审核状态。
 
 原创代码使用 [MIT](LICENSE)。原创文字使用 [CC BY 4.0](LICENSE-CONTENT)。第三方内容保留原始权利和适用许可。
+
+[首版交付与验证记录](docs/initial-release-report.md)
