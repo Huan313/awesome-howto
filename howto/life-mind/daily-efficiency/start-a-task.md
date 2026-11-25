@@ -18,4 +18,4 @@
 
 ## 证据与核验
 
-这是可逆的日常任务实验。2026-11-25 已核对示例、完成标准和可逆步骤，未测量对情绪或长期习惯的影响。参考 [UNC Learning Center 的拖延学习资料](https://learningcenter.unc.edu/tips-and-tools/procrastination/)。
+这是可逆的日常任务练习。2026-11-25 核对了示例、完成标准和可逆步骤。对情绪或长期习惯的影响未测量。2026-11-26 复核了 UNC 医学院写作讲义的第 62–63 张幻灯片，其中建议先写十分钟，再把大任务缩小到可完成的一段或一句。[UNC 医学院写作讲义](https://www.med.unc.edu/facultyaffairs/wp-content/uploads/sites/427/2024/06/Getting-it-Done.pdf)
