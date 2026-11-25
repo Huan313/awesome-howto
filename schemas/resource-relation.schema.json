@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "V2.1 resource relationship",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "from_id",
+    "type",
+    "to_id",
+    "evidence",
+    "verified"
+  ],
+  "properties": {
+    "from_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "type": {
+      "enum": [
+        "duplicate",
+        "translation_of",
+        "fork_of",
+        "mirror_of",
+        "derivative_of",
+        "child_of",
+        "related_to",
+        "supersedes",
+        "alternative_to"
+      ]
+    },
+    "to_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "evidence": {
+      "type": "string",
+      "minLength": 1
+    },
+    "verified": {
+      "type": "boolean"
+    }
+  }
+}

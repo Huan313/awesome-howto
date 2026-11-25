@@ -16,6 +16,10 @@ A Chinese-first library of practical guides with checkable steps, primary refere
 
 ## Resources and contributing
 
+[Global resource catalog](resources/discovery-index.md) · [HowTo series](resources/howto-series.md) · [Practical guides and handbooks](resources/practical-guides.md) · [Courses and learning paths](resources/learning-paths-and-courses.md) · [Awesome Lists](resources/awesome-lists.md) · [Audiences](resources/resource-audiences.md) · [Screened candidates](resources/discovery-candidates.md)
+
+The catalog tracks independent resources, collection sections and external leads. Browse by [resource type](resources/discovery-by-type.md). Candidate screening uses structural evidence and has its own status alongside editorial review. The count above refers to the V2 registry. [Curation report](reports/RESOURCE_CURATION_V2.1.1_REPORT.md) · [Curation workflow](discovery/README.md)
+
 [GitHub projects](resources/awesome-howto-projects.md) · [Primary and official resources](resources/official-resources.md) · [Weekly scans](data/weekly/README.md) · [Monthly research plans](data/monthly/README.md)
 
 [Contribute](CONTRIBUTING.md) · [Evidence grades](docs/evidence-grading.md) · [Safety](docs/safety-policy.md) · [Codex Skills](docs/automation-guide.md#本地-codex-skills) · [Optional website](docs/pages-guide.md) · [V2 delivery](docs/v2-release-report.md)

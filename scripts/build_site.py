@@ -24,7 +24,7 @@ def stage_site(root, destination):
         shutil.copyfile(path, target)
     for name, content in render(root, entries, site=True).items():
         write_text(docs / "guides" / name, content)
-    for name, content in outputs(root).items():
+    for name, content in outputs(root, site=True).items():
         write_text(docs / "resources" / name, content)
     navigation = "\n".join(f"- [{title}](guides/{slug}.md)" for slug, (title, _) in DIMENSIONS.items())
     message = f"{len(entries)} 篇指南完成审查并进入站点。" if entries else "当前可先查官方文档和资源目录。指南经审核后会进入本站。"

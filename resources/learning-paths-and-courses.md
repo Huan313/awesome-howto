@@ -1,0 +1,32 @@
+# 学习路径、课程与开放教材
+
+学习路径、课程体系、开放教材和带任务的教程。
+
+## 规范目录
+
+- [Artificial Intelligence for Beginners - A Curriculum](https://github.com/microsoft/ai-for-beginners) · curriculum · 大众 AI · mul / unknown · student · beginner · 许可 verified · active / structure_inspected · reference-only。从 AI 基础单元进入练习和测验，README 单列初学者入口。
+- [College Success](https://openstax.org/details/books/college-success) · book · 学习与研究 · en / global · university-student · unknown · 许可 unknown · active / public_page_reachable · reference-only。围绕大学学习、时间管理和过渡适应组织的开放教材。
+- [freeCodeCamp](https://github.com/freecodecamp/freecodecamp) · curriculum · 学习与研究 · en / unknown · developer、student · unknown · 许可 verified · active / structure_inspected · reference-only。以项目与练习组织开发课程。可从 README 区分全栈课程和语言学习等专门入口。
+- [GenAI\_Agents](https://github.com/nirdiamant/genai_agents) · tutorial · AI 工程 · unknown / unknown · 受众未核定 · unknown · 许可 unclear · active / repository_exists · reference-only。AI · Agents 示例。集中展示生成式 Agent 的实现模式，面向 Python 开发者。
+- [Generative AI for Beginners (Version 3) - A Course](https://github.com/microsoft/generative-ai-for-beginners) · curriculum · 大众 AI · mul / unknown · developer · beginner · 许可 verified · active / structure_inspected · reference-only。按课次组织生成式 AI 应用学习，提供课程设置、练习与部署环节。
+- [hello-agents](https://github.com/datawhalechina/hello-agents) · curriculum · AI 工程 · zh / unknown · 受众未核定 · unknown · 许可 unclear · active / structure_inspected · reference-only。中文 Agent 学习材料，使用章节目录定位基础知识和实作内容。
+- [Introduction to GitHub](https://github.com/skills/introduction-to-github) · tutorial · 主题未核定 · en / unknown · 受众未核定 · unknown · 许可 verified · active / structure_inspected · reference-only。上游简介 · Get started using GitHub in less than an hour.
+- [Learn web development](https://developer.mozilla.org/en-US/docs/Learn_web_development) · learning_path · 数字生活 · en / global · developer · beginner · 许可 unknown · active / public_page_reachable · reference-only。分层的 Web 学习路径与实作模块。
+- [Lessons](https://carpentries.org/lessons) · curriculum · 学习与研究 · en / global · general-public · unknown · 许可 unknown · active / public_page_reachable · reference-only。可按软件、图书馆和数据技能查看课程与实作任务。
+- [LibraryCarpentry/lc-spreadsheets](https://github.com/librarycarpentry/lc-spreadsheets) · course · 专业手册 · en / unknown · researcher、professional · unknown · 许可 unclear · 待核验 / metadata_only · reference-only。面向研究与图情工作者的数据表格课程，涉及录入、整理和核对。
+- [OSSU Computer Science](https://github.com/ossu/computer-science) · learning_path · 学习与研究 · en / unknown · student · unknown · 许可 verified · active / structure_inspected · reference-only。从先修要求、入门课程到核心编程、数学和系统课程，组织自学计算机科学路径。
+- [swcarpentry/git-novice](https://github.com/swcarpentry/git-novice) · course · 数字生活 · en / unknown · student · beginner · 许可 unclear · 待核验 / metadata_only · reference-only。Git 入门课程，以小步提交和练习组织版本管理学习。
+- [The Hugging Face Agents Course](https://github.com/huggingface/agents-course) · course · AI 工程 · en / unknown · developer、student · unknown · 许可 verified · active / structure_inspected · reference-only。按单元组织 Agent 课程和练习，README 单列前置要求。
+
+## 自动初筛样本
+
+- [Machine Learning for Beginners - A Curriculum](https://github.com/microsoft/ml-for-beginners) · curriculum · AI 工程 · unknown / unknown · 受众未核定 · unknown · 许可 verified · active / structure_inspected · needs-review。上游简介 · 12 weeks, 26 lessons, 52 quizzes, classic Machine Learning for all
+- [building-a-coding-agent-from-scratch-course](https://github.com/itsdecodingai/building-a-coding-agent-from-scratch-course) · course · AI 工程 · unknown / unknown · 受众未核定 · unknown · 许可 verified · active / structure_inspected · needs-review。上游简介 · Learn harness engineering by building Claude Code from scratch. Free, open-source course: 8 articles, 6 videos, 1 codebase.
+- [SDE-Interview-and-Prep-Roadmap](https://github.com/aasthas2022/sde-interview-and-prep-roadmap) · learning_path · 职业与工作 · unknown / unknown · 受众未核定 · unknown · 许可 unknown · active / repository_exists · needs-review。上游简介 · Welcome to the SDE Interview Preparation Roadmap! This repository is not just about my personal journey; it&\#x27;s a collaborative space for collective learning. As I prepare for Softwa
+- [Robotics\_Notebooks](https://github.com/imchong/robotics_notebooks) · learning_path · 学习与研究 · unknown / unknown · 受众未核定 · unknown · 许可 unclear · active / repository_exists · needs-review。上游简介 · 机器人技术栈知识库，配有学习路线和交互式知识图谱。 / A robotics engineering wiki with learning paths and an interactive knowledge graph.
+- [education-agent-skills](https://github.com/garethmanning/education-agent-skills) · curriculum · 学习与研究 · unknown / unknown · 受众未核定 · unknown · 许可 unclear · active / repository_exists · needs-review。上游简介 · 165 evidence-grounded AI skills for teachers, school leaders and EdTech builders—pedagogy, learning science, curriculum, assessment and regeneration. Claude, Codex and Hermes.
+- [susanSayJava](https://github.com/dvsusan/susansayjava) · learning_path · 职业与工作 · unknown / unknown · 受众未核定 · unknown · 许可 unknown · active / repository_exists · needs-review。上游简介 · Java 面试八股文 + 企业级项目实战：Spring、Spring Boot、Spring Cloud、JVM、Redis、MySQL、分布式、微服务、AI Agent，附详细答案与学习路线。
+- [ops-engineering-roadmap](https://github.com/vinson-lee01/ops-engineering-roadmap) · learning_path · 数字生活 · unknown / unknown · 受众未核定 · unknown · 许可 unknown · active / repository_exists · needs-review。上游简介 · 🔧 DevOps/SRE 工程师从零基础到架构师完整学习路线图 | Linux · Docker · K8s · CI/CD · Prometheus · 云原生 | CN+EN Bilingual | 500+ Resources | Zero to Architect — Complete learning path for DevOps &amp; SRE e
+- [curriculum](https://github.com/mdn/curriculum) · curriculum · 职业与工作 · unknown / unknown · 受众未核定 · unknown · 许可 unclear · active / repository_exists · needs-review。上游简介 · MDN front-end developer curriculum
+- [Robot\_Learning\_Paper\_Notebooks](https://github.com/imchong/robot_learning_paper_notebooks) · learning_path · 学习与研究 · unknown / unknown · 受众未核定 · unknown · 许可 unclear · active / repository_exists · needs-review。上游简介 · 人形机器人学习论文精读笔记，配有学习路线图、交互演示与配音视频。 / In-depth notes on humanoid robot learning papers, with a learning roadmap, interactive demos, and narrated videos.
+- [claude-architect-exam-guide](https://github.com/sarveshtalele/claude-architect-exam-guide) · learning_path · 学习与研究 · unknown / unknown · 受众未核定 · unknown · 许可 unknown · active / repository_exists · needs-review。上游简介 · The CCAR-F, CCAR-P prep guide built for non-technical learners and engineers alike. Curated resources, Claude skills, and a learning path that goes beyond the exam.

@@ -1,0 +1,174 @@
+{
+  "life": {
+    "label": "生活与家庭",
+    "priority": 0,
+    "terms": [
+      "life skills",
+      "adulting",
+      "household management",
+      "home maintenance",
+      "cleaning",
+      "organizing",
+      "cooking",
+      "food safety",
+      "travel preparation",
+      "pet care",
+      "family management",
+      "emergency preparedness"
+    ]
+  },
+  "health-safety": {
+    "label": "健康素养与安全",
+    "priority": 0,
+    "terms": [
+      "health literacy",
+      "first aid",
+      "sleep hygiene",
+      "exercise basics",
+      "nutrition literacy",
+      "food safety",
+      "mental health literacy",
+      "personal safety",
+      "emergency response"
+    ]
+  },
+  "finance-law-consumer": {
+    "label": "财务、法律与消费",
+    "priority": 0,
+    "terms": [
+      "personal finance",
+      "budgeting",
+      "saving",
+      "tax basics",
+      "insurance literacy",
+      "social security",
+      "employment rights",
+      "consumer rights",
+      "scam prevention",
+      "legal literacy"
+    ]
+  },
+  "learning-study": {
+    "label": "学习与研究",
+    "priority": 0,
+    "terms": [
+      "learning how to learn",
+      "study skills",
+      "spaced repetition",
+      "retrieval practice",
+      "note taking",
+      "critical thinking",
+      "academic writing",
+      "research methods",
+      "language learning",
+      "open education",
+      "exam preparation"
+    ]
+  },
+  "digital-life": {
+    "label": "数字生活",
+    "priority": 0,
+    "terms": [
+      "digital literacy",
+      "computer basics",
+      "smartphone guide",
+      "Windows",
+      "macOS",
+      "Android",
+      "iOS",
+      "file backup",
+      "data recovery",
+      "privacy",
+      "cybersecurity basics",
+      "office productivity",
+      "cloud storage"
+    ]
+  },
+  "career-work": {
+    "label": "职业与工作",
+    "priority": 0,
+    "terms": [
+      "career development",
+      "job search",
+      "resume",
+      "CV",
+      "interview",
+      "workplace communication",
+      "presentation skills",
+      "management handbook",
+      "leadership",
+      "teacher guide",
+      "researcher guide",
+      "freelancer guide",
+      "small business operations"
+    ]
+  },
+  "ai-everyone": {
+    "label": "大众 AI",
+    "priority": 1,
+    "terms": [
+      "ChatGPT for beginners",
+      "AI for everyday life",
+      "AI productivity",
+      "AI for students",
+      "teachers",
+      "researchers",
+      "creators",
+      "small business",
+      "AI workflow",
+      "AI literacy"
+    ]
+  },
+  "ai-engineering": {
+    "label": "AI 工程",
+    "priority": 1,
+    "terms": [
+      "LLM",
+      "VLM",
+      "multimodal AI",
+      "RAG",
+      "agents",
+      "agent skills",
+      "MCP",
+      "fine tuning",
+      "LoRA",
+      "inference",
+      "evaluation",
+      "deployment",
+      "AI coding",
+      "local LLM",
+      "prompt engineering",
+      "context engineering"
+    ]
+  },
+  "creative-hobby": {
+    "label": "创作与兴趣",
+    "priority": 2,
+    "terms": [
+      "photography",
+      "graphic design",
+      "video editing",
+      "music production",
+      "drawing",
+      "DIY",
+      "gardening",
+      "baking",
+      "crafts"
+    ]
+  },
+  "professional": {
+    "label": "专业手册",
+    "priority": 2,
+    "terms": [
+      "engineering handbook",
+      "medical education",
+      "clinical guideline",
+      "teacher professional development",
+      "scientific research workflow",
+      "manufacturing guide",
+      "agriculture guide",
+      "architecture guide",
+      "data science handbook"
+    ]
+  }
+}

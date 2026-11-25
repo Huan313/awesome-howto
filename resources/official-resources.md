@@ -1,77 +1,54 @@
-# 官方与原始资料
+# 官方资料与原始来源
 
-共 28 条。下列等级是编辑判断。Stars 和 Forks 表示 GitHub 公开参与度。官方资料按原文适用范围使用，第三方内容遵守原许可。
+公共机构、大学、项目官方帮助及 V2 登记的原始资料。各条记录保留适用范围与核验等级。
 
-## 生活与日常 HowTo
+## 规范目录
 
-- [Apple · Back up an iPhone or iPad](https://support.apple.com/en-us/108771) · curated / direct-reference。比较 iCloud 与电脑备份以及同步数据的覆盖范围。 受众为一般读者及相应设备使用者。 核验 2026-11-25。
-  可借鉴 用原始说明核对措辞、时间及适用范围。 限制 范围 global。站点链接可用于参考，转载按发布者条款。
-- [FTC · Recognize and avoid phishing scams](https://consumer.ftc.gov/articles/how-recognize-avoid-phishing-scams) · curated / direct-reference。核实独立联系路径和美国报告范围。 受众为一般读者及相应设备使用者。 核验 2026-11-25。
-  可借鉴 用原始说明核对措辞、时间及适用范围。 限制 范围 united-states。站点链接可用于参考，转载按发布者条款。
-- [Google · Back up or restore Android data](https://support.google.com/android/answer/2819582) · curated / direct-reference。Google 服务设备备份范围、版本条件和恢复时机。 受众为一般读者及相应设备使用者。 核验 2026-11-25。
-  可借鉴 用原始说明核对措辞、时间及适用范围。 限制 范围 global。站点链接可用于参考，转载按发布者条款。
-- [FTC · Consumer Alerts](https://consumer.ftc.gov/consumer-alerts) · curated / direct-reference。消费者保护公告和诈骗线索。 受众为一般读者及相应设备使用者。 核验 2026-11-25。
-  可借鉴 用原始说明核对措辞、时间及适用范围。 限制 范围 united-states。站点链接可用于参考，转载按发布者条款。
-- [中国政府网 · 中国政府网](https://www.gov.cn/) · curated / direct-reference。用政策原文核对发布日期和实施范围。 受众为一般读者及相应设备使用者。 核验 2026-11-25。
-  可借鉴 用原始说明核对措辞、时间及适用范围。 限制 范围 china-mainland。站点链接可用于参考，转载按发布者条款。
-- [CFPB · Consumer tools](https://www.consumerfinance.gov/consumer-tools/) · curated / direct-reference。消费者金融教育资料，核对美国制度及日期。 受众为一般读者及相应设备使用者。 核验 2026-11-25。
-  可借鉴 用原始说明核对措辞、时间及适用范围。 限制 范围 united-states。站点链接可用于参考，转载按发布者条款。
-
-## 健康素养与安全
-
-- [USDA FSIS · Cold Food Storage Chart](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts) · curated / direct-reference。美国家庭食品储藏的官方参考，健康问题由专业人员处理。 受众为一般读者及相应设备使用者。 核验 2026-11-25。
-  可借鉴 用原始说明核对措辞、时间及适用范围。 限制 范围 united-states。站点链接可用于参考，转载按发布者条款。
-- [WHO · Health topics](https://www.who.int/health-topics) · curated / direct-reference。用来定位公共健康原始资料，个体决策需专业意见。 受众为一般读者及相应设备使用者。 核验 2026-11-25。
-  可借鉴 用原始说明核对措辞、时间及适用范围。 限制 范围 global。站点链接可用于参考，转载按发布者条款。
-
-## 学习与课程
-
-- [Karpicke and Roediger · The Critical Importance of Retrieval for Learning](https://pubmed.ncbi.nlm.nih.gov/18276894/) · curated / direct-reference。界定具体学习任务与延迟记忆结果，先读研究原文。 受众为对应主题读者。 核验 2026-11-25。
-  可借鉴 用原始说明核对措辞、时间及适用范围。 限制 范围 global。站点链接可用于参考，转载按发布者条款。
-- [Cepeda et al. · Distributed practice in verbal recall tasks](https://pubmed.ncbi.nlm.nih.gov/16719566/) · curated / direct-reference。量化综述讨论练习间隔和保持间隔。 受众为对应主题读者。 核验 2026-11-25。
-  可借鉴 用原始说明核对措辞、时间及适用范围。 限制 范围 global。站点链接可用于参考，转载按发布者条款。
-- [S. Keshav · How to Read a Paper](https://cs.uwaterloo.ca/~Brecht/courses/856/readings/how-to-read/keshav-paper-reading.pdf) · curated / direct-reference。提供三遍读法，每遍有不同阅读目标。 受众为对应主题读者。 核验 2026-11-25。
-  可借鉴 用原始说明核对措辞、时间及适用范围。 限制 范围 global。站点链接可用于参考，转载按发布者条款。
-- [Crossref · Crossref REST API](https://www.crossref.org/documentation/retrieve-metadata/rest-api/) · curated / direct-reference。核对 DOI 元数据，登记记录覆盖取决于来源。 受众为对应主题读者。 核验 2026-11-25。
-  可借鉴 用原始说明核对措辞、时间及适用范围。 限制 范围 global。站点链接可用于参考，转载按发布者条款。
-- [Crossref · Crossmark](https://www.crossref.org/services/crossmark/) · curated / direct-reference。定位已参与文献的版本、勘误和撤回。 受众为对应主题读者。 核验 2026-11-25。
-  可借鉴 用原始说明核对措辞、时间及适用范围。 限制 范围 global。站点链接可用于参考，转载按发布者条款。
-- [Zotero · Duplicate detection and merging](https://www.zotero.org/support/duplicate_detection) · curated / direct-reference。同库检测、选择主版本、合并保留关联。 受众为对应主题读者。 核验 2026-11-25。
-  可借鉴 用原始说明核对措辞、时间及适用范围。 限制 范围 global。站点链接可用于参考，转载按发布者条款。
-- [UNESCO · Education](https://www.unesco.org/en/education) · curated / direct-reference。教育项目、统计与政策入口，区分全球报告和国家案例。 受众为对应主题读者。 核验 2026-11-25。
-  可借鉴 用原始说明核对措辞、时间及适用范围。 限制 范围 global。站点链接可用于参考，转载按发布者条款。
-
-## 职业与工作
-
-- [FTC · Choosing a vocational school or certificate program](https://consumer.ftc.gov/articles/choosing-vocational-school-or-certificate-program) · curated / direct-reference。美国职业培训费用、资格和声称的就业结果。 受众为对应主题读者。 核验 2026-11-25。
-  可借鉴 用原始说明核对措辞、时间及适用范围。 限制 范围 united-states。站点链接可用于参考，转载按发布者条款。
-- [MIT CAPD · STAR 行为面试](https://capd.mit.edu/resources/the-star-method-for-behavioral-interviews/) · curated / direct-reference。行为面试的 STAR 框架、回答练习及样表。 受众为对应主题读者。 核验 2026-11-25。
-  可借鉴 用原始说明核对措辞、时间及适用范围。 限制 范围 united-states。站点链接可用于参考，转载按发布者条款。
-
-## 数字技能与安全
-
-- [Microsoft · Windows backup and recovery options](https://support.microsoft.com/en-us/windows/experience/backup-recovery/backup-restore-and-recovery-in-windows) · curated / direct-reference。区分文件备份、系统还原与重新安装。 受众为一般读者及相应设备使用者。 核验 2026-11-25。
-  可借鉴 用原始说明核对措辞、时间及适用范围。 限制 范围 global。站点链接可用于参考，转载按发布者条款。
-- [Microsoft · Windows File History](https://support.microsoft.com/en-au/windows/experience/backup-recovery/backup-and-restore-with-file-history) · curated / direct-reference。定位以前的文件或文件夹版本。 受众为一般读者及相应设备使用者。 核验 2026-11-25。
-  可借鉴 用原始说明核对措辞、时间及适用范围。 限制 范围 global。站点链接可用于参考，转载按发布者条款。
-- [GitHub · Create a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository) · curated / direct-reference。核对所有者、可见性与项目创建条件。 受众为一般读者及相应设备使用者。 核验 2026-11-25。
-  可借鉴 用原始说明核对措辞、时间及适用范围。 限制 范围 global。站点链接可用于参考，转载按发布者条款。
-- [Google · Google Authenticator verification codes](https://support.google.com/accounts/answer/1066447) · curated / direct-reference。区分帐号同步与从旧设备手动转移。 受众为一般读者及相应设备使用者。 核验 2026-11-25。
-  可借鉴 用原始说明核对措辞、时间及适用范围。 限制 范围 global。站点链接可用于参考，转载按发布者条款。
-- [Apple · Back up your Mac with Time Machine](https://support.apple.com/en-us/104984) · curated / direct-reference。Time Machine 设置、介质与备份操作。 受众为一般读者及相应设备使用者。 核验 2026-11-25。
-  可借鉴 用原始说明核对措辞、时间及适用范围。 限制 范围 global。站点链接可用于参考，转载按发布者条款。
-- [Microsoft · Collaborate in Microsoft OneDrive](https://support.microsoft.com/en-us/onedrive/collaborate-in-microsoft-onedrive-sharing-editing-and-managing-files) · curated / direct-reference。共享权限和 Manage access。 受众为一般读者及相应设备使用者。 核验 2026-11-25。
-  可借鉴 用原始说明核对措辞、时间及适用范围。 限制 范围 global。站点链接可用于参考，转载按发布者条款。
-- [NIST · Cybersecurity](https://www.nist.gov/cybersecurity) · curated / direct-reference。数字安全框架与技术参考，各地合规要求另查。 受众为一般读者及相应设备使用者。 核验 2026-11-25。
-  可借鉴 用原始说明核对措辞、时间及适用范围。 限制 范围 global。站点链接可用于参考，转载按发布者条款。
-
-## 官方文档
-
-- [OpenAI · Codex CLI](https://learn.chatgpt.com/docs/codex/cli) · curated / direct-reference。核对 CLI 启动和执行权限。 受众为对应主题读者。 核验 2026-11-25。
-  可借鉴 用原始说明核对措辞、时间及适用范围。 限制 范围 global。站点链接可用于参考，转载按发布者条款。
-- [OpenAI · Data controls in ChatGPT](https://help.openai.com/en/articles/7730893-data-controls-in-chatgpt) · curated / direct-reference。核对当前消费者账户的数据设置和限制。 受众为对应主题读者。 核验 2026-11-25。
-  可借鉴 用原始说明核对措辞、时间及适用范围。 限制 范围 global。站点链接可用于参考，转载按发布者条款。
-- [OpenAI · Testing Agent Skills Systematically with Evals](https://developers.openai.com/blog/eval-skills) · curated / direct-reference。设计触发行为、边界案例和测试口径。 受众为对应主题读者。 核验 2026-11-25。
-  可借鉴 用原始说明核对措辞、时间及适用范围。 限制 范围 global。站点链接可用于参考，转载按发布者条款。
-- [Hugging Face · Hugging Face Learn](https://huggingface.co/learn) · curated / direct-reference。AI 课程与练习入口，运行环境按课核对。 受众为对应主题读者。 核验 2026-11-25。
-  可借鉴 用原始说明核对措辞、时间及适用范围。 限制 范围 global。站点链接可用于参考，转载按发布者条款。
+- [Apple · Back up an iPhone or iPad](https://support.apple.com/en-us/108771) · official_reference · 生活与家庭 · unknown / global · 受众未核定 · unknown · 许可 unknown · 待核验 / metadata_only · reference-only。比较 iCloud 与电脑备份以及同步数据的覆盖范围。
+- [Apple · Back up your Mac with Time Machine](https://support.apple.com/en-us/104984) · official_reference · 数字生活 · unknown / global · 受众未核定 · unknown · 许可 unknown · 待核验 / metadata_only · reference-only。Time Machine 设置、介质与备份操作。
+- [Audacity Manual](https://manual.audacityteam.org/) · manual · 创作与兴趣 · en / global · general-public · unknown · 许可 unknown · active / public_page_reachable · reference-only。从录音、编辑到导出的桌面音频操作参考。
+- [Blender Manual](https://docs.blender.org/manual/en/latest) · manual · 创作与兴趣 · en / global · general-public · unknown · 许可 unknown · active / public_page_reachable · reference-only。按版本、建模、动画与渲染工具导航的官方手册。
+- [Cepeda et al. · Distributed practice in verbal recall tasks](https://pubmed.ncbi.nlm.nih.gov/16719566) · official_reference · 学习与研究 · unknown / global · 受众未核定 · unknown · 许可 unknown · 待核验 / metadata_only · reference-only。量化综述讨论练习间隔和保持间隔。
+- [CFPB · Consumer tools](https://www.consumerfinance.gov/consumer-tools) · official_reference · 生活与家庭 · unknown / US · 受众未核定 · unknown · 许可 unknown · 待核验 / metadata_only · reference-only。消费者金融教育资料，核对美国制度及日期。
+- [College Success](https://openstax.org/details/books/college-success) · book · 学习与研究 · en / global · university-student · unknown · 许可 unknown · active / public_page_reachable · reference-only。围绕大学学习、时间管理和过渡适应组织的开放教材。
+- [Consumer](https://www.citizensadvice.org.uk/consumer) · official_reference · 财务、法律与消费 · en / GB · general-public · unknown · 许可 unknown · active / public_page_reachable · reference-only。英国消费问题入口，具体规则与地区适用性须核对原文。
+- [Crossref · Crossmark](https://www.crossref.org/services/crossmark) · official_reference · 学习与研究 · unknown / global · 受众未核定 · unknown · 许可 unknown · 待核验 / metadata_only · reference-only。定位已参与文献的版本、勘误和撤回。
+- [Crossref · Crossref REST API](https://www.crossref.org/documentation/retrieve-metadata/rest-api) · official_reference · 学习与研究 · unknown / global · 受众未核定 · unknown · 许可 unknown · 待核验 / metadata_only · reference-only。核对 DOI 元数据，登记记录覆盖取决于来源。
+- [eLearning Academy](https://elearning.fao.org/) · official_reference · 专业手册 · en / global · general-public · unknown · 许可 unknown · active / public_page_reachable · reference-only。联合国粮农组织的农业、营养和可持续发展课程入口。
+- [FTC · Choosing a vocational school or certificate program](https://consumer.ftc.gov/articles/choosing-vocational-school-or-certificate-program) · official_reference · 职业与工作 · unknown / US · 受众未核定 · unknown · 许可 unknown · 待核验 / metadata_only · reference-only。美国职业培训费用、资格和声称的就业结果。
+- [FTC · Consumer Alerts](https://consumer.ftc.gov/consumer-alerts) · official_reference · 生活与家庭 · unknown / US · 受众未核定 · unknown · 许可 unknown · 待核验 / metadata_only · reference-only。消费者保护公告和诈骗线索。
+- [FTC · Recognize and avoid phishing scams](https://consumer.ftc.gov/articles/how-recognize-avoid-phishing-scams) · official_reference · 生活与家庭 · unknown / US · 受众未核定 · unknown · 许可 unknown · 待核验 / metadata_only · reference-only。核实独立联系路径和美国报告范围。
+- [Gardening advice](https://www.rhs.org.uk/advice) · official_reference · 创作与兴趣 · en / GB · general-public · unknown · 许可 unknown · active / public_page_reachable · reference-only。按季节、植物和园艺任务定位英国园艺资料。
+- [Get Cyber Safe resources](https://www.getcybersafe.gc.ca/en/resources) · official_reference · 数字生活 · en / CA · general-public · unknown · 许可 unknown · active / public_page_reachable · reference-only。面向一般用户的加拿大数字安全资料及家庭场景。
+- [GitHub · Create a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository) · official_reference · 数字生活 · unknown / global · 受众未核定 · unknown · 许可 unknown · 待核验 / metadata_only · reference-only。核对所有者、可见性与项目创建条件。
+- [Google · Back up or restore Android data](https://support.google.com/android/answer/2819582) · official_reference · 生活与家庭 · unknown / global · 受众未核定 · unknown · 许可 unknown · 待核验 / metadata_only · reference-only。Google 服务设备备份范围、版本条件和恢复时机。
+- [Google · Google Authenticator verification codes](https://support.google.com/accounts/answer/1066447) · official_reference · 数字生活 · unknown / global · 受众未核定 · unknown · 许可 unknown · 待核验 / metadata_only · reference-only。区分帐号同步与从旧设备手动转移。
+- [Hugging Face · Hugging Face Learn](https://huggingface.co/learn) · official_reference · 大众 AI · unknown / global · 受众未核定 · unknown · 许可 unknown · 待核验 / metadata_only · reference-only。AI 课程与练习入口，运行环境按课核对。
+- [Interview primer](https://capd.mit.edu/resources/interview-primer) · official_reference · 职业与工作 · en / US · university-student、career-starter · unknown · 许可 unknown · active / public_page_reachable · reference-only。提供面试准备、行为问题及实践场景的大学职业建议。
+- [Karpicke and Roediger · The Critical Importance of Retrieval for Learning](https://pubmed.ncbi.nlm.nih.gov/18276894) · official_reference · 学习与研究 · unknown / global · 受众未核定 · unknown · 许可 unknown · 待核验 / metadata_only · reference-only。界定具体学习任务与延迟记忆结果，先读研究原文。
+- [Learn web development](https://developer.mozilla.org/en-US/docs/Learn_web_development) · learning_path · 数字生活 · en / global · developer · beginner · 许可 unknown · active / public_page_reachable · reference-only。分层的 Web 学习路径与实作模块。
+- [Lessons](https://carpentries.org/lessons) · curriculum · 学习与研究 · en / global · general-public · unknown · 许可 unknown · active / public_page_reachable · reference-only。可按软件、图书馆和数据技能查看课程与实作任务。
+- [Live Well](https://www.nhs.uk/live-well) · official_reference · 健康素养与安全 · en / GB · general-public · unknown · 许可 unknown · active / public_page_reachable · reference-only。英国公共健康素养目录，主题含运动、睡眠和日常健康。
+- [Mac User Guide](https://support.apple.com/guide/mac-help/welcome/mac) · manual · 数字生活 · en / global · general-public · unknown · 许可 unknown · active / public_page_reachable · reference-only。按 macOS 操作场景与版本导航的官方手册。
+- [Managing your money](https://www.moneysense.gov.sg/managing-your-money) · official_reference · 财务、法律与消费 · en / SG · general-public · unknown · 许可 unknown · active / public_page_reachable · reference-only。新加坡公共财务教育资料，适用于核对本地预算基本概念。
+- [Microsoft · Collaborate in Microsoft OneDrive](https://support.microsoft.com/en-us/onedrive/collaborate-in-microsoft-onedrive-sharing-editing-and-managing-files) · official_reference · 数字生活 · unknown / global · 受众未核定 · unknown · 许可 unknown · 待核验 / metadata_only · reference-only。共享权限和 Manage access。
+- [Microsoft · Windows backup and recovery options](https://support.microsoft.com/en-us/windows/experience/backup-recovery/backup-restore-and-recovery-in-windows) · official_reference · 数字生活 · unknown / global · 受众未核定 · unknown · 许可 unknown · 待核验 / metadata_only · reference-only。区分文件备份、系统还原与重新安装。
+- [Microsoft · Windows File History](https://support.microsoft.com/en-au/windows/experience/backup-recovery/backup-and-restore-with-file-history) · official_reference · 数字生活 · unknown / global · 受众未核定 · unknown · 许可 unknown · 待核验 / metadata_only · reference-only。定位以前的文件或文件夹版本。
+- [MIT CAPD · STAR 行为面试](https://capd.mit.edu/resources/the-star-method-for-behavioral-interviews) · official_reference · 职业与工作 · unknown / US · 受众未核定 · unknown · 许可 unknown · 待核验 / metadata_only · reference-only。行为面试的 STAR 框架、回答练习及样表。
+- [NIST · Cybersecurity](https://www.nist.gov/cybersecurity) · official_reference · 数字生活 · unknown / global · 受众未核定 · unknown · 许可 unknown · 待核验 / metadata_only · reference-only。数字安全框架与技术参考，各地合规要求另查。
+- [O\*NET OnLine](https://www.onetonline.org/) · official_reference · 职业与工作 · en / US · general-public · unknown · 许可 unknown · active / public_page_reachable · reference-only。美国职业任务与技能参考，支持按岗位及能力检索。
+- [OpenAI · Codex CLI](https://learn.chatgpt.com/docs/codex/cli) · official_reference · 大众 AI · unknown / global · 受众未核定 · unknown · 许可 unknown · 待核验 / metadata_only · reference-only。核对 CLI 启动和执行权限。
+- [OpenAI · Data controls in ChatGPT](https://help.openai.com/en/articles/7730893-data-controls-in-chatgpt) · official_reference · 大众 AI · unknown / global · 受众未核定 · unknown · 许可 unknown · 待核验 / metadata_only · reference-only。核对当前消费者账户的数据设置和限制。
+- [OpenAI · Testing Agent Skills Systematically with Evals](https://developers.openai.com/blog/eval-skills) · official_reference · 大众 AI · unknown / global · 受众未核定 · unknown · 许可 unknown · 待核验 / metadata_only · reference-only。设计触发行为、边界案例和测试口径。
+- [OpenCourseWare](https://ocw.mit.edu/) · resource_directory · 学习与研究 · en / global · general-public · unknown · 许可 unknown · active / public_page_reachable · reference-only。按学科查找 MIT 的开放课程与可用教学材料。
+- [Prompt engineering best practices for ChatGPT](https://help.openai.com/en/articles/10032626-prompt-engineering-best-practices-for-chatgpt) · official_reference · 大众 AI · en / global · general-public · unknown · 许可 unknown · active / public_page_reachable · reference-only。从清晰指令与反复调整入手的产品帮助入口。
+- [Reporting guidelines](https://equator-network.org/reporting-guidelines) · official_reference · 专业手册 · en / global · general-public · unknown · 许可 unknown · redirected / public_page_reachable · reference-only。按研究设计定位报告规范，用于论文和研究报告核对。
+- [Research Guides](https://guides.loc.gov/) · resource_directory · 学习与研究 · en / global · general-public · unknown · 许可 unknown · active / public_page_reachable · reference-only。按主题查找国会图书馆馆员维护的原始资料导航。
+- [S. Keshav · How to Read a Paper](https://cs.uwaterloo.ca/~Brecht/courses/856/readings/how-to-read/keshav-paper-reading.pdf) · official_reference · 学习与研究 · unknown / global · 受众未核定 · unknown · 许可 unknown · 待核验 / metadata_only · reference-only。提供三遍读法，每遍有不同阅读目标。
+- [Systems Engineering Handbook](https://www.nasa.gov/reference/systems-engineering-handbook) · handbook · 专业手册 · en / US · engineer · unknown · 许可 unknown · active / public_page_reachable · reference-only。面向工程团队的体系工程过程与术语参考。
+- [UNESCO · Education](https://www.unesco.org/en/education) · official_reference · 学习与研究 · unknown / global · 受众未核定 · unknown · 许可 unknown · 待核验 / metadata_only · reference-only。教育项目、统计与政策入口，区分全球报告和国家案例。
+- [USDA FSIS · Cold Food Storage Chart](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts) · official_reference · 健康素养与安全 · unknown / US · 受众未核定 · unknown · 许可 unknown · 待核验 / metadata_only · reference-only。美国家庭食品储藏的官方参考，健康问题由专业人员处理。
+- [Web Accessibility Tutorials](https://www.w3.org/WAI/tutorials) · official_reference · 数字生活 · en / global · developer、designer · unknown · 许可 unknown · active / public_page_reachable · reference-only。从页面结构、表单和图片等实际任务查找无障碍写作与开发参考。
+- [WHO · Health topics](https://www.who.int/health-topics) · official_reference · 健康素养与安全 · unknown / global · 受众未核定 · unknown · 许可 unknown · 待核验 / metadata_only · reference-only。用来定位公共健康原始资料，个体决策需专业意见。
+- [Zotero · Duplicate detection and merging](https://www.zotero.org/support/duplicate_detection) · official_reference · 学习与研究 · unknown / global · 受众未核定 · unknown · 许可 unknown · 待核验 / metadata_only · reference-only。同库检测、选择主版本、合并保留关联。
+- [中国政府网 · 中国政府网](https://www.gov.cn/) · official_reference · 生活与家庭 · unknown / CN · 受众未核定 · unknown · 许可 unknown · 待核验 / metadata_only · reference-only。用政策原文核对发布日期和实施范围。

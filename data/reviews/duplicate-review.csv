@@ -1,0 +1,11 @@
+from_id,relation,to_id,evidence,suggested_action
+gh-1053050558,duplicate,gh-1380625960,Same normalized repository name and similar metadata description. Kept separately.,核对上游、版本和适用范围，记录保留或合并理由
+gh-1053679209,duplicate,gh-1380625960,Same normalized repository name and similar metadata description. Kept separately.,核对上游、版本和适用范围，记录保留或合并理由
+gh-1053682494,duplicate,gh-1380625960,Same normalized repository name and similar metadata description. Kept separately.,核对上游、版本和适用范围，记录保留或合并理由
+gh-1053752428,duplicate,gh-1380625960,Same normalized repository name and similar metadata description. Kept separately.,核对上游、版本和适用范围，记录保留或合并理由
+gh-1053752483,duplicate,gh-1380625960,Same normalized repository name and similar metadata description. Kept separately.,核对上游、版本和适用范围，记录保留或合并理由
+gh-1372008277,duplicate,gh-1380625960,Same normalized repository name and similar metadata description. Kept separately.,核对上游、版本和适用范围，记录保留或合并理由
+gh-1380629645,duplicate,gh-1380625960,Same normalized repository name and similar metadata description. Kept separately.,核对上游、版本和适用范围，记录保留或合并理由
+gh-1439849191,duplicate,gh-1439857258,Same normalized repository name and similar metadata description. Kept separately.,核对上游、版本和适用范围，记录保留或合并理由
+gh-1464966125,duplicate,gh-40619595,Same normalized repository name and similar metadata description. Kept separately.,核对上游、版本和适用范围，记录保留或合并理由
+gh-860588915,duplicate,gh-1380625960,Same normalized repository name and similar metadata description. Kept separately.,核对上游、版本和适用范围，记录保留或合并理由
