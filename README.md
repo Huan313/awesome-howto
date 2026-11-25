@@ -22,6 +22,10 @@
 
 ## 原始资料与长期维护
 
+[全球资源目录](resources/discovery-index.md) · [HowTo 系列与手册](resources/howto-series.md) · [Awesome Lists](resources/awesome-lists.md) · [按类型、受众和难度](resources/discovery-by-type.md) · [自动初筛](resources/discovery-candidates.md)
+
+资源目录从官方来源和公开集合提取入口，记录来源、许可及适用范围。新核验入口列为 `reference-only`，自动初筛记录列为 `needs-review`。上方 53 条资源为 V2 注册表统计。最新发现日期、样本范围和复核方法见 [发现报告](reports/RESOURCE_DISCOVERY_V2.1_REPORT.md) 和 [资源贡献说明](discovery/README.md)。
+
 [GitHub 项目资源](resources/awesome-howto-projects.md) · [官方与原始资料](resources/official-resources.md) · [周度候选](data/weekly/README.md) · [每月研究计划](data/monthly/README.md)
 
 在项目根目录打开 Codex，输入 `$` 选择 [项目 Skills](docs/automation-guide.md#本地-codex-skills)。投稿前查看 [贡献流程](CONTRIBUTING.md)、[证据规则](docs/evidence-grading.md) 和 [安全政策](docs/safety-policy.md)。[可选站点](docs/pages-guide.md) · [V2 交付记录](docs/v2-release-report.md)

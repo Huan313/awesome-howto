@@ -16,6 +16,10 @@ A Chinese-first library of practical guides with checkable steps, primary refere
 
 ## Resources and contributing
 
+[Global resource catalog](resources/discovery-index.md) · [HowTo series and handbooks](resources/howto-series.md) · [Awesome Lists](resources/awesome-lists.md) · [Type, audience and difficulty](resources/discovery-by-type.md) · [Screened candidates](resources/discovery-candidates.md)
+
+The catalog links to original sources and public collections with provenance, licence and review status. Verified entries are `reference-only` and screened candidates await review. The count above refers to the V2 registry. See the [dated discovery report](reports/RESOURCE_DISCOVERY_V2.1_REPORT.md) and the [curation workflow](discovery/README.md).
+
 [GitHub projects](resources/awesome-howto-projects.md) · [Primary and official resources](resources/official-resources.md) · [Weekly scans](data/weekly/README.md) · [Monthly research plans](data/monthly/README.md)
 
 [Contribute](CONTRIBUTING.md) · [Evidence grades](docs/evidence-grading.md) · [Safety](docs/safety-policy.md) · [Codex Skills](docs/automation-guide.md#本地-codex-skills) · [Optional website](docs/pages-guide.md) · [V2 delivery](docs/v2-release-report.md)

@@ -1,0 +1,10 @@
+{
+  "concurrency": 4,
+  "search_spacing_seconds": 2.35,
+  "max_depth": 3,
+  "repository_expansions": 52,
+  "max_documents_per_repository": 4,
+  "max_local_items": 18,
+  "max_external_items": 10,
+  "screened_limit": 200
+}

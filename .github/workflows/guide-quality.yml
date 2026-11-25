@@ -33,13 +33,15 @@ jobs:
           python -m scripts.validate_guides
           python -m scripts.build_index --check
           python -m scripts.build_resource_index --check
+          python -m scripts.validate_catalog
+          python -m scripts.build_resource_catalog --check
           python -m scripts.build_site
           python -m scripts.check_links
       - name: Validate workflows and scan for secrets
         run: |
           bash scripts/ci_tools.sh actionlint gitleaks
           out/ci-tools/actionlint -color
-          out/ci-tools/gitleaks dir --redact --no-banner --max-target-megabytes 2 .
+          out/ci-tools/gitleaks dir --redact --no-banner --max-target-megabytes 8 .
       - name: Check external editorial links
         run: python -m scripts.check_links --external --strict
       - name: Upload link check results

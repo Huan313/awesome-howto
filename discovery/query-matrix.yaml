@@ -1,0 +1,243 @@
+{
+  "page_size": 20,
+  "pages": 2,
+  "formats": [
+    "how to",
+    "howto",
+    "how-to",
+    "guide",
+    "handbook",
+    "manual",
+    "playbook",
+    "cookbook",
+    "field guide",
+    "starter guide",
+    "tutorial",
+    "learning path",
+    "curriculum",
+    "wiki",
+    "best practices",
+    "cheatsheet",
+    "practical guide",
+    "from scratch",
+    "step by step",
+    "resources",
+    "open course",
+    "knowledge base",
+    "checklist",
+    "reference"
+  ],
+  "vocabulary": {
+    "zh": "实用指南、生活指南、操作手册、使用教程、入门指南、从零开始、实践手册、学习路线、知识库、经验总结、避坑指南、操作清单、工作手册、技能指南、课程体系、开源资源合集、工具合集",
+    "es": "guía/manual/tutorial",
+    "fr": "guide/manuel/tutoriel",
+    "de": "Anleitung/Handbuch",
+    "ja": "入門/使い方/ガイド",
+    "ko": "가이드/사용법/입문"
+  },
+  "queries": [
+    {
+      "id": "life-1",
+      "domain": "life",
+      "language": "en",
+      "expression": "\"cooking\" cookbook in:name,description",
+      "sort": "stars"
+    },
+    {
+      "id": "life-2",
+      "domain": "life",
+      "language": "zh",
+      "expression": "\"生活指南\" in:name,description,readme",
+      "sort": "updated"
+    },
+    {
+      "id": "life-3",
+      "domain": "life",
+      "language": "es",
+      "expression": "\"recetas\" cocina in:name,description",
+      "sort": "stars"
+    },
+    {
+      "id": "health-safety-1",
+      "domain": "health-safety",
+      "language": "en",
+      "expression": "\"health literacy\" resources in:description,readme",
+      "sort": "stars"
+    },
+    {
+      "id": "health-safety-2",
+      "domain": "health-safety",
+      "language": "zh",
+      "expression": "\"食品安全\" \"指南\" in:description,readme",
+      "sort": "stars"
+    },
+    {
+      "id": "finance-law-consumer-1",
+      "domain": "finance-law-consumer",
+      "language": "en",
+      "expression": "\"budgeting\" guide in:description,readme",
+      "sort": "stars"
+    },
+    {
+      "id": "finance-law-consumer-2",
+      "domain": "finance-law-consumer",
+      "language": "en",
+      "expression": "\"consumer rights\" guide in:description,readme",
+      "sort": "updated"
+    },
+    {
+      "id": "finance-law-consumer-3",
+      "domain": "finance-law-consumer",
+      "language": "de",
+      "expression": "\"Haushaltsbuch\" Anleitung in:description,readme",
+      "sort": "stars"
+    },
+    {
+      "id": "learning-study-1",
+      "domain": "learning-study",
+      "language": "en",
+      "expression": "\"study skills\" in:name,description,readme",
+      "sort": "stars"
+    },
+    {
+      "id": "learning-study-2",
+      "domain": "learning-study",
+      "language": "zh",
+      "expression": "\"学习路线\" in:name,description",
+      "sort": "updated"
+    },
+    {
+      "id": "learning-study-3",
+      "domain": "learning-study",
+      "language": "fr",
+      "expression": "\"cours\" \"tutoriel\" in:name,description",
+      "sort": "stars"
+    },
+    {
+      "id": "digital-life-1",
+      "domain": "digital-life",
+      "language": "en",
+      "expression": "\"digital literacy\" curriculum in:description,readme",
+      "sort": "stars"
+    },
+    {
+      "id": "digital-life-2",
+      "domain": "digital-life",
+      "language": "zh",
+      "expression": "\"备份\" \"使用教程\" in:description,readme",
+      "sort": "updated"
+    },
+    {
+      "id": "digital-life-3",
+      "domain": "digital-life",
+      "language": "ja",
+      "expression": "\"使い方\" \"バックアップ\" in:description,readme",
+      "sort": "stars"
+    },
+    {
+      "id": "career-work-1",
+      "domain": "career-work",
+      "language": "en",
+      "expression": "\"job search\" guide in:description,readme",
+      "sort": "stars"
+    },
+    {
+      "id": "career-work-2",
+      "domain": "career-work",
+      "language": "zh",
+      "expression": "\"面试\" \"经验总结\" in:description,readme",
+      "sort": "updated"
+    },
+    {
+      "id": "career-work-3",
+      "domain": "career-work",
+      "language": "en",
+      "expression": "\"workplace communication\" in:name,description,readme",
+      "sort": "stars"
+    },
+    {
+      "id": "ai-everyone-1",
+      "domain": "ai-everyone",
+      "language": "en",
+      "expression": "\"AI literacy\" in:description,readme",
+      "sort": "stars"
+    },
+    {
+      "id": "ai-everyone-2",
+      "domain": "ai-everyone",
+      "language": "zh",
+      "expression": "\"AI\" \"入门指南\" in:description,readme",
+      "sort": "updated"
+    },
+    {
+      "id": "ai-everyone-3",
+      "domain": "ai-everyone",
+      "language": "ko",
+      "expression": "\"ChatGPT\" \"사용법\" in:description,readme",
+      "sort": "stars"
+    },
+    {
+      "id": "ai-engineering-1",
+      "domain": "ai-engineering",
+      "language": "en",
+      "expression": "\"LLM\" \"from scratch\" in:name,description",
+      "sort": "stars"
+    },
+    {
+      "id": "ai-engineering-2",
+      "domain": "ai-engineering",
+      "language": "en",
+      "expression": "\"agents\" curriculum in:name,description",
+      "sort": "stars"
+    },
+    {
+      "id": "ai-engineering-3",
+      "domain": "ai-engineering",
+      "language": "zh",
+      "expression": "\"大模型\" \"实践手册\" in:description,readme",
+      "sort": "updated"
+    },
+    {
+      "id": "creative-hobby-1",
+      "domain": "creative-hobby",
+      "language": "en",
+      "expression": "\"photography\" guide in:description,readme",
+      "sort": "stars"
+    },
+    {
+      "id": "creative-hobby-2",
+      "domain": "creative-hobby",
+      "language": "en",
+      "expression": "\"gardening\" manual in:description,readme",
+      "sort": "updated"
+    },
+    {
+      "id": "creative-hobby-3",
+      "domain": "creative-hobby",
+      "language": "ja",
+      "expression": "\"写真\" \"入門\" in:description,readme",
+      "sort": "stars"
+    },
+    {
+      "id": "professional-1",
+      "domain": "professional",
+      "language": "en",
+      "expression": "\"research methods\" handbook in:description,readme",
+      "sort": "stars"
+    },
+    {
+      "id": "professional-2",
+      "domain": "professional",
+      "language": "en",
+      "expression": "\"engineering handbook\" in:description,readme",
+      "sort": "stars"
+    },
+    {
+      "id": "professional-3",
+      "domain": "professional",
+      "language": "zh",
+      "expression": "\"科研\" \"操作手册\" in:description,readme",
+      "sort": "updated"
+    }
+  ]
+}

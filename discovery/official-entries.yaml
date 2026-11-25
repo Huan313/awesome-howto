@@ -1,0 +1,435 @@
+[
+  {
+    "publisher": "FoodSafety.gov",
+    "title": "Keep Food Safe",
+    "url": "https://www.foodsafety.gov/keep-food-safe",
+    "domain": "health-safety",
+    "region": "US",
+    "description": "美国联合食品安全入口，可按家庭储存与处理主题定位官方说明。",
+    "language": "en",
+    "resource_type": "official_reference",
+    "audience": [
+      "general-public"
+    ],
+    "skill_level": "unknown"
+  },
+  {
+    "publisher": "USDA",
+    "title": "FoodKeeper",
+    "url": "https://www.foodsafety.gov/keep-food-safe/foodkeeper-app",
+    "domain": "life",
+    "region": "US",
+    "description": "按食材类型查询储存参考，便于为家庭核对食物管理条件。",
+    "language": "en",
+    "resource_type": "official_reference",
+    "audience": [
+      "general-public"
+    ],
+    "skill_level": "unknown"
+  },
+  {
+    "publisher": "NHS",
+    "title": "Live Well",
+    "url": "https://www.nhs.uk/live-well/",
+    "domain": "health-safety",
+    "region": "GB",
+    "description": "英国公共健康素养目录，主题含运动、睡眠和日常健康。",
+    "language": "en",
+    "resource_type": "official_reference",
+    "audience": [
+      "general-public"
+    ],
+    "skill_level": "unknown"
+  },
+  {
+    "publisher": "CFPB",
+    "title": "Your Money, Your Goals",
+    "url": "https://www.consumerfinance.gov/consumer-tools/educator-tools/your-money-your-goals/",
+    "domain": "finance-law-consumer",
+    "region": "US",
+    "description": "美国消费者金融教育工具入口，按目标、预算和信用主题组织。",
+    "language": "en",
+    "resource_type": "official_reference",
+    "audience": [
+      "general-public"
+    ],
+    "skill_level": "unknown"
+  },
+  {
+    "publisher": "MoneySense",
+    "title": "Managing your money",
+    "url": "https://www.moneysense.gov.sg/managing-your-money/",
+    "domain": "finance-law-consumer",
+    "region": "SG",
+    "description": "新加坡公共财务教育资料，适用于核对本地预算基本概念。",
+    "language": "en",
+    "resource_type": "official_reference",
+    "audience": [
+      "general-public"
+    ],
+    "skill_level": "unknown"
+  },
+  {
+    "publisher": "Citizens Advice",
+    "title": "Consumer",
+    "url": "https://www.citizensadvice.org.uk/consumer/",
+    "domain": "finance-law-consumer",
+    "region": "GB",
+    "description": "英国消费问题入口，具体规则与地区适用性须核对原文。",
+    "language": "en",
+    "resource_type": "official_reference",
+    "audience": [
+      "general-public"
+    ],
+    "skill_level": "unknown"
+  },
+  {
+    "publisher": "Government of Canada",
+    "title": "Get Cyber Safe resources",
+    "url": "https://www.getcybersafe.gc.ca/en/resources",
+    "domain": "digital-life",
+    "region": "CA",
+    "description": "面向一般用户的加拿大数字安全资料及家庭场景。",
+    "language": "en",
+    "resource_type": "official_reference",
+    "audience": [
+      "general-public"
+    ],
+    "skill_level": "unknown"
+  },
+  {
+    "publisher": "Apple",
+    "title": "Mac User Guide",
+    "url": "https://support.apple.com/guide/mac-help/welcome/mac",
+    "domain": "digital-life",
+    "region": "global",
+    "description": "按 macOS 操作场景与版本导航的官方手册。",
+    "language": "en",
+    "resource_type": "manual",
+    "audience": [
+      "general-public"
+    ],
+    "skill_level": "unknown"
+  },
+  {
+    "publisher": "Microsoft",
+    "title": "Microsoft 365 Training",
+    "url": "https://support.microsoft.com/en-us/training",
+    "domain": "digital-life",
+    "region": "global",
+    "description": "按办公室软件和任务组织的官方学习入口。",
+    "language": "en",
+    "resource_type": "official_reference",
+    "audience": [
+      "general-public"
+    ],
+    "skill_level": "unknown"
+  },
+  {
+    "publisher": "Google",
+    "title": "Google Workspace Learning Center",
+    "url": "https://support.google.com/a/users/",
+    "domain": "digital-life",
+    "region": "global",
+    "description": "Google Workspace 的产品、协作与管理员分流入口。",
+    "language": "en",
+    "resource_type": "official_reference",
+    "audience": [
+      "general-public"
+    ],
+    "skill_level": "unknown"
+  },
+  {
+    "publisher": "W3C WAI",
+    "title": "Web Accessibility Tutorials",
+    "url": "https://www.w3.org/WAI/tutorials/",
+    "domain": "digital-life",
+    "region": "global",
+    "description": "从页面结构、表单和图片等实际任务查找无障碍写作与开发参考。",
+    "language": "en",
+    "resource_type": "official_reference",
+    "audience": [
+      "developer", "designer"
+    ],
+    "skill_level": "unknown"
+  },
+  {
+    "publisher": "MDN",
+    "title": "Learn web development",
+    "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development",
+    "domain": "digital-life",
+    "region": "global",
+    "description": "分层的 Web 学习路径与实作模块。",
+    "language": "en",
+    "resource_type": "learning_path",
+    "audience": [
+      "developer"
+    ],
+    "skill_level": "beginner"
+  },
+  {
+    "publisher": "MIT",
+    "title": "OpenCourseWare",
+    "url": "https://ocw.mit.edu/",
+    "domain": "learning-study",
+    "region": "global",
+    "description": "按学科查找 MIT 的开放课程与可用教学材料。",
+    "language": "en",
+    "resource_type": "resource_directory",
+    "audience": [
+      "general-public"
+    ],
+    "skill_level": "unknown"
+  },
+  {
+    "publisher": "Open University",
+    "title": "OpenLearn Education & Development",
+    "url": "https://www.open.edu/openlearn/education-development",
+    "domain": "learning-study",
+    "region": "global",
+    "description": "开放教育与技能学习栏目，面向自主学习。",
+    "language": "en",
+    "resource_type": "resource_directory",
+    "audience": [
+      "general-public"
+    ],
+    "skill_level": "unknown"
+  },
+  {
+    "publisher": "The Carpentries",
+    "title": "Lessons",
+    "url": "https://carpentries.org/lessons/",
+    "domain": "learning-study",
+    "region": "global",
+    "description": "可按软件、图书馆和数据技能查看课程与实作任务。",
+    "language": "en",
+    "resource_type": "curriculum",
+    "audience": [
+      "general-public"
+    ],
+    "skill_level": "unknown"
+  },
+  {
+    "publisher": "Library of Congress",
+    "title": "Research Guides",
+    "url": "https://guides.loc.gov/",
+    "domain": "learning-study",
+    "region": "global",
+    "description": "按主题查找国会图书馆馆员维护的原始资料导航。",
+    "language": "en",
+    "resource_type": "resource_directory",
+    "audience": [
+      "general-public"
+    ],
+    "skill_level": "unknown"
+  },
+  {
+    "publisher": "O*NET",
+    "title": "O*NET OnLine",
+    "url": "https://www.onetonline.org/",
+    "domain": "career-work",
+    "region": "US",
+    "description": "美国职业任务与技能参考，支持按岗位及能力检索。",
+    "language": "en",
+    "resource_type": "official_reference",
+    "audience": [
+      "general-public"
+    ],
+    "skill_level": "unknown"
+  },
+  {
+    "publisher": "National Careers Service",
+    "title": "Careers advice",
+    "url": "https://nationalcareers.service.gov.uk/careers-advice",
+    "domain": "career-work",
+    "region": "GB",
+    "description": "英国公共职业服务，提供求职、发展和面试等入口。",
+    "language": "en",
+    "resource_type": "official_reference",
+    "audience": [
+      "general-public"
+    ],
+    "skill_level": "unknown"
+  },
+  {
+    "publisher": "MIT CAPD",
+    "title": "Interview primer",
+    "url": "https://capd.mit.edu/resources/interview-primer/",
+    "domain": "career-work",
+    "region": "US",
+    "description": "提供面试准备、行为问题及实践场景的大学职业建议。",
+    "language": "en",
+    "resource_type": "official_reference",
+    "audience": [
+      "university-student", "career-starter"
+    ],
+    "skill_level": "unknown"
+  },
+  {
+    "publisher": "OpenAI",
+    "title": "Prompt engineering best practices for ChatGPT",
+    "url": "https://help.openai.com/en/articles/10032626-prompt-engineering-best-practices-for-chatgpt",
+    "domain": "ai-everyone",
+    "region": "global",
+    "description": "从清晰指令与反复调整入手的产品帮助入口。",
+    "language": "en",
+    "resource_type": "official_reference",
+    "audience": [
+      "general-public"
+    ],
+    "skill_level": "unknown"
+  },
+  {
+    "publisher": "Google",
+    "title": "People + AI Guidebook",
+    "url": "https://pair.withgoogle.com/guidebook-v2/chapters",
+    "domain": "ai-everyone",
+    "region": "global",
+    "description": "面向产品与服务设计者的人机协作主题和案例入口。",
+    "language": "en",
+    "resource_type": "practical_guide",
+    "audience": [
+      "general-public"
+    ],
+    "skill_level": "unknown"
+  },
+  {
+    "publisher": "Hugging Face",
+    "title": "LLM Course",
+    "url": "https://huggingface.co/learn/llm-course/chapter1/1",
+    "domain": "ai-engineering",
+    "region": "global",
+    "description": "按章节学习 LLM 与相关开源工具的课程入口。",
+    "language": "en",
+    "resource_type": "course",
+    "audience": [
+      "general-public"
+    ],
+    "skill_level": "unknown"
+  },
+  {
+    "publisher": "Google",
+    "title": "Machine Learning Crash Course",
+    "url": "https://developers.google.com/machine-learning/crash-course",
+    "domain": "ai-engineering",
+    "region": "global",
+    "description": "围绕模型基础、数据与评估组织的自学模块。",
+    "language": "en",
+    "resource_type": "course",
+    "audience": [
+      "general-public"
+    ],
+    "skill_level": "unknown"
+  },
+  {
+    "publisher": "Blender Foundation",
+    "title": "Blender Manual",
+    "url": "https://docs.blender.org/manual/en/latest/",
+    "domain": "creative-hobby",
+    "region": "global",
+    "description": "按版本、建模、动画与渲染工具导航的官方手册。",
+    "language": "en",
+    "resource_type": "manual",
+    "audience": [
+      "general-public"
+    ],
+    "skill_level": "unknown"
+  },
+  {
+    "publisher": "Audacity",
+    "title": "Audacity Manual",
+    "url": "https://manual.audacityteam.org/",
+    "domain": "creative-hobby",
+    "region": "global",
+    "description": "从录音、编辑到导出的桌面音频操作参考。",
+    "language": "en",
+    "resource_type": "manual",
+    "audience": [
+      "general-public"
+    ],
+    "skill_level": "unknown"
+  },
+  {
+    "publisher": "Royal Horticultural Society",
+    "title": "Gardening advice",
+    "url": "https://www.rhs.org.uk/advice",
+    "domain": "creative-hobby",
+    "region": "GB",
+    "description": "按季节、植物和园艺任务定位英国园艺资料。",
+    "language": "en",
+    "resource_type": "official_reference",
+    "audience": [
+      "general-public"
+    ],
+    "skill_level": "unknown"
+  },
+  {
+    "publisher": "NASA",
+    "title": "Systems Engineering Handbook",
+    "url": "https://www.nasa.gov/reference/systems-engineering-handbook/",
+    "domain": "professional",
+    "region": "US",
+    "description": "面向工程团队的体系工程过程与术语参考。",
+    "language": "en",
+    "resource_type": "handbook",
+    "audience": [
+      "engineer"
+    ],
+    "skill_level": "unknown"
+  },
+  {
+    "publisher": "FAO",
+    "title": "eLearning Academy",
+    "url": "https://elearning.fao.org/",
+    "domain": "professional",
+    "region": "global",
+    "description": "联合国粮农组织的农业、营养和可持续发展课程入口。",
+    "language": "en",
+    "resource_type": "official_reference",
+    "audience": [
+      "general-public"
+    ],
+    "skill_level": "unknown"
+  },
+  {
+    "publisher": "Equator Network",
+    "title": "Reporting guidelines",
+    "url": "https://www.equator-network.org/reporting-guidelines/",
+    "domain": "professional",
+    "region": "global",
+    "description": "按研究设计定位报告规范，用于论文和研究报告核对。",
+    "language": "en",
+    "resource_type": "official_reference",
+    "audience": [
+      "general-public"
+    ],
+    "skill_level": "unknown"
+  },
+  {
+    "publisher": "OpenStax",
+    "title": "College Success",
+    "url": "https://openstax.org/details/books/college-success",
+    "domain": "learning-study",
+    "region": "global",
+    "description": "围绕大学学习、时间管理和过渡适应组织的开放教材。",
+    "language": "en",
+    "resource_type": "book",
+    "audience": [
+      "university-student"
+    ],
+    "skill_level": "unknown"
+  },
+  {
+    "publisher": "Git Project",
+    "title": "Git source repository on kernel.org",
+    "url": "https://git.kernel.org/pub/scm/git/git.git/",
+    "domain": "digital-life",
+    "region": "global",
+    "description": "Git 项目官方源码页列出的 kernel.org 仓库地址。",
+    "language": "unknown",
+    "resource_type": "tool",
+    "audience": ["developer"],
+    "source_evidence": "https://git-scm.com/install/source",
+    "mirror_repository": "https://github.com/git/git"
+  }
+]

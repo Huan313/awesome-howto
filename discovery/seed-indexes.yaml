@@ -1,0 +1,366 @@
+[
+  {
+    "repository": "sindresorhus/awesome",
+    "domain": "learning-study",
+    "resource_type": "awesome_list",
+    "language": "en",
+    "expand": true,
+    "group": "requested-index"
+  },
+  {
+    "repository": "0ex/more-awesome",
+    "domain": "learning-study",
+    "resource_type": "awesome_list",
+    "language": "en",
+    "expand": false,
+    "group": "requested-index"
+  },
+  {
+    "repository": "bayandin/awesome-awesomeness",
+    "domain": "learning-study",
+    "resource_type": "awesome_list",
+    "language": "en",
+    "expand": true,
+    "group": "requested-index"
+  },
+  {
+    "repository": "emijrp/awesome-awesome",
+    "domain": "learning-study",
+    "resource_type": "awesome_list",
+    "language": "en",
+    "expand": true,
+    "group": "requested-index"
+  },
+  {
+    "repository": "MunGell/awesome-for-beginners",
+    "domain": "digital-life",
+    "resource_type": "awesome_list",
+    "language": "en",
+    "expand": true,
+    "group": "requested-index"
+  },
+  {
+    "repository": "szabgab/awesome-for-non-programmers",
+    "domain": "digital-life",
+    "resource_type": "awesome_list",
+    "language": "en",
+    "expand": true,
+    "group": "requested-index"
+  },
+  {
+    "repository": "prakhar1989/awesome-courses",
+    "domain": "learning-study",
+    "resource_type": "awesome_list",
+    "language": "en",
+    "expand": true,
+    "group": "requested-index"
+  },
+  {
+    "repository": "StudentSuite/awesome-student-resources",
+    "domain": "learning-study",
+    "resource_type": "awesome_list",
+    "language": "en",
+    "expand": true,
+    "group": "requested-index"
+  },
+  {
+    "repository": "StudentSuite/awesome-study-resources",
+    "domain": "learning-study",
+    "resource_type": "awesome_list",
+    "language": "en",
+    "expand": true,
+    "group": "requested-index"
+  },
+  {
+    "repository": "trimstray/the-book-of-secret-knowledge",
+    "domain": "digital-life",
+    "resource_type": "resource_directory",
+    "language": "en",
+    "expand": false,
+    "group": "requested-index",
+    "limitation": "混合安全内容须人工审阅，限元数据检查。"
+  },
+  {
+    "repository": "awesome-selfhosted/awesome-selfhosted",
+    "domain": "digital-life",
+    "resource_type": "awesome_list",
+    "language": "en",
+    "expand": false,
+    "group": "requested-index"
+  },
+  {
+    "repository": "practical-tutorials/project-based-learning",
+    "domain": "learning-study",
+    "resource_type": "resource_directory",
+    "language": "en",
+    "expand": true,
+    "group": "requested-index"
+  },
+  {
+    "repository": "EbookFoundation/free-programming-books",
+    "domain": "learning-study",
+    "resource_type": "bibliography",
+    "language": "mul",
+    "expand": true,
+    "group": "requested-index"
+  },
+  {
+    "repository": "awesomedata/awesome-public-datasets",
+    "domain": "professional",
+    "resource_type": "awesome_list",
+    "language": "en",
+    "expand": false,
+    "group": "requested-index"
+  },
+  {
+    "repository": "vinta/awesome-python",
+    "domain": "ai-engineering",
+    "resource_type": "awesome_list",
+    "language": "en",
+    "expand": true,
+    "group": "requested-index"
+  },
+  {
+    "repository": "learn-anything/curated-lists",
+    "domain": "learning-study",
+    "resource_type": "resource_directory",
+    "language": "en",
+    "expand": true,
+    "group": "added-index"
+  },
+  {
+    "repository": "mtdvio/every-programmer-should-know",
+    "domain": "career-work",
+    "resource_type": "resource_directory",
+    "language": "en",
+    "expand": true,
+    "group": "added-index"
+  },
+  {
+    "repository": "ripienaar/free-for-dev",
+    "domain": "digital-life",
+    "resource_type": "resource_directory",
+    "language": "en",
+    "expand": false,
+    "group": "added-index"
+  },
+  {
+    "repository": "iCHAIT/awesome-macOS",
+    "domain": "digital-life",
+    "resource_type": "awesome_list",
+    "language": "en",
+    "expand": true,
+    "group": "added-index"
+  },
+  {
+    "repository": "jaywcjlove/awesome-mac",
+    "domain": "digital-life",
+    "resource_type": "awesome_list",
+    "language": "mul",
+    "expand": true,
+    "group": "added-index"
+  },
+  {
+    "repository": "sdras/awesome-actions",
+    "domain": "digital-life",
+    "resource_type": "awesome_list",
+    "language": "en",
+    "expand": false,
+    "group": "added-index"
+  },
+  {
+    "repository": "brabadu/awesome-fonts",
+    "domain": "creative-hobby",
+    "resource_type": "awesome_list",
+    "language": "en",
+    "expand": true,
+    "group": "added-index"
+  },
+  {
+    "repository": "tiimgreen/github-cheat-sheet",
+    "domain": "digital-life",
+    "resource_type": "cheatsheet",
+    "language": "en",
+    "expand": true,
+    "group": "added-index"
+  },
+  {
+    "repository": "TheAlgorithms/Python",
+    "domain": "learning-study",
+    "resource_type": "collection",
+    "language": "en",
+    "expand": false,
+    "group": "added-index"
+  },
+  {
+    "repository": "microsoft/AI-For-Beginners",
+    "domain": "ai-everyone",
+    "resource_type": "curriculum",
+    "language": "en",
+    "expand": true,
+    "group": "added-index"
+  },
+  {
+    "repository": "public-apis/public-apis",
+    "domain": "professional",
+    "resource_type": "resource_directory",
+    "language": "en",
+    "expand": false,
+    "group": "added-index"
+  },
+  {
+    "repository": "Anduin2017/HowToCook",
+    "domain": "life",
+    "resource_type": "cookbook",
+    "language": "zh",
+    "expand": true,
+    "group": "requested-series"
+  },
+  {
+    "repository": "eternity4719/HowToLiveBetter",
+    "domain": "life",
+    "resource_type": "howto_series",
+    "language": "zh",
+    "expand": true,
+    "group": "requested-series"
+  },
+  {
+    "repository": "geekan/HowToLiveLonger",
+    "domain": "health-safety",
+    "resource_type": "resource_directory",
+    "language": "zh",
+    "expand": false,
+    "group": "requested-series",
+    "limitation": "健康信息需专业审核，限元数据和目录入口。"
+  },
+  {
+    "repository": "byoungd/up",
+    "domain": "digital-life",
+    "resource_type": "practical_guide",
+    "language": "zh",
+    "expand": false,
+    "group": "requested-series",
+    "limitation": "区域适用性与使用边界待审。"
+  },
+  {
+    "repository": "kkk-bot/HowToGetAlong",
+    "domain": "life",
+    "resource_type": "howto_series",
+    "language": "zh",
+    "expand": true,
+    "group": "requested-series"
+  },
+  {
+    "repository": "braydie/HowToBeAProgrammer",
+    "domain": "career-work",
+    "resource_type": "handbook",
+    "language": "mul",
+    "expand": true,
+    "group": "requested-series"
+  },
+  {
+    "repository": "ryanhanwu/How-To-Ask-Questions-The-Smart-Way",
+    "domain": "learning-study",
+    "resource_type": "practical_guide",
+    "language": "zh-TW",
+    "expand": true,
+    "group": "requested-series"
+  },
+  {
+    "repository": "jlevy/the-art-of-command-line",
+    "domain": "digital-life",
+    "resource_type": "handbook",
+    "language": "mul",
+    "expand": true,
+    "group": "requested-series"
+  },
+  {
+    "repository": "codecrafters-io/build-your-own-x",
+    "domain": "learning-study",
+    "resource_type": "resource_directory",
+    "language": "en",
+    "expand": true,
+    "group": "requested-series"
+  },
+  {
+    "repository": "ossu/computer-science",
+    "domain": "learning-study",
+    "resource_type": "learning_path",
+    "language": "en",
+    "expand": true,
+    "group": "requested-series"
+  },
+  {
+    "repository": "freeCodeCamp/freeCodeCamp",
+    "domain": "learning-study",
+    "resource_type": "curriculum",
+    "language": "en",
+    "expand": true,
+    "group": "requested-series"
+  },
+  {
+    "repository": "microsoft/generative-ai-for-beginners",
+    "domain": "ai-everyone",
+    "resource_type": "curriculum",
+    "language": "mul",
+    "expand": true,
+    "group": "requested-series"
+  },
+  {
+    "repository": "datawhalechina/hello-agents",
+    "domain": "ai-engineering",
+    "resource_type": "curriculum",
+    "language": "zh",
+    "expand": true,
+    "group": "requested-series"
+  },
+  {
+    "repository": "dair-ai/Prompt-Engineering-Guide",
+    "domain": "ai-everyone",
+    "resource_type": "handbook",
+    "language": "mul",
+    "expand": true,
+    "group": "requested-series"
+  },
+  {
+    "repository": "K-Dense-AI/scientific-agent-skills",
+    "domain": "professional",
+    "resource_type": "resource_directory",
+    "language": "en",
+    "expand": false,
+    "group": "requested-series",
+    "limitation": "工具配置集合，限元数据与许可证核对。"
+  },
+  {
+    "repository": "huggingface/agents-course",
+    "domain": "ai-engineering",
+    "resource_type": "course",
+    "language": "en",
+    "expand": true,
+    "group": "requested-series"
+  },
+  {
+    "repository": "openai/openai-cookbook",
+    "domain": "ai-engineering",
+    "resource_type": "cookbook",
+    "language": "en",
+    "expand": true,
+    "group": "requested-series"
+  },
+  {
+    "repository": "skills/introduction-to-github",
+    "domain": "digital-life",
+    "resource_type": "tutorial",
+    "language": "en",
+    "expand": true,
+    "group": "requested-series"
+  },
+  {
+    "repository": "git/git",
+    "domain": "digital-life",
+    "language": null,
+    "resource_type": "tool",
+    "expand": false,
+    "group": "relationship-probe"
+  }
+]
