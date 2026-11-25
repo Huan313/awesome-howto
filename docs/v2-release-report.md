@@ -61,4 +61,8 @@ MkDocs 本地 strict 构建通过并产生搜索索引。现有指南仍待审�
 
 [Draft PR #6](https://github.com/Huan313/awesome-howto/pull/6) · [质量检查](https://github.com/Huan313/awesome-howto/actions/runs/45526312487) · [依赖检查](https://github.com/Huan313/awesome-howto/actions/runs/45526312512) · [云端周报](https://github.com/Huan313/awesome-howto/actions/runs/45526350119) · [云端月报](https://github.com/Huan313/awesome-howto/actions/runs/45526624553)
 
+限流修复提交 `3fe834c46bbb59e4596629e761cd13fe09915c4a` 在同一分支复跑。周报 20 项，月报 5 项，复跑两次的 GitHub Search 均为 9/9，月报 5 个专题均含历史引用。质量及依赖检查已通过。[复跑周报](https://github.com/Huan313/awesome-howto/actions/runs/45527070647) · [复跑月报](https://github.com/Huan313/awesome-howto/actions/runs/45527064966) · [修复后 PR 质量检查](https://github.com/Huan313/awesome-howto/actions/runs/45527073078)
+
+本地复核命令为 `python -m unittest discover -s tests`、`python -m scripts.validate_guides`、`python -m scripts.build_index --check`、`python -m scripts.build_resource_index --check`、`python -m scripts.check_links --external --strict` 和 `python -m scripts.build_site`。工作流语法用 Actionlint 验证，提交前用 Gitleaks 扫描暂存差异。
+
 定时任务将在 V2 进入默认分支后采用新实现。Pages 需要维护者启用。现有指南都需要继续核验，抖音、Reddit 和可选 Codex 路径分别等待审批或密钥。
