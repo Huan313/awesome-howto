@@ -12,7 +12,7 @@ from scripts.check_resource_links import probe
 from scripts.deduplicate_resources import canonical_url
 from scripts.expand_awesome_indexes import collection_items
 from scripts.extract_collection_items import parse_document
-from scripts.resource_catalog import Catalog, assemble, declared_mirrors, github_record, legal_record
+from scripts.resource_catalog import Catalog, assemble, declared_mirrors, github_record, legal_record, resource_type
 from scripts.score_resources import eligible
 from scripts.validate_catalog import CATALOG, validate_records
 
@@ -62,6 +62,12 @@ Private fixture prose that should stay outside discovery outputs.
         self.assertEqual(translations["README-zh.md"], "zh-CN")
         self.assertEqual(translations["README-de.md"], "de")
         self.assertNotIn("CONTRIBUTING.md", translations)
+
+    def test_course_type_does_not_match_unrelated_terms(self):
+        self.assertEqual(resource_type("A list of public courses"), "course")
+        self.assertEqual(resource_type("Course-grounded exam prep"), "unknown")
+        self.assertEqual(resource_type("My curriculum vitae"), "unknown")
+        self.assertEqual(resource_type("Discourse community"), "community")
 
     def test_repo_id_alias_and_fork_have_distinct_identities(self):
         graph = Catalog({})

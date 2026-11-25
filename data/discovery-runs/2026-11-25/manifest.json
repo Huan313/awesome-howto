@@ -7,11 +7,13 @@
     "scripts/discover_github.py": "fd2f786a276fea91b7707a631ba9f25b05ced468d0608aa345cf00f81249814b",
     "scripts/expand_awesome_indexes.py": "04e4d0ce79ae02698ba955b33bc015656dafed16968aaa9f73b0a6740e922886",
     "scripts/extract_collection_items.py": "81c971ac1e027d239e50eca9ad7847dfa0c828c661ef32fad8202a96b367aef6",
-    "scripts/resource_catalog.py": "f52aea18c4fa5c3945a12c0d59b9f29e3c6922fded7e31a51bc27c3eb8873543",
+    "scripts/resource_catalog.py": "4eadf24db1bea7edecaf8110a993d5a4f5e43c8c52bf6420e695af06522a9606",
     "scripts/check_resource_links.py": "b6fc023321e624548c7498c68ff90fa7f6bf6b5064479327fcc7cbb484998cd5",
     "scripts/score_resources.py": "ed3813345f2c2e5b6c2e1c8e24ee332d8f5210b23d21a5b623e7caff705911b9",
     "scripts/deduplicate_resources.py": "307db0e2ffbc6ef5757d401db541ef6cfd3f88d7ba9852dffd2deecd53478e04",
-    "scripts/build_resource_catalog.py": "a9255260cc4aaebca4b42110ecb6c24e88542657f9486edb2bdfd86128880e91"
+    "scripts/build_resource_catalog.py": "5ed608f035c4897a52292585175ca01d0ffd58a7e682db22c248f8bf19a585d8",
+    "scripts/validate_catalog.py": "5d40f1c5f5f2b67e4ee020a866f0863d42d6ee310a233c1af73165b1ebab958d",
+    "scripts/generate_discovery_report.py": "72b4f96d95d3e588d4720a405a6ea50fa98e40635fd4397754b010160307efc8"
   },
   "depth_limit": 3,
   "counts": {

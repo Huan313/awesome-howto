@@ -16,6 +16,12 @@ SERIES = (
     ("github.com/microsoft/ai-for-beginners", "按单元组织 AI 基础课程及习题，便于核对受众。"),
 )
 
+LOW_STAR_EXAMPLES = {
+    "awesome-german/websites": "按语言程度整理德语学习网站，补充非英语学习入口。",
+    "adamxweb/awesome-aussie": "按澳大利亚开发的软件和服务整理，可复查区域数字生态。",
+    "autogeoai4sci/awesome-autonomous-geoai": "集中索引自主地理空间 AI 资料，便于查找专业候选。",
+}
+
 
 def fmt(value):
     return str(value if value is not None else "unknown").replace("|", r"\|").replace("\n", " ")
@@ -50,8 +56,8 @@ def reports(catalog, manifest):
                     r["status"] in {"active", "redirected"} and not r["legacy_v2"]), None)
         if row:
             verified.append(f"- [{row['title']}]({row['canonical_url']})。{reason}")
-    low = sorted((r for r in screened if r["github_metrics"] and r["github_metrics"]["stars"] < 50),
-                 key=lambda r: (-r["quality_assessment"]["automated_score"], r["resource_id"]))[:8]
+    low = [r for r in screened if r["github_metrics"] and r["github_metrics"]["stars"] < 50
+           and (r["source_repository"] or "").casefold() in LOW_STAR_EXAMPLES]
     intro = [
         "# V2.1 全球资源发现记录", "",
         f"运行窗口 {window(manifest['started_at'])} 至 {window(manifest['finished_at'])}（UTC+08）。"
@@ -79,8 +85,8 @@ def reports(catalog, manifest):
         "", "## 低 Stars 待审样本", "",
         *[f"- [{r['title']}]({r['canonical_url']}) · {r['github_metrics']['stars']} Stars。"
           f"采集 {r['github_metrics']['metadata_checked_at']}。"
-          f"以 {r['resource_type']} 和原发布者为复核入口。" for r in low],
-        *([] if low else ["本轮初筛队列暂无低于 50 Stars 的可核验公开项目。"]),
+          f"{LOW_STAR_EXAMPLES[r['source_repository'].casefold()]}" for r in low],
+        *([] if low else ["本轮未列出经抽样复核的低星案例。"]),
         "", "## 排除及后续", "",
         f"排除观察：{distribution(catalog.rejected)}。",
         "下一轮优先补非英语生活资源、按司法辖区的消费与劳动公开目录，以及无需账号即可查阅的低星行业手册。",

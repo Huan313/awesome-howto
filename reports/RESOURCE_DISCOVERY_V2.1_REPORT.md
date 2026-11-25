@@ -14,8 +14,8 @@ BFS 深度上限 3，实际最深 3。抽取 983 个目录观察，建立 658 �
 ## 类型、主题与语言
 
 目录类型分布：awesome_list 13、bibliography 1、book 1、cheatsheet 1、cookbook 2、course 2、curriculum 5、handbook 4、howto_series 2、learning_path 2、manual 3、official_reference 39、practical_guide 3、resource_directory 8、tutorial 2、unknown 7。
-候选类型分布：awesome_list 205、bibliography 1、cheatsheet 5、collection 348、community 8、cookbook 47、course 83、curriculum 74、dataset 10、handbook 38、learning_path 47、manual 11、practical_guide 164、resource_directory 27、tool 10、tutorial 117、unknown 839、wiki 13。
-初筛类型分布：awesome_list 90、cheatsheet 2、collection 1、cookbook 6、course 5、curriculum 7、handbook 15、learning_path 11、manual 5、practical_guide 24、resource_directory 12、tutorial 22。
+候选类型分布：awesome_list 205、bibliography 1、cheatsheet 5、collection 348、community 8、cookbook 47、course 66、curriculum 75、dataset 10、handbook 38、learning_path 47、manual 11、practical_guide 164、resource_directory 27、tool 10、tutorial 126、unknown 846、wiki 13。
+初筛类型分布：awesome_list 91、cheatsheet 2、collection 1、cookbook 6、course 4、curriculum 6、handbook 15、learning_path 12、manual 5、practical_guide 24、resource_directory 12、tutorial 22。
 初筛主题分布：ai-engineering 26、ai-everyone 26、career-work 26、creative-hobby 19、digital-life 26、learning-study 26、life 26、professional 25。
 目录地域分布：CA 1、CN 1、GB 3、SG 1、US 9、global 33、unknown 47。
 候选语言分布：cs 1、de 1、el 1、en 296、es 1、fr 1、it 1、ja 2、ko 2、mul 87、pt 1、ru 1、unknown 1559、zh 73、zh-CN 3、zh-TW 17。
@@ -35,14 +35,9 @@ BFS 深度上限 3，实际最深 3。抽取 983 个目录观察，建立 658 �
 
 ## 低 Stars 待审样本
 
-- [JerNB/gpt-im-cooked](https://github.com/jernb/gpt-im-cooked) · 38 Stars。采集 2026-11-25T03:24:21Z。以 course 和原发布者为复核入口。
-- [AdamXweb/awesome-aussie](https://github.com/adamxweb/awesome-aussie) · 49 Stars。采集 2026-11-25T03:24:49Z。以 awesome_list 和原发布者为复核入口。
-- [wangjiezhe/awesome-stars](https://github.com/wangjiezhe/awesome-stars) · 45 Stars。采集 2026-11-25T03:24:46Z。以 awesome_list 和原发布者为复核入口。
-- [Awesome Skills & Plugins for Students](https://github.com/studentsuite/awesome-skills-plugins-for-students) · 37 Stars。采集 2026-11-25T03:24:21Z。以 awesome_list 和原发布者为复核入口。
-- [awesome-german/websites](https://github.com/awesome-german/websites) · 3 Stars。采集 2026-11-25T03:24:28Z。以 awesome_list 和原发布者为复核入口。
-- [AutoGeoAI4Sci/awesome-autonomous-geoai](https://github.com/autogeoai4sci/awesome-autonomous-geoai) · 22 Stars。采集 2026-11-25T03:25:41Z。以 awesome_list 和原发布者为复核入口。
-- [kimyoungwopo/cafe24-smart-design](https://github.com/kimyoungwopo/cafe24-smart-design) · 24 Stars。采集 2026-11-25T03:25:05Z。以 manual 和原发布者为复核入口。
-- [DivitMittal/CV-nixCfg](https://github.com/divitmittal/cv-nixcfg) · 6 Stars。采集 2026-11-25T03:25:20Z。以 curriculum 和原发布者为复核入口。
+- [awesome-german/websites](https://github.com/awesome-german/websites) · 3 Stars。采集 2026-11-25T03:24:28Z。按语言程度整理德语学习网站，补充非英语学习入口。
+- [AdamXweb/awesome-aussie](https://github.com/adamxweb/awesome-aussie) · 49 Stars。采集 2026-11-25T03:24:49Z。按澳大利亚开发的软件和服务整理，可复查区域数字生态。
+- [AutoGeoAI4Sci/awesome-autonomous-geoai](https://github.com/autogeoai4sci/awesome-autonomous-geoai) · 22 Stars。采集 2026-11-25T03:25:41Z。集中索引自主地理空间 AI 资料，便于查找专业候选。
 
 ## 排除及后续
 

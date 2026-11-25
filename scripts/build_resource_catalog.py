@@ -101,16 +101,21 @@ def indexes(resources, candidates):
 def make_manifest(search, expanded, official, catalog, platform_probes):
     roots, pages = expanded["roots"], search["pages"]
     rows = list(catalog.rows.values())
-    base_revision = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
     start = min(search["started_at"], expanded["started_at"],
                 *(item["probe"]["checked_at"] for item in official["entries"]))
     end = max(search["finished_at"], expanded["finished_at"],
               *(item["probe"]["checked_at"] for item in official["entries"]))
     date = timestamp(start).astimezone(SHANGHAI).date().isoformat()
     run_dir = f"data/discovery-runs/{date}"
+    previous_manifest = ROOT / run_dir / "manifest.json"
+    previous = read_json(previous_manifest) if previous_manifest.is_file() else {}
+    base_revision = previous.get("base_revision") if previous.get("started_at") == start else None
+    if not base_revision:
+        base_revision = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
     script_hashes = {}
     for name in ("discover_github", "expand_awesome_indexes", "extract_collection_items", "resource_catalog",
-                 "check_resource_links", "score_resources", "deduplicate_resources", "build_resource_catalog"):
+                 "check_resource_links", "score_resources", "deduplicate_resources", "build_resource_catalog",
+                 "validate_catalog", "generate_discovery_report"):
         path = ROOT / "scripts" / f"{name}.py"
         script_hashes[path.relative_to(ROOT).as_posix()] = hashlib.sha256(path.read_bytes()).hexdigest()
     seed = [row for row in roots if row["group"] in {"requested-index", "added-index", "requested-series"}]
