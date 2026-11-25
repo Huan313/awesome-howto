@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "V2.1 resource discovery record",
+  "title": "V2.1 and V2.1.1 resource discovery records",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -41,10 +41,73 @@
     "screening",
     "quality_assessment"
   ],
+  "if": {"properties": {"schema_version": {"const": "2.1.1"}}},
+  "then": {
+    "required": [
+      "resource_scope", "source_url", "snapshot_url", "latest_url", "snapshots", "identity_aliases",
+      "display_title", "upstream_title", "upstream_description", "curator_summary", "summary_status",
+      "summary_evidence", "summary_checked_at", "classification_confidence", "classification_evidence",
+      "alternative_domains", "classification_status", "risk_scope", "risk_evidence", "risk_confidence",
+      "requires_expert_review", "verification_level", "audience_evidence", "audience_confidence",
+      "life_stage_evidence", "region_evidence", "jurisdiction_evidence", "license_scope",
+      "license_inherited_from", "license_inheritance_status", "score_type", "score_confidence",
+      "score_evidence", "score_limitations", "query_domains"
+    ]
+  },
+  "$defs": {
+    "nullable_url": {"type": ["string", "null"], "pattern": "^https?://", "format": "uri"},
+    "confidence": {"enum": ["low", "medium", "high"]},
+    "evidence": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true}
+  },
   "properties": {
     "schema_version": {
-      "const": "2.1"
+      "enum": ["2.1", "2.1.1"]
     },
+    "resource_scope": {"enum": ["collection_root", "section", "document", "external_resource", "standalone_resource", "tool", "course_unit"]},
+    "source_url": {"$ref": "#/$defs/nullable_url"},
+    "snapshot_url": {"$ref": "#/$defs/nullable_url"},
+    "latest_url": {"$ref": "#/$defs/nullable_url"},
+    "identity_aliases": {"$ref": "#/$defs/evidence"},
+    "snapshots": {
+      "type": "array", "uniqueItems": true,
+      "items": {
+        "type": "object", "required": ["url", "observed_source_url", "commit_sha"], "additionalProperties": false,
+        "properties": {
+          "url": {"$ref": "#/$defs/nullable_url"},
+          "observed_source_url": {"$ref": "#/$defs/nullable_url"},
+          "commit_sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"}
+        }
+      }
+    },
+    "display_title": {"type": "string", "minLength": 1, "maxLength": 180},
+    "upstream_title": {"type": ["string", "null"], "maxLength": 180},
+    "upstream_description": {"type": ["string", "null"], "maxLength": 220},
+    "curator_summary": {"type": ["string", "null"], "maxLength": 350},
+    "summary_status": {"enum": ["extracted", "human-reviewed", "generated-needs-review", "unavailable"]},
+    "summary_evidence": {"$ref": "#/$defs/evidence"},
+    "summary_checked_at": {"type": ["string", "null"], "format": "date-time"},
+    "classification_confidence": {"$ref": "#/$defs/confidence"},
+    "classification_evidence": {"$ref": "#/$defs/evidence"},
+    "alternative_domains": {"$ref": "#/$defs/evidence"},
+    "classification_status": {"enum": ["classified", "cross-domain", "unclassified", "needs-review"]},
+    "query_domains": {"$ref": "#/$defs/evidence"},
+    "risk_scope": {"enum": ["informational", "reference", "software_tool", "decision_support", "personalized_advice", "clinical_decision", "legal_advice", "financial_recommendation", "other"]},
+    "risk_evidence": {"$ref": "#/$defs/evidence"},
+    "risk_confidence": {"$ref": "#/$defs/confidence"},
+    "requires_expert_review": {"type": "boolean"},
+    "verification_level": {"enum": ["metadata_only", "repository_exists", "document_exists", "public_page_reachable", "structure_inspected", "content_reviewed", "expert_reviewed"]},
+    "audience_evidence": {"$ref": "#/$defs/evidence"},
+    "audience_confidence": {"$ref": "#/$defs/confidence"},
+    "life_stage_evidence": {"$ref": "#/$defs/evidence"},
+    "region_evidence": {"$ref": "#/$defs/evidence"},
+    "jurisdiction_evidence": {"$ref": "#/$defs/evidence"},
+    "license_scope": {"enum": ["repository", "document", "third-party-link", "unknown"]},
+    "license_inherited_from": {"type": ["string", "null"]},
+    "license_inheritance_status": {"enum": ["not_applicable", "needs_review", "verified"]},
+    "score_type": {"const": "structural_triage"},
+    "score_confidence": {"$ref": "#/$defs/confidence"},
+    "score_evidence": {"$ref": "#/$defs/evidence"},
+    "score_limitations": {"$ref": "#/$defs/evidence"},
     "resource_id": {
       "type": "string",
       "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
@@ -142,7 +205,8 @@
         "ai-everyone",
         "ai-engineering",
         "creative-hobby",
-        "professional"
+        "professional",
+        "unclassified"
       ]
     },
     "domains": {
@@ -158,7 +222,8 @@
           "ai-everyone",
           "ai-engineering",
           "creative-hobby",
-          "professional"
+          "professional",
+          "unclassified"
         ]
       },
       "uniqueItems": true
@@ -656,7 +721,9 @@
     "risk_level": {
       "enum": [
         "low",
-        "high"
+        "medium",
+        "high",
+        "unknown"
       ]
     },
     "screening": {

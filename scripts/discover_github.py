@@ -158,7 +158,7 @@ def search_page(client, query, page, page_size, since):
 def discover(client, queries, *, pages, page_size, since, concurrency):
     def run(query):
         results = []
-        for page in range(1, pages + 1):
+        for page in range(1, min(query.get("pages", pages), 3) + 1):
             item = search_page(client, query, page, page_size, since)
             results.append(item)
             data = item["data"]

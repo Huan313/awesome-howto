@@ -4,6 +4,7 @@ import hashlib
 import json
 import posixpath
 import re
+from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 from urllib.parse import quote, unquote, urljoin, urlsplit
 
@@ -12,7 +13,7 @@ from scripts.deduplicate_resources import canonical_url, github_name
 from scripts.discover_github import (
     CONFIG, add_arguments, atomic_json, build_client, checked_at, encoded_repo, repo_metadata,
 )
-from scripts.extract_collection_items import parse_document, suitable, translation_language
+from scripts.extract_collection_items import parse_document, plain_heading, suitable, translation_language
 
 DOCUMENT = re.compile(r"\.(?:md|mdx|rst|ipynb)$", re.I)
 TOC = re.compile(r"(?:^|/)(?:readme|toc|summary|index|contents|contributing)\.(?:md|rst)$", re.I)
@@ -23,6 +24,12 @@ ADMIN_DOC = re.compile(r"(?:^|/)(?:contributing|support|license|copying|code[-_]
 FORK_PARENTS = {"jlevy/the-art-of-command-line", "practical-tutorials/project-based-learning"}
 FORMAT_HINT = re.compile(r"awesome|guide|tutorial|manual|handbook|course|curriculum|checklist|learn|book|"
                          r"实践|手册|教程|指南|课程|食谱", re.I)
+RECURSIVE_TYPE = (
+    (r"handbook|manual|手册", "handbook"), (r"curriculum|学习路线|课程体系", "curriculum"),
+    (r"\bcourses?\b|课程", "course"), (r"cookbook|食谱", "cookbook"),
+    (r"tutorial|教程", "tutorial"), (r"how[ -]?to|practical.guide|实用指南", "howto_series"),
+    (r"awesome|resource.directory|资源索引", "awesome_list"),
+)
 
 
 def ref_url(repo, commit, path, anchor=""):
@@ -47,7 +54,8 @@ def license_metadata(payload):
             "url": payload.get("html_url"), "path": payload.get("path")}
 
 
-def structure(client, name, meta, rules):
+def structure(client, seed, meta, rules):
+    name = seed["repository"]
     prefix = "repos/" + encoded_repo(name)
     branch = quote(meta["default_branch"], safe="")
     commit = client.get(f"{prefix}/commits/{branch}", lambda item: {
@@ -58,21 +66,28 @@ def structure(client, name, meta, rules):
     sha = commit["data"]["sha"]
     tree = client.get(f"{prefix}/git/trees/{commit['data']['tree_sha']}?recursive=1", file_list)
     root_url = canonical_url(meta["url"])
-    readme = client.get(f"{prefix}/readme?ref={sha}", lambda item: parse_document(item, root_url))
+    readme_url = f"{prefix}/readme?ref={sha}"
+    allowlist = seed.get("safe_headings", [])
+    cache_version = "safe-outline-v3:" if allowlist else "structure-v2:"
+    readme = client.get(readme_url, lambda item: parse_document(item, root_url, allowlist), key=cache_version + readme_url)
     docs = [readme["data"]] if readme["data"] else []
     paths = (tree["data"] or {}).get("paths", [])
     index_paths = [path for path in paths if TOC.search(path) and ("/" not in path or DIRNAME.search(path))
                    and all(path != doc["path"] for doc in docs)]
     index_paths.sort(key=lambda path: (path.count("/"), path.casefold()))
     statuses = []
-    for path in index_paths[:max(0, rules["max_documents_per_repository"] - len(docs))]:
+    maximum = rules["max_documents_per_series"] if seed["resource_type"] in {
+        "howto_series", "cookbook", "handbook", "curriculum", "course"} else rules["max_documents_per_repository"]
+    if seed.get("outline_only"):
+        maximum = 1
+    for path in index_paths[:max(0, maximum - len(docs))]:
         lookup = client.get(f"{prefix}/contents/{quote(path, safe='/')}?ref={sha}",
                             lambda item: parse_document(item, root_url))
         if lookup["data"]:
             docs.append(lookup["data"])
         statuses.append({"path": path, "http": lookup["http"], "status": lookup["status"]})
     return {"status": "ok" if tree["data"] and docs else "partial", "commit_sha": sha,
-            "tree_http": tree["http"], "readme_http": readme["http"], "documents": docs,
+            "tree_http": tree["http"], "readme_http": readme["http"], "readme_checked_at": readme["checked_at"], "documents": docs,
             "toc_checks": statuses, "tree_truncated": (tree["data"] or {}).get("truncated"),
             "paths": paths, "license_files": [path for path in paths if LICENSE_NAME.fullmatch(path)]}
 
@@ -96,7 +111,7 @@ def local_path(href, doc, meta, commit):
     return path if not path.startswith("../") and path != ".." else None
 
 
-def collection_items(meta, info, rules):
+def collection_items(meta, info, rules, seed=None):
     if not info.get("documents"):
         return [], None
     commit = info["commit_sha"]
@@ -104,16 +119,24 @@ def collection_items(meta, info, rules):
     paths = set(info["paths"])
     local, external = {}, {}
     shapes = []
+    seed = seed or {}
+    allow = set(seed.get("safe_headings", []))
     for doc in info["documents"]:
         for heading in doc["headings"]:
-            if ADMIN_DOC.search(doc["path"]):
+            if ADMIN_DOC.search(doc["path"]) or (allow and plain_heading(heading["title"]) not in allow):
                 continue
             path, anchor = doc["path"], heading["anchor"]
             url = ref_url(repo, commit, path, anchor)
             local.setdefault(url, {"url": url, "title": heading["title"], "path": path, "mode": "heading"})
             shapes.append(heading["title"].casefold())
+        if seed.get("outline_only") and not seed.get("outline_paths"):
+            continue
         for link in doc["links"]:
             path = local_path(link["href"], doc["path"], meta, commit)
+            if seed.get("outline_only") and (
+                not path or not any(path.startswith(prefix) for prefix in seed["outline_paths"])
+            ):
+                continue
             if path in paths and DOCUMENT.search(path) and not ADMIN_DOC.search(path):
                 url = ref_url(repo, commit, path)
                 local.setdefault(url, {"url": url, "title": link["label"], "path": path,
@@ -134,7 +157,7 @@ def collection_items(meta, info, rules):
             if translation_language(link) or FORMAT_HINT.search(link["label"] + " " + url):
                 external.setdefault(url, {"url": url, "title": link["label"], "path": doc["path"],
                                           "mode": "external", "translation": translation_language(link)})
-    for path in sorted(paths):
+    for path in sorted(paths) if not seed.get("outline_only") else ():
         if (DOCUMENT.search(path) and not TOC.search(path) and not ADMIN_DOC.search(path)
                 and (DIRNAME.search(path) or path.count("/") > 0)):
             title = re.sub(r"[-_]+", " ", posixpath.basename(path).rsplit(".", 1)[0])
@@ -162,14 +185,52 @@ def inspect_root(client, item, rules, can_expand):
                 "license_http": legal["http"], "items": []}
     if not can_expand or not item["expand"] or not meta["default_branch"]:
         return acquired
-    details = structure(client, name, meta, rules)
-    entries, fingerprint = collection_items(meta, details, rules)
+    details = structure(client, item, meta, rules)
+    entries, fingerprint = collection_items(meta, details, rules, item)
+    documents = details.get("documents", [])
+    readme = documents[0] if documents and details.get("readme_http") in {200, 304} else {}
     return {**acquired, "items": entries, "fingerprint": fingerprint,
             "structure": {k: v for k, v in details.items() if k not in {"documents", "paths"}},
-            "headings": [heading for doc in details.get("documents", []) for heading in doc["headings"][:15]]}
+            "readme_title": readme.get("title"), "readme_path": readme.get("path"),
+            "headings": [heading for doc in documents for heading in doc["headings"][:15]
+                         if not item.get("safe_headings")
+                         or plain_heading(heading["title"]) in item["safe_headings"]]}
 
 
-def expand(client, seeds, args, rules):
+def recursive_targets(results, seen, depth, rules, search_evidence):
+    proposed = {}
+    for root in results:
+        for item in root["items"]:
+            name = github_name(item["url"])
+            if not name or name in seen or root.get("outline_only") or not suitable(name):
+                continue
+            metadata = search_evidence.get(name, {})
+            context = " ".join((name.split("/")[-1].replace("-", " "), item["title"],
+                                metadata.get("about", ""), " ".join(metadata.get("topics", []))))
+            matches = [kind for pattern, kind in RECURSIVE_TYPE if re.search(pattern, context, re.I)]
+            if not matches or metadata.get("fork") or metadata.get("archived"):
+                continue
+            kind = matches[0]
+            score = 2 * int(kind != "awesome_list") + int(bool(metadata)) + int(root["depth"] == 0)
+            target = {"repository": name, "depth": depth, "expand": True,
+                      "via": root["metadata"]["url"], "group": "recursive",
+                      "domain": root["domain"], "language": None, "resource_type": kind}
+            if name not in proposed or score > proposed[name][0]:
+                proposed[name] = score, target
+    quota = Counter()
+    queue = []
+    for _, row in sorted(proposed.values(), key=lambda pair: (-pair[0], pair[1]["repository"])):
+        domain = row["domain"]
+        if quota[domain] < rules["max_targets_per_domain"]:
+            queue.append(row)
+            quota[domain] += 1
+            if len(queue) >= rules["max_targets_per_layer"]:
+                break
+    seen.update(row["repository"] for row in queue)
+    return queue
+
+
+def expand(client, seeds, args, rules, search_evidence=None):
     queue = [{**seed, "depth": 0, "via": None} for seed in seeds]
     seen = {row["repository"].casefold() for row in queue}
     returned = []
@@ -178,8 +239,6 @@ def expand(client, seeds, args, rules):
     for depth in range(cap + 1):
         if not queue:
             break
-        if depth:
-            queue = queue[:8]
         batch = []
         for item in queue:
             take = bool(remaining and item["expand"] and depth < cap)
@@ -188,16 +247,9 @@ def expand(client, seeds, args, rules):
         with ThreadPoolExecutor(max_workers=rules["concurrency"]) as workers:
             results = list(workers.map(lambda pair: inspect_root(client, pair[0], rules, pair[1]), batch))
         returned.extend(results)
-        queue = []
-        for result in results:
-            for item in result["items"]:
-                name = github_name(item["url"])
-                if (name and depth + 1 < cap and name not in seen
-                        and "awesome" in name.split("/")[1] and suitable(name)):
-                    seen.add(name)
-                    queue.append({"repository": name, "depth": depth + 1, "expand": True,
-                                  "via": result["metadata"]["url"], "group": "recursive",
-                                  "domain": result["domain"], "language": None, "resource_type": "awesome_list"})
+        if depth + 1 >= cap:
+            break
+        queue = recursive_targets(results, seen, depth + 1, rules, search_evidence or {})
     return returned
 
 
@@ -227,7 +279,12 @@ def main():
         return
     client, rules = build_client(args)
     started = checked_at()
-    results = expand(client, seeds, args, rules)
+    from scripts.common import read_json
+
+    reference = args.output / "search.json"
+    pages = read_json(reference)["pages"] if reference.is_file() else []
+    evidence = {row["full_name"].casefold(): row for page in pages for row in (page["data"] or {}).get("items", [])}
+    results = expand(client, seeds, args, rules, evidence)
     results += list(inspect_forks(client, results, rules))
     atomic_json(args.output / "expansion.json", {"started_at": started, "finished_at": checked_at(),
                                                "depth_limit": args.max_depth, "roots": results})

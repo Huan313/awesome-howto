@@ -1,0 +1,318 @@
+{
+  "anduin2017/howtocook": {
+    "type": "cookbook",
+    "domain": "life",
+    "summary": "从食材处理和厨房用具入手，按素菜、荤菜、水产、早餐和主食找家庭菜谱。",
+    "audience": [
+      "general-public"
+    ],
+    "language": "zh",
+    "evidence": "README 浏览菜谱与发布方家庭烹饪简介"
+  },
+  "eternity4719/howtolivebetter": {
+    "type": "howto_series",
+    "domain": "life",
+    "summary": "按生活、学习和工作议题编排的个人经验集合，健康、财务与法律章节需要逐项核验适用范围。",
+    "audience": [],
+    "language": "zh",
+    "evidence": "README 怎么读、四种资源、证据分级与正文"
+  },
+  "geekan/howtolivelonger": {
+    "type": "resource_directory",
+    "domain": "health-safety",
+    "summary": "README 提供多语导航，汇集长寿相关资料入口。适用人群与健康主张需要专项复核。",
+    "audience": [],
+    "language": "mul",
+    "evidence": "README 多语入口和发布方的长寿资料定位"
+  },
+  "kkk-bot/howtogetalong": {
+    "type": "howto_series",
+    "domain": "career-work",
+    "summary": "围绕校园合作、求助、拒绝与初入职场的人际沟通组织场景。",
+    "audience": [
+      "university-student",
+      "career-starter"
+    ],
+    "language": "zh",
+    "evidence": "GitHub 项目简介明确大学生和初入职场者"
+  },
+  "braydie/howtobeaprogrammer": {
+    "type": "howto_series",
+    "domain": "career-work",
+    "summary": "社区版程序员手册，保留原作出处，并按工作阶段组织技术与协作经验。",
+    "audience": [
+      "developer"
+    ],
+    "language": "mul",
+    "evidence": "README 标题、原作说明与 V2 注册表的开发者对象"
+  },
+  "jlevy/the-art-of-command-line": {
+    "type": "practical_guide",
+    "domain": "digital-life",
+    "summary": "从常用操作到文件处理，按任务组织命令行速查，另有系统专属章节。",
+    "audience": [],
+    "language": "mul",
+    "evidence": "README Basics、Everyday use、Processing files and data"
+  },
+  "ossu/computer-science": {
+    "type": "learning_path",
+    "domain": "learning-study",
+    "summary": "从先修要求、入门课程到核心编程、数学和系统课程，组织自学计算机科学路径。",
+    "audience": [
+      "student"
+    ],
+    "language": "en",
+    "evidence": "GitHub 公开简介明确自学，README 有先修要求和核心课程目录",
+    "title": "OSSU Computer Science"
+  },
+  "freecodecamp/freecodecamp": {
+    "type": "curriculum",
+    "domain": "learning-study",
+    "summary": "以项目与练习组织开发课程。可从 README 区分全栈课程和语言学习等专门入口。",
+    "audience": [
+      "developer",
+      "student"
+    ],
+    "language": "en",
+    "evidence": "README 开发者认证目录和 V2 注册表自学说明"
+  },
+  "microsoft/ai-for-beginners": {
+    "type": "curriculum",
+    "domain": "ai-everyone",
+    "summary": "从 AI 基础单元进入练习和测验，README 单列初学者入口。",
+    "audience": [
+      "student"
+    ],
+    "language": "mul",
+    "evidence": "README New to AI? Start Here、Full Curriculum Setup",
+    "skill_level": "beginner"
+  },
+  "microsoft/generative-ai-for-beginners": {
+    "type": "curriculum",
+    "domain": "ai-everyone",
+    "summary": "按课次组织生成式 AI 应用学习，提供课程设置、练习与部署环节。",
+    "audience": [
+      "developer"
+    ],
+    "language": "mul",
+    "evidence": "README 课程目标、What You Need 与 Lessons",
+    "skill_level": "beginner"
+  },
+  "huggingface/agents-course": {
+    "type": "course",
+    "domain": "ai-engineering",
+    "summary": "按单元组织 Agent 课程和练习，README 单列前置要求。",
+    "audience": [
+      "developer",
+      "student"
+    ],
+    "language": "en",
+    "evidence": "README Prerequisites 和 V2 注册表的 Python 学习者说明"
+  },
+  "dair-ai/prompt-engineering-guide": {
+    "type": "handbook",
+    "domain": "ai-everyone",
+    "summary": "汇集提示工程指南、课程入口和练习笔记，也可定位检索增强与 Agent 相关资料。",
+    "audience": [
+      "developer",
+      "creator"
+    ],
+    "language": "mul",
+    "evidence": "README Guides 与 Lecture，V2 注册表明确创作者和开发者"
+  },
+  "studentsuite/awesome-student-resources": {
+    "type": "awesome_list",
+    "domain": "learning-study",
+    "summary": "从学生常用工具到奖学金和升学就业入口，按学生任务组织索引。",
+    "audience": [
+      "student"
+    ],
+    "language": "en",
+    "evidence": "GitHub 简介明确学生受众，README 有奖学金和升学就业目录"
+  },
+  "studentsuite/awesome-study-resources": {
+    "type": "awesome_list",
+    "domain": "learning-study",
+    "summary": "按学习主题和考试资源整理入口，可从父集合定位细分资料。",
+    "audience": [
+      "student"
+    ],
+    "language": "en",
+    "evidence": "GitHub 项目简介和学生资源集合的学科、考试分流说明"
+  },
+  "szabgab/awesome-for-non-programmers": {
+    "type": "awesome_list",
+    "domain": "digital-life",
+    "summary": "汇集面向非程序员的项目与学习材料，可从 README 的项目和资源目录分别进入。",
+    "audience": [
+      "non-technical-user"
+    ],
+    "language": "en",
+    "evidence": "README 的项目、资源目录明确面向非程序员"
+  },
+  "practical-tutorials/project-based-learning": {
+    "type": "resource_directory",
+    "domain": "learning-study",
+    "summary": "按编程语言组织项目教程，便于依据已有技能挑选练习。",
+    "audience": [
+      "developer",
+      "student"
+    ],
+    "language": "en",
+    "evidence": "README 项目导航按编程语言分类，GitHub 简介明确项目教程"
+  },
+  "ebookfoundation/free-programming-books": {
+    "type": "bibliography",
+    "domain": "learning-study",
+    "summary": "按学习语言和资料格式组织编程书目、在线课程和练习入口。",
+    "audience": [
+      "student",
+      "developer"
+    ],
+    "language": "mul",
+    "evidence": "README 多语书目、课程和编程资源结构"
+  },
+  "sindresorhus/awesome": {
+    "type": "awesome_list",
+    "domain": "learning-study",
+    "summary": "按技术与其他主题维护 Awesome Lists 的入口，可作为进一步核验的起点。",
+    "audience": [],
+    "language": "en",
+    "evidence": "README 主题目录与收录说明"
+  },
+  "0ex/more-awesome": {
+    "type": "awesome_list",
+    "domain": "learning-study",
+    "summary": "补充可继续查找的 Awesome 目录，现有观察来自公开 README 索引。",
+    "audience": [],
+    "language": "en",
+    "evidence": "GitHub README 的 More Awesome 标题和链接目录"
+  },
+  "openai/openai-cookbook": {
+    "type": "resource_directory",
+    "domain": "ai-engineering",
+    "summary": "聚合 OpenAI API 示例和可查阅的笔记，适合有编程基础的读者寻找具体实作入口。",
+    "audience": [
+      "developer"
+    ],
+    "language": "en",
+    "evidence": "README 目录及 V2 注册表的编程基础说明"
+  },
+  "datawhalechina/hello-agents": {
+    "type": "curriculum",
+    "domain": "ai-engineering",
+    "summary": "中文 Agent 学习材料，使用章节目录定位基础知识和实作内容。",
+    "audience": [],
+    "language": "zh",
+    "evidence": "README 与公开 Git 树中的章节文件"
+  },
+  "brabadu/awesome-fonts": {
+    "type": "awesome_list",
+    "domain": "creative-hobby",
+    "summary": "按字体和排印使用场景组织资源入口，适合定位设计相关参考。",
+    "audience": [
+      "designer"
+    ],
+    "language": "en",
+    "evidence": "README 的字体与排印分类"
+  },
+  "tiimgreen/github-cheat-sheet": {
+    "type": "cheatsheet",
+    "domain": "digital-life",
+    "summary": "按使用场景查阅 GitHub 的导航、命令与协作速查。",
+    "audience": [
+      "developer"
+    ],
+    "language": "en",
+    "evidence": "README GitHub Cheat Sheet 及功能目录"
+  },
+  "byoungd/up": {
+    "type": "practical_guide",
+    "domain": "digital-life",
+    "summary": "链接到原发布项目，具体用途和涵盖范围保留待查。",
+    "audience": [],
+    "language": "zh",
+    "evidence": "V2 注册表与现有公开仓库元数据"
+  },
+  "openrefine/openrefine": {
+    "type": "tool",
+    "domain": "professional",
+    "summary": "面向表格数据清洗以及格式转换任务的开源工具。",
+    "audience": [],
+    "language": "unknown",
+    "evidence": "V2 注册表注明数据清洗、转换及工作副本范围"
+  },
+  "zotero/zotero": {
+    "type": "tool",
+    "domain": "professional",
+    "summary": "文献管理应用的开发仓库，资料导入与去重使用官方说明。",
+    "audience": [
+      "researcher"
+    ],
+    "language": "unknown",
+    "evidence": "V2 注册表的文献元数据与科研工作场景"
+  },
+  "swcarpentry/git-novice": {
+    "type": "course",
+    "domain": "digital-life",
+    "summary": "Git 入门课程，以小步提交和练习组织版本管理学习。",
+    "audience": [
+      "student"
+    ],
+    "language": "en",
+    "evidence": "V2 注册表 Git 入门及提交练习",
+    "skill_level": "beginner"
+  },
+  "librarycarpentry/lc-spreadsheets": {
+    "type": "course",
+    "domain": "professional",
+    "summary": "面向研究与图情工作者的数据表格课程，涉及录入、整理和核对。",
+    "audience": [
+      "researcher",
+      "professional"
+    ],
+    "language": "en",
+    "evidence": "V2 注册表明确研究与图情工作者"
+  },
+  "k-dense-ai/scientific-agent-skills": {
+    "type": "resource_directory",
+    "domain": "ai-engineering",
+    "summary": "整理科研工具和分析任务相关 Agent Skills，适用条件需逐条查阅。",
+    "audience": [
+      "researcher"
+    ],
+    "language": "en",
+    "evidence": "V2 注册表明确面向研究人员"
+  },
+  "nirdiamant/genai-agents": {
+    "type": "tutorial",
+    "domain": "ai-engineering",
+    "summary": "以项目示例介绍生成式 AI Agent 的实践模式。",
+    "audience": [
+      "developer"
+    ],
+    "language": "en",
+    "evidence": "V2 注册表明确 Python 开发者"
+  },
+  "qerssd/howtoavoidscams": {
+    "type": "resource_directory",
+    "domain": "finance-law-consumer",
+    "summary": "汇集诈骗案例和预防资料，具体辖区和日期需独立核对。",
+    "audience": [
+      "general-public"
+    ],
+    "language": "zh",
+    "evidence": "V2 注册表说明一般风险识别读者和案例范围"
+  },
+  "goodseafly/how-to-make-work-pay": {
+    "type": "howto_series",
+    "domain": "career-work",
+    "summary": "从工作沟通和职场转换等任务整理个人经验，具体结论需要结合职业环境使用。",
+    "audience": [
+      "office-worker",
+      "career-starter"
+    ],
+    "language": "zh",
+    "evidence": "V2 注册表说明适合初入职场"
+  }
+}

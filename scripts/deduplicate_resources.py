@@ -10,7 +10,7 @@ TRACKING = {"ref", "source", "fbclid", "gclid", "spm", "si", "xsec_token", "toke
 REPO_SEGMENT = re.compile(r"[\w.-]+\Z", re.ASCII)
 
 
-def canonical_url(value, *, default_branch=None, pages_aliases=None):
+def canonical_url(value, *, default_branch=None, pages_aliases=None, collapse_readme=True):
     parts = urlsplit(value.strip())
     host = (parts.hostname or "").encode("idna").decode("ascii").lower()
     if not host or "." not in host or parts.scheme not in {"http", "https"} or parts.username or parts.password:
@@ -31,16 +31,16 @@ def canonical_url(value, *, default_branch=None, pages_aliases=None):
     anchor = parts.fragment
     if host in {"github.com", "www.github.com"}:
         host = "github.com"
-        pieces = unquote(path.strip("/")).split("/")
+        pieces = [unquote(piece) for piece in path.strip("/").split("/")]
         if len(pieces) >= 2 and all(REPO_SEGMENT.fullmatch(piece) and piece not in {".", ".."} for piece in pieces[:2]):
             owner, repo = pieces[0].casefold(), pieces[1].casefold().removesuffix(".git")
             rest = pieces[2:]
             parts_are_root_readme = (len(rest) == 3 and rest[0] == "blob" and
                                      rest[1] in {"main", "master", default_branch} and
                                      rest[2].casefold() in {"readme.md", "readme.rst"})
-            if parts_are_root_readme and anchor in {"", "readme"}:
+            if collapse_readme and parts_are_root_readme and anchor in {"", "readme"}:
                 rest = []
-            if anchor == "readme" and not rest:
+            if collapse_readme and anchor == "readme" and not rest:
                 anchor = ""
             path = "/" + "/".join(quote(piece, safe="") for piece in [owner, repo, *rest])
     result = urlunsplit((parts.scheme, host, path, urlencode(parameters, doseq=True), anchor))

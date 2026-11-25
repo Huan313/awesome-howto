@@ -5,6 +5,7 @@ from pathlib import Path
 
 from scripts.build_resource_index import read_registry
 from scripts.common import ROOT, validate
+from scripts.curation_identity import pinned_parts
 from scripts.deduplicate_resources import canonical_url
 from scripts.score_resources import eligible
 
@@ -26,7 +27,8 @@ def validate_records(resources, candidates, relations, legacy):
     for row in resources + candidates:
         validate("resource-catalog", row)
         key, url = row["resource_id"], row["canonical_url"]
-        if key in rows or url in urls or canonical_url(url) != url or url in row["aliases"]:
+        refined = row["schema_version"] == "2.1.1"
+        if key in rows or url in urls or canonical_url(url, collapse_readme=not refined) != url or url in row["aliases"]:
             raise ValueError(f"duplicate or noncanonical identity: {key}")
         if row["github_metrics"]:
             repo_id = row["github_metrics"]["repository_id"]
@@ -46,8 +48,26 @@ def validate_records(resources, candidates, relations, legacy):
             raise ValueError(f"automated score is not reproducible: {key}")
         if rating["editorial_score"] is not None and rating["review_status"] != "human-approved":
             raise ValueError(f"editorial rating has no human approval: {key}")
-        if row["screening"] == "screened" and not eligible(row):
-            raise ValueError(f"screened record does not meet the triage gate: {key}")
+        if row["screening"] == "screened":
+            if refined:
+                from scripts.curate_resources import triage_eligible
+
+                approved = triage_eligible(row)
+            else:
+                approved = eligible(row)
+            if not approved:
+                raise ValueError(f"screened record does not meet the triage gate: {key}")
+        if refined:
+            if row["risk_level"] == "high" and not row["requires_expert_review"]:
+                raise ValueError(f"high risk requires expert review: {key}")
+            if row["audience"] and not row["audience_evidence"]:
+                raise ValueError(f"audience without evidence: {key}")
+            if row["license_inheritance_status"] == "needs_review" and row["license"]["content_reuse_allowed"]:
+                raise ValueError(f"inherited license grants unverified reuse: {key}")
+            for snapshot in row["snapshots"]:
+                parts = pinned_parts(snapshot["url"])
+                if not parts or parts[1] != snapshot["commit_sha"]:
+                    raise ValueError(f"snapshot does not contain its commit: {key}")
         if row["child_item_count"] != len(row["child_resource_ids"]):
             raise ValueError(f"child count mismatch: {key}")
     if any(row["screening"] != "catalogued" for row in resources) or any(
@@ -81,15 +101,34 @@ def validate_records(resources, candidates, relations, legacy):
     return {"catalogued": len(resources), "candidates": len(candidates), "relations": len(relations)}
 
 
+def validate_migrations(rows, migrations):
+    index = {row["resource_id"]: row for row in rows}
+    aliases = {}
+    for entry in migrations:
+        old, key = entry["old_resource_id"], entry["resource_id"]
+        if old in aliases or old in index or key not in index or old not in index[key]["identity_aliases"]:
+            raise ValueError(f"invalid or unresolved identity alias: {old}")
+        row = index[key]
+        if (entry["relation"] != "supersedes" or entry["canonical_url"] != row["canonical_url"]
+                or not any(snapshot["url"] == entry["snapshot_url"]
+                           and snapshot["commit_sha"] == entry["source_commit_sha"] for snapshot in row["snapshots"])):
+            raise ValueError(f"identity alias lacks its evidence: {old}")
+        aliases[old] = key
+    for row in rows:
+        if any(aliases.get(alias) != row["resource_id"] for alias in row["identity_aliases"]):
+            raise ValueError(f"missing migration entry: {row['resource_id']}")
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=ROOT)
     args = parser.parse_args()
     root = args.root
     data = root / CATALOG
-    result = validate_records(list(read_lines(data / "resources.jsonl")),
-                              list(read_lines(data / "candidates.jsonl")),
-                              list(read_lines(data / "resource-relations.jsonl")), read_registry(root))
+    resources, candidates = (list(read_lines(data / f"{name}.jsonl")) for name in ("resources", "candidates"))
+    result = validate_records(resources, candidates, list(read_lines(data / "resource-relations.jsonl")), read_registry(root))
+    if resources[0]["schema_version"] == "2.1.1":
+        validate_migrations(resources + candidates, read_lines(root / "data/curation-runs/v2.1.1/id-migrations.jsonl"))
     print("Resource graph validated:", result)
 
 

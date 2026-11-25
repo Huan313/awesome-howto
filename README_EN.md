@@ -16,9 +16,9 @@ A Chinese-first library of practical guides with checkable steps, primary refere
 
 ## Resources and contributing
 
-[Global resource catalog](resources/discovery-index.md) · [HowTo series and handbooks](resources/howto-series.md) · [Awesome Lists](resources/awesome-lists.md) · [Type, audience and difficulty](resources/discovery-by-type.md) · [Screened candidates](resources/discovery-candidates.md)
+[Global resource catalog](resources/discovery-index.md) · [HowTo series](resources/howto-series.md) · [Practical guides and handbooks](resources/practical-guides.md) · [Courses and learning paths](resources/learning-paths-and-courses.md) · [Awesome Lists](resources/awesome-lists.md) · [Audiences](resources/resource-audiences.md) · [Screened candidates](resources/discovery-candidates.md)
 
-The catalog links to original sources and public collections with provenance, licence and review status. Verified entries are `reference-only` and screened candidates await review. The count above refers to the V2 registry. See the [dated discovery report](reports/RESOURCE_DISCOVERY_V2.1_REPORT.md) and the [curation workflow](discovery/README.md).
+The catalog tracks independent resources, collection sections and external leads. Browse by [resource type](resources/discovery-by-type.md). Candidate screening uses structural evidence and has its own status alongside editorial review. The count above refers to the V2 registry. [Curation report](reports/RESOURCE_CURATION_V2.1.1_REPORT.md) · [Curation workflow](discovery/README.md)
 
 [GitHub projects](resources/awesome-howto-projects.md) · [Primary and official resources](resources/official-resources.md) · [Weekly scans](data/weekly/README.md) · [Monthly research plans](data/monthly/README.md)
 

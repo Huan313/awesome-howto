@@ -12,7 +12,7 @@
     "domain": "learning-study",
     "resource_type": "awesome_list",
     "language": "en",
-    "expand": false,
+    "expand": true,
     "group": "requested-index"
   },
   {
@@ -76,9 +76,11 @@
     "domain": "digital-life",
     "resource_type": "resource_directory",
     "language": "en",
-    "expand": false,
+    "expand": true,
     "group": "requested-index",
-    "limitation": "混合安全内容须人工审阅，限元数据检查。"
+    "outline_only": true,
+    "safe_headings": ["cli tools", "gui tools", "shells", "terminals", "text editors", "manuals and tutorials", "manuals/tutorials", "lists", "shell", "terminal", "text editor", "cli", "system administration"],
+    "limitation": "混合安全内容只记录白名单下的普通运维与学习标题。"
   },
   {
     "repository": "awesome-selfhosted/awesome-selfhosted",
@@ -229,9 +231,11 @@
     "domain": "health-safety",
     "resource_type": "resource_directory",
     "language": "zh",
-    "expand": false,
+    "expand": true,
     "group": "requested-series",
-    "limitation": "健康信息需专业审核，限元数据和目录入口。"
+    "outline_only": true,
+    "outline_paths": ["docs/readme/"],
+    "limitation": "仅处理公开目录与标题，健康主张留待专项复核。"
   },
   {
     "repository": "byoungd/up",

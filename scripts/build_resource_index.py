@@ -72,12 +72,13 @@ def render(title, rows):
     return "\n".join(result)
 
 
-def outputs(root=ROOT):
+def outputs(root=ROOT, *, site=False):
     rows = read_registry(root)
     out = {
         "awesome-howto-projects.md": render("GitHub HowTo 项目资源", [row for row in rows if row["github"]]),
-        "official-resources.md": render("官方与原始资料", [row for row in rows if not row["github"]]),
     }
+    if site or not (root / "data/curation-runs/v2.1.1/manifest.json").is_file():
+        out["official-resources.md"] = render("官方与原始资料", [row for row in rows if not row["github"]])
     for name, groups in SECTIONS.items():
         out[f"{name}-resources.md"] = render(f"{name.title()} 资源", [row for row in rows if row["category"] in groups])
     return out

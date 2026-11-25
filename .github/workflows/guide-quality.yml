@@ -41,7 +41,7 @@ jobs:
         run: |
           bash scripts/ci_tools.sh actionlint gitleaks
           out/ci-tools/actionlint -color
-          out/ci-tools/gitleaks dir --redact --no-banner --max-target-megabytes 8 .
+          out/ci-tools/gitleaks dir --redact --no-banner --max-target-megabytes 20 .
       - name: Check external editorial links
         run: python -m scripts.check_links --external --strict
       - name: Upload link check results

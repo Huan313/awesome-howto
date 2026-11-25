@@ -1,56 +1,43 @@
-# Awesome Lists 与其他索引集合
+# Awesome Lists 与资料索引
 
-合集可以帮助定位资料。核验集合存在不等于核验了它的每条外链。
+集合目录可用于发现候选。集合中的独立条目各自保留核验状态。
 
 ## 规范目录
 
-- [mtdvio/every-programmer-should-know](https://github.com/mtdvio/every-programmer-should-know) · resource_directory · 职业与工作 · en / unknown · 受众未核定 · unknown · verified · reference-only。职业与工作 · 目录入口，适用范围见原发布方。
-- [szabgab/awesome-for-non-programmers](https://github.com/szabgab/awesome-for-non-programmers) · awesome_list · 数字生活 · en / unknown · 受众未核定 · unknown · no_license_found · reference-only。数字生活 · 索引集合，适用范围见原发布方。
-- [gendotnew/curated-lists](https://github.com/gendotnew/curated-lists) · resource_directory · 学习与研究 · en / unknown · 受众未核定 · unknown · no_license_found · reference-only。学习与研究 · 目录入口，适用范围见原发布方。
-- [StudentSuite/awesome-student-resources](https://github.com/studentsuite/awesome-student-resources) · awesome_list · 学习与研究 · en / unknown · 受众未核定 · unknown · verified · reference-only。学习与研究 · 索引集合，适用范围见原发布方。
-- [StudentSuite/awesome-study-resources](https://github.com/studentsuite/awesome-study-resources) · awesome_list · 学习与研究 · en / unknown · 受众未核定 · unknown · verified · reference-only。学习与研究 · 索引集合，适用范围见原发布方。
-- [codecrafters-io/build-your-own-x](https://github.com/codecrafters-io/build-your-own-x) · resource_directory · 学习与研究 · en / unknown · 受众未核定 · unknown · no_license_found · reference-only。学习与研究 · 目录入口，适用范围见原发布方。
-- [EbookFoundation/free-programming-books](https://github.com/ebookfoundation/free-programming-books) · bibliography · 学习与研究 · mul / unknown · 受众未核定 · unknown · verified · reference-only。学习与研究 · 资料入口，适用范围见原发布方。
-- [vinta/awesome-python](https://github.com/vinta/awesome-python) · awesome_list · AI 工程 · en / unknown · 受众未核定 · unknown · unclear · reference-only。AI 工程 · 索引集合，适用范围见原发布方。
-- [emijrp/awesome-awesome](https://github.com/emijrp/awesome-awesome) · awesome_list · 学习与研究 · en / unknown · 受众未核定 · unknown · verified · reference-only。学习与研究 · 索引集合，适用范围见原发布方。
-- [bayandin/awesome-awesomeness](https://github.com/bayandin/awesome-awesomeness) · awesome_list · 学习与研究 · en / unknown · 受众未核定 · unknown · no_license_found · reference-only。学习与研究 · 索引集合，适用范围见原发布方。
-- [sindresorhus/awesome](https://github.com/sindresorhus/awesome) · awesome_list · 学习与研究 · en / unknown · 受众未核定 · unknown · verified · reference-only。学习与研究 · 索引集合，适用范围见原发布方。
-- [prakhar1989/awesome-courses](https://github.com/prakhar1989/awesome-courses) · awesome_list · 学习与研究 · en / unknown · 受众未核定 · unknown · no_license_found · reference-only。学习与研究 · 索引集合，适用范围见原发布方。
-- [brabadu/awesome-fonts](https://github.com/brabadu/awesome-fonts) · awesome_list · 创作与兴趣 · en / unknown · 受众未核定 · unknown · no_license_found · reference-only。创作与兴趣 · 索引集合，适用范围见原发布方。
-- [iCHAIT/awesome-macOS](https://github.com/ichait/awesome-macos) · awesome_list · 数字生活 · en / unknown · 受众未核定 · unknown · no_license_found · reference-only。数字生活 · 索引集合，适用范围见原发布方。
-- [MunGell/awesome-for-beginners](https://github.com/mungell/awesome-for-beginners) · awesome_list · 数字生活 · en / unknown · 受众未核定 · unknown · no_license_found · reference-only。数字生活 · 索引集合，适用范围见原发布方。
-- [jaywcjlove/awesome-mac](https://github.com/jaywcjlove/awesome-mac) · awesome_list · 数字生活 · mul / unknown · 受众未核定 · unknown · verified · reference-only。数字生活 · 索引集合，适用范围见原发布方。
-- [practical-tutorials/project-based-learning](https://github.com/practical-tutorials/project-based-learning) · resource_directory · 学习与研究 · en / unknown · 受众未核定 · unknown · verified · reference-only。学习与研究 · 目录入口，适用范围见原发布方。
-- [geekan/HowToLiveLonger](https://github.com/geekan/howtolivelonger) · resource_directory · 健康素养与安全 · zh / unknown · 受众未核定 · unknown · verified · reference-only。生活 · 健康研究。将健康和寿命相关主题整理成资料索引，面向进阶读者。
-- github/awesome-copilot · awesome_list · AI 工程 · unknown / unknown · 受众未核定 · unknown · verified · reference-only。数字 · 助手配置。汇总 GitHub Copilot 指令和工具配置，面向开发者。
-- [K-Dense-AI/scientific-agent-skills](https://github.com/k-dense-ai/scientific-agent-skills) · resource_directory · AI 工程 · en / unknown · 受众未核定 · unknown · verified · reference-only。AI · 科研 Skills。面向科研工具和分析任务的 Skill 目录，面向研究人员。
-- [Research Guides](https://guides.loc.gov/) · resource_directory · 学习与研究 · en / global · general-public · unknown · unknown · reference-only。按主题查找国会图书馆馆员维护的原始资料导航。
-- [OpenCourseWare](https://ocw.mit.edu/) · resource_directory · 学习与研究 · en / global · general-public · unknown · unknown · reference-only。按学科查找 MIT 的开放课程与可用教学材料。
+- [A Programmer’s Guide to Longevity · HowToLiveLonger](https://github.com/geekan/howtolivelonger) · resource_directory · 健康素养与安全 · mul / unknown · 受众未核定 · unknown · 许可 verified · active / structure_inspected · reference-only。README 提供多语导航，汇集长寿相关资料入口。适用人群与健康主张需要专项复核。
+- [awesome](https://github.com/sindresorhus/awesome) · awesome_list · 学习与研究 · en / unknown · 受众未核定 · unknown · 许可 verified · active / structure_inspected · reference-only。按技术与其他主题维护 Awesome Lists 的入口，可作为进一步核验的起点。
+- [Awesome Awesome](https://github.com/emijrp/awesome-awesome) · awesome_list · 主题未核定 · en / unknown · 受众未核定 · unknown · 许可 verified · active / structure_inspected · reference-only。上游简介 · A curated list of awesome curated lists of many topics.
+- [Awesome Awesomeness](https://github.com/bayandin/awesome-awesomeness) · awesome_list · 主题未核定 · en / unknown · 受众未核定 · unknown · 许可 no_license_found · active / structure_inspected · reference-only。上游简介 · A curated list of awesome awesomeness
+- [Awesome First Pull Request Opportunities](https://github.com/mungell/awesome-for-beginners) · awesome_list · 主题未核定 · en / unknown · 受众未核定 · unknown · 许可 no_license_found · active / structure_inspected · reference-only。上游简介 · A list of awesome beginners-friendly projects.
+- [Awesome fonts](https://github.com/brabadu/awesome-fonts) · awesome_list · 创作与兴趣 · en / unknown · designer · unknown · 许可 no_license_found · active / structure_inspected · reference-only。按字体和排印使用场景组织资源入口，适合定位设计相关参考。
+- [Awesome for non-programmers](https://github.com/szabgab/awesome-for-non-programmers) · awesome_list · 数字生活 · en / unknown · non-technical-user · unknown · 许可 no_license_found · active / structure_inspected · reference-only。汇集面向非程序员的项目与学习材料，可从 README 的项目和资源目录分别进入。
+- [Awesome Python](https://github.com/vinta/awesome-python) · awesome_list · AI 工程 · en / unknown · 受众未核定 · unknown · 许可 unclear · active / structure_inspected · reference-only。上游简介 · The definitive list that answers &quot;I want to do X in Python, which tool should I use?&quot;
+- [Awesome Student Resources](https://github.com/studentsuite/awesome-student-resources) · awesome_list · 学习与研究 · en / unknown · student · unknown · 许可 verified · active / structure_inspected · reference-only。从学生常用工具到奖学金和升学就业入口，按学生任务组织索引。
+- [Awesome Study Resources](https://github.com/studentsuite/awesome-study-resources) · awesome_list · 学习与研究 · en / unknown · student · unknown · 许可 verified · active / structure_inspected · reference-only。按学习主题和考试资源整理入口，可从父集合定位细分资料。
+- [awesome-courses](https://github.com/prakhar1989/awesome-courses) · awesome_list · 主题未核定 · en / unknown · 受众未核定 · unknown · 许可 no_license_found · active / structure_inspected · reference-only。上游简介 · :books: List of awesome university courses for learning Computer Science!
+- [awesome-mac](https://github.com/jaywcjlove/awesome-mac) · awesome_list · 数字生活 · mul / unknown · 受众未核定 · unknown · 许可 verified · active / structure_inspected · reference-only。上游简介 ·  This project is dedicated to collecting high-quality macOS software and organizing them systematically by different categories for easy search and use.
+- [awesome-macOS](https://github.com/ichait/awesome-macos) · awesome_list · 数字生活 · en / unknown · 受众未核定 · unknown · 许可 no_license_found · active / structure_inspected · reference-only。上游简介 ·  A curated list of awesome applications, softwares, tools and shiny things for macOS.
+- [build-your-own-x](https://github.com/codecrafters-io/build-your-own-x) · resource_directory · 主题未核定 · en / unknown · 受众未核定 · unknown · 许可 no_license_found · active / structure_inspected · reference-only。上游简介 · Master programming by recreating your favorite technologies from scratch.
+- [Curated Lists](https://github.com/gendotnew/curated-lists) · resource_directory · 主题未核定 · en / unknown · 受众未核定 · unknown · 许可 no_license_found · active / structure_inspected · reference-only。上游简介 · Curated lists on various topics
+- [Every Programmer Should Know :thinking:](https://github.com/mtdvio/every-programmer-should-know) · resource_directory · 主题未核定 · en / unknown · 受众未核定 · unknown · 许可 verified · active / structure_inspected · reference-only。上游简介 · A collection of (mostly) technical things every software developer should know about
+- [github/awesome-copilot](https://github.com/github/awesome-copilot) · awesome_list · AI 工程 · unknown / unknown · 受众未核定 · unknown · 许可 verified · 待核验 / metadata_only · reference-only。数字 · 助手配置。汇总 GitHub Copilot 指令和工具配置，面向开发者。
+- [List of Free Learning Resources In Many Languages](https://github.com/ebookfoundation/free-programming-books) · bibliography · 学习与研究 · mul / unknown · student、developer · unknown · 许可 verified · active / structure_inspected · reference-only。按学习语言和资料格式组织编程书目、在线课程和练习入口。
+- [openai-cookbook](https://github.com/openai/openai-cookbook) · resource_directory · AI 工程 · en / unknown · developer · unknown · 许可 verified · active / structure_inspected · reference-only。聚合 OpenAI API 示例和可查阅的笔记，适合有编程基础的读者寻找具体实作入口。
+- [OpenCourseWare](https://ocw.mit.edu/) · resource_directory · 学习与研究 · en / global · general-public · unknown · 许可 unknown · active / public_page_reachable · reference-only。按学科查找 MIT 的开放课程与可用教学材料。
+- [Project Based Learning](https://github.com/practical-tutorials/project-based-learning) · resource_directory · 学习与研究 · en / unknown · developer、student · unknown · 许可 verified · active / structure_inspected · reference-only。按编程语言组织项目教程，便于依据已有技能挑选练习。
+- [QERSSD/HowToAvoidScams](https://github.com/qerssd/howtoavoidscams) · resource_directory · 财务、法律与消费 · zh / unknown · general-public · unknown · 许可 unclear · 待核验 / metadata_only · reference-only。汇集诈骗案例和预防资料，具体辖区和日期需独立核对。
+- [Research Guides](https://guides.loc.gov/) · resource_directory · 学习与研究 · en / global · general-public · unknown · 许可 unknown · active / public_page_reachable · reference-only。按主题查找国会图书馆馆员维护的原始资料导航。
+- [scientific-agent-skills](https://github.com/k-dense-ai/scientific-agent-skills) · resource_directory · AI 工程 · en / unknown · researcher · unknown · 许可 verified · active / repository_exists · reference-only。整理科研工具和分析任务相关 Agent Skills，适用条件需逐条查阅。
 
-## 候选 Awesome Lists
+## 自动初筛样本
 
-- [0xNyk/awesome-hermes-agent](https://github.com/0xnyk/awesome-hermes-agent) · awesome_list · AI 工程 · unknown / unknown · 受众未核定 · unknown · unclear · needs-review。AI 工程 · 索引集合，适用范围见原发布方。
-- [AgenticHealthAI/Awesome-AI-Agents-for-Healthcare](https://github.com/agentichealthai/awesome-ai-agents-for-healthcare) · awesome_list · AI 工程 · unknown / unknown · 受众未核定 · unknown · unknown · needs-review。AI 工程 · 索引集合，适用范围见原发布方。
-- [alvinreal/awesome-opensource-ai](https://github.com/alvinreal/awesome-opensource-ai) · awesome_list · AI 工程 · unknown / unknown · 受众未核定 · unknown · unclear · needs-review。AI 工程 · 索引集合，适用范围见原发布方。
-- [best-of-ai/best-of-ai](https://github.com/best-of-ai/best-of-ai) · awesome_list · AI 工程 · unknown / unknown · 受众未核定 · unknown · unknown · needs-review。AI 工程 · 索引集合，适用范围见原发布方。
-- [cporter202/API-mega-list](https://github.com/cporter202/api-mega-list) · awesome_list · AI 工程 · unknown / unknown · 受众未核定 · unknown · unknown · needs-review。AI 工程 · 索引集合，适用范围见原发布方。
-- [dipakkr/awesome-ai-engineering](https://github.com/dipakkr/awesome-ai-engineering) · awesome_list · AI 工程 · unknown / unknown · 受众未核定 · unknown · unclear · needs-review。AI 工程 · 索引集合，适用范围见原发布方。
-- [enescingoz/awesome-n8n-templates](https://github.com/enescingoz/awesome-n8n-templates) · awesome_list · AI 工程 · unknown / unknown · 受众未核定 · unknown · unclear · needs-review。AI 工程 · 索引集合，适用范围见原发布方。
-- [heilcheng/awesome-agent-skills](https://github.com/heilcheng/awesome-agent-skills) · awesome_list · AI 工程 · unknown / unknown · 受众未核定 · unknown · unclear · needs-review。AI 工程 · 索引集合，适用范围见原发布方。
-- [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) · awesome_list · AI 工程 · unknown / unknown · 受众未核定 · unknown · unclear · needs-review。AI 工程 · 索引集合，适用范围见原发布方。
-- [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) · awesome_list · AI 工程 · unknown / unknown · 受众未核定 · unknown · unclear · needs-review。AI 工程 · 索引集合，适用范围见原发布方。
-- [Shubhamsaboo/awesome-llm-apps](https://github.com/shubhamsaboo/awesome-llm-apps) · awesome_list · AI 工程 · unknown / unknown · 受众未核定 · unknown · unclear · needs-review。AI 工程 · 索引集合，适用范围见原发布方。
-- [sickn33/agentic-awesome-skills](https://github.com/sickn33/agentic-awesome-skills) · awesome_list · AI 工程 · unknown / unknown · 受众未核定 · unknown · unclear · needs-review。AI 工程 · 索引集合，适用范围见原发布方。
-- [VoltAgent/awesome-agent-skills](https://github.com/voltagent/awesome-agent-skills) · awesome_list · AI 工程 · unknown / unknown · 受众未核定 · unknown · unclear · needs-review。AI 工程 · 索引集合，适用范围见原发布方。
-- [VoltAgent/awesome-design-md](https://github.com/voltagent/awesome-design-md) · awesome_list · AI 工程 · unknown / unknown · 受众未核定 · unknown · unclear · needs-review。AI 工程 · 索引集合，适用范围见原发布方。
-- [VoltAgent/awesome-openclaw-skills](https://github.com/voltagent/awesome-openclaw-skills) · awesome_list · AI 工程 · unknown / unknown · 受众未核定 · unknown · unclear · needs-review。AI 工程 · 索引集合，适用范围见原发布方。
-- [ZeroLu/awesome-nanobanana-pro](https://github.com/zerolu/awesome-nanobanana-pro) · awesome_list · AI 工程 · unknown / unknown · 受众未核定 · unknown · unclear · needs-review。AI 工程 · 索引集合，适用范围见原发布方。
-- [BELYAGOUBIABDELILAH/promptstack](https://github.com/belyagoubiabdelilah/promptstack) · awesome_list · 大众 AI · unknown / unknown · 受众未核定 · unknown · unclear · needs-review。大众 AI · 索引集合，适用范围见原发布方。
-- [bydeng01/student-gpt-tools](https://github.com/bydeng01/student-gpt-tools) · awesome_list · 大众 AI · unknown / unknown · 受众未核定 · unknown · unclear · needs-review。大众 AI · 索引集合，适用范围见原发布方。
-- [erbanku/awesome](https://github.com/erbanku/awesome) · awesome_list · 大众 AI · unknown / unknown · 受众未核定 · unknown · unknown · needs-review。大众 AI · 索引集合，适用范围见原发布方。
-- [Evolink-AI/awesome-gpt-image-2-API-Prompts](https://github.com/evolink-ai/awesome-gpt-image-2-api-prompts) · awesome_list · 大众 AI · unknown / unknown · 受众未核定 · unknown · unclear · needs-review。大众 AI · 索引集合，适用范围见原发布方。
-- [freeCodeCamp/awesome-quincy-larson-emails](https://github.com/freecodecamp/awesome-quincy-larson-emails) · awesome_list · 大众 AI · unknown / unknown · 受众未核定 · unknown · unclear · needs-review。大众 AI · 索引集合，适用范围见原发布方。
-- [freestylefly/awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2) · awesome_list · 大众 AI · unknown / unknown · 受众未核定 · unknown · unclear · needs-review。大众 AI · 索引集合，适用范围见原发布方。
-- [h9-tec/Awesome\_ai\_learning](https://github.com/h9-tec/awesome_ai_learning) · awesome_list · 大众 AI · unknown / unknown · 受众未核定 · unknown · unknown · needs-review。大众 AI · 索引集合，适用范围见原发布方。
-- [littlemoji/my-awesome-star-list](https://github.com/littlemoji/my-awesome-star-list) · awesome_list · 大众 AI · unknown / unknown · 受众未核定 · unknown · unknown · needs-review。大众 AI · 索引集合，适用范围见原发布方。
-- [maehr/awesome-digital-history](https://github.com/maehr/awesome-digital-history) · awesome_list · 大众 AI · unknown / unknown · 受众未核定 · unknown · unclear · needs-review。大众 AI · 索引集合，适用范围见原发布方。
+- [academic/awesome-datascience](https://github.com/academic/awesome-datascience) · awesome_list · AI 工程 · unknown / unknown · 受众未核定 · unknown · 许可 verified · active / structure_inspected · needs-review。用途待核验。
+- [0PandaDEV/awesome-windows](https://github.com/0pandadev/awesome-windows) · awesome_list · 数字生活 · unknown / unknown · 受众未核定 · unknown · 许可 verified · active / structure_inspected · needs-review。用途待核验。
+- [Awesome Skills &amp; Plugins for Students](https://github.com/studentsuite/awesome-skills-plugins-for-students) · awesome_list · AI 工程 · unknown / unknown · 受众未核定 · unknown · 许可 verified · active / structure_inspected · needs-review。上游简介 · A curated list of Claude Code, Cursor, and Copilot skills and plugins built for students: IB, IGCSE, college-bound, and anyone studying with an AI coding agent at their side.
+- [aaronhma/awesome-tensorflow-js](https://github.com/aaronhma/awesome-tensorflow-js) · awesome_list · AI 工程 · unknown / unknown · 受众未核定 · unknown · 许可 verified · active / structure_inspected · needs-review。用途待核验。
+- [Awesome Remote Job](https://github.com/lukasz-madon/awesome-remote-job) · awesome_list · 职业与工作 · unknown / unknown · 受众未核定 · unknown · 许可 unknown · active / structure_inspected · needs-review。上游简介 · A curated list of awesome remote jobs and resources. Inspired by https://github.com/vinta/awesome-python
+- [More Awesome](https://github.com/0ex/more-awesome) · awesome_list · 学习与研究 · en / unknown · 受众未核定 · unknown · 许可 unclear · active / structure_inspected · needs-review。补充可继续查找的 Awesome 目录，现有观察来自公开 README 索引。
+- [the-book-of-secret-knowledge](https://github.com/trimstray/the-book-of-secret-knowledge) · resource_directory · 数字生活 · en / unknown · 受众未核定 · unknown · 许可 verified · active / structure_inspected · needs-review。上游简介 · A collection of inspiring lists, manuals, cheatsheets, blogs, hacks, one-liners, cli/web tools and more.
+- [awesome\_bot](https://github.com/dkhamsing/awesome_bot) · awesome_list · 数字生活 · unknown / unknown · 受众未核定 · unknown · 许可 verified · active / structure_inspected · needs-review。上游简介 · :white\_check\_mark: Validate links in awesome projects
+- [Python](https://github.com/thealgorithms/python) · collection · 职业与工作 · en / unknown · 受众未核定 · unknown · 许可 verified · active / repository_exists · needs-review。上游简介 · All Algorithms implemented in Python
+- [awesome-openclaw-skills](https://github.com/voltagent/awesome-openclaw-skills) · awesome_list · 财务、法律与消费 · unknown / unknown · 受众未核定 · unknown · 许可 unclear · active / repository_exists · needs-review。上游简介 · The awesome collection of OpenClaw skills. 5,400+ skills filtered and categorized from the official OpenClaw Skills Registry.🦞

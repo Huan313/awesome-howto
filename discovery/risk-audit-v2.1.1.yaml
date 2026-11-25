@@ -1,0 +1,406 @@
+{
+  "gh-1010681419": {
+    "reason": "发布方明确是构建通用 Agent 框架的学习项目。",
+    "verdict": "ordinary"
+  },
+  "gh-1050292440": {
+    "reason": "名称不足以判定任务用途。",
+    "verdict": "uncertain"
+  },
+  "gh-1098861771": {
+    "reason": "名称支持学习主题，功能缺少简介或结构证据。",
+    "verdict": "uncertain"
+  },
+  "gh-1102076080": {
+    "reason": "发布方明确以医院再入院预测作为案例。应用情境需专业复核。",
+    "verdict": "decision"
+  },
+  "gh-1111638356": {
+    "reason": "发布方说明用途为供应商采购匹配。",
+    "verdict": "software"
+  },
+  "gh-1118337069": {
+    "reason": "发布方说明根据消费者情况识别违规并生成投诉材料，需要法律专业复核。",
+    "verdict": "decision"
+  },
+  "gh-1119492821": {
+    "reason": "发布方说明查询法条原文和核验引文，未见个案判断功能证据。",
+    "verdict": "reference"
+  },
+  "gh-1136685443": {
+    "reason": "发布方说明自动汇总学术论文。",
+    "verdict": "reference"
+  },
+  "gh-1137415682": {
+    "reason": "介绍自动汇总高分子研究论文。",
+    "verdict": "reference"
+  },
+  "gh-1139978483": {
+    "reason": "现有简介明确是提示词集合的使用资料。",
+    "verdict": "ordinary"
+  },
+  "gh-1146422489": {
+    "reason": "可见简介不足，无法判定健康输出。",
+    "verdict": "uncertain"
+  },
+  "gh-1146804947": {
+    "reason": "现有简介只说明肿瘤试验整合，实际输出未核验。",
+    "verdict": "uncertain"
+  },
+  "gh-1167300963": {
+    "reason": "简介说明研究、写作与修订流程。",
+    "verdict": "ordinary"
+  },
+  "gh-1192142550": {
+    "reason": "公开简介明确为韩语企业 Agent 教学材料。",
+    "verdict": "ordinary"
+  },
+  "gh-1195580981": {
+    "reason": "发布方明确列出费用记录、票据扫描和多用户使用。",
+    "verdict": "software"
+  },
+  "gh-1200119038": {
+    "reason": "发布方将它定位为法律顾问，个案输出与辖区适用性须核验。",
+    "verdict": "decision"
+  },
+  "gh-1203354023": {
+    "reason": "简介说明是按主题汇编的规则库。",
+    "verdict": "reference"
+  },
+  "gh-1208082216": {
+    "reason": "仅有框架名称，业务用途未核验。",
+    "verdict": "uncertain"
+  },
+  "gh-1216273504": {
+    "reason": "通用助手名称，发布方用途说明缺失。",
+    "verdict": "uncertain"
+  },
+  "gh-1217863650": {
+    "reason": "源简介显示商品比价与优惠检索功能。",
+    "verdict": "software"
+  },
+  "gh-1226387273": {
+    "reason": "发布方列出车规和功能安全标准主题，具体操作能力待查。",
+    "verdict": "reference"
+  },
+  "gh-1232803292": {
+    "reason": "缺少简介，无法区分个人数据分析与投资建议。",
+    "verdict": "uncertain"
+  },
+  "gh-1249681509": {
+    "reason": "发布方列出税务、投资和退休代理人，个案建议要逐项查验。",
+    "verdict": "decision"
+  },
+  "gh-1283811976": {
+    "reason": "发布方描述解释个体遗传报告并标记可行动性，需要专业审查。",
+    "verdict": "decision"
+  },
+  "gh-1291090836": {
+    "reason": "简介整理财务计划，需核对其建议是否依赖个人数据。",
+    "verdict": "uncertain"
+  },
+  "gh-1298238049": {
+    "reason": "项目定位为卫生经济学材料，现有元数据不支持个案决策判断。",
+    "verdict": "reference"
+  },
+  "gh-1314910535": {
+    "reason": "说明涵盖合同审核、法律咨询与劳动仲裁，应复核建议是否个性化。",
+    "verdict": "decision"
+  },
+  "gh-1326307740": {
+    "reason": "源简介表明可按法规审查广告声明并改写，需要核对法律输出。",
+    "verdict": "decision"
+  },
+  "gh-1332660185": {
+    "reason": "简介声称在具体危机场景给出操作判断，输出范围需核对。",
+    "verdict": "decision"
+  },
+  "gh-1337329714": {
+    "reason": "名称提及应急金，缺少对具体功能的说明。",
+    "verdict": "uncertain"
+  },
+  "gh-1350051950": {
+    "reason": "缺少可判断记账、消费提醒或建议的功能说明。",
+    "verdict": "uncertain"
+  },
+  "gh-1358763218": {
+    "reason": "发布方说明目标为人文背景学习者，内容为 NLP 路线和练习。",
+    "verdict": "ordinary"
+  },
+  "gh-1364109268": {
+    "reason": "可见标题无法识别具体资料范围。",
+    "verdict": "uncertain"
+  },
+  "gh-1369451751": {
+    "reason": "简介说明医生工作与患者管理，尚无个案决策输出证据。",
+    "verdict": "uncertain"
+  },
+  "gh-1371857046": {
+    "reason": "家庭计划名称不足以确认运行功能。",
+    "verdict": "uncertain"
+  },
+  "gh-1372917416": {
+    "reason": "项目简介标明为个人 GitHub 资料页。",
+    "verdict": "ordinary"
+  },
+  "gh-1376975713": {
+    "reason": "德语家用记账名称支持暂定工具范围，仍需查看具体功能。",
+    "verdict": "software"
+  },
+  "gh-1396291648": {
+    "reason": "简介列出食谱、采购、提醒及日历。",
+    "verdict": "software"
+  },
+  "gh-1397792659": {
+    "reason": "发布方描述家庭日程与共用事项管理。",
+    "verdict": "software"
+  },
+  "gh-1398551067": {
+    "reason": "简介说明面向家庭与儿童的风暴安全教育。",
+    "verdict": "ordinary"
+  },
+  "gh-1412548725": {
+    "reason": "可见标题像财务记录，缺少足够说明。",
+    "verdict": "uncertain"
+  },
+  "gh-1412891155": {
+    "reason": "源简介聚焦点餐、预算和订单分配。",
+    "verdict": "software"
+  },
+  "gh-1418817214": {
+    "reason": "公开简介表明是商业法律与消费者权益指南。",
+    "verdict": "reference"
+  },
+  "gh-1431262823": {
+    "reason": "发布方描述账簿、预算记录与报表。",
+    "verdict": "software"
+  },
+  "gh-1431724643": {
+    "reason": "上游说明以架构图组织通用 Agent 学习。",
+    "verdict": "ordinary"
+  },
+  "gh-1432253846": {
+    "reason": "简介说明是本地知识库集成插件。",
+    "verdict": "software"
+  },
+  "gh-1438268310": {
+    "reason": "发布方明确标为预算应用。",
+    "verdict": "software"
+  },
+  "gh-1451600599": {
+    "reason": "现有可见标题缺少资源类别和功能。",
+    "verdict": "uncertain"
+  },
+  "gh-1461235487": {
+    "reason": "发布方列出个人日历、提醒与习惯记录。",
+    "verdict": "software"
+  },
+  "gh-1462867758": {
+    "reason": "德语家用记账名称支持暂定工具范围，仍需查看具体功能。",
+    "verdict": "software"
+  },
+  "gh-1463393736": {
+    "reason": "发布方描述为咖啡设备替换界面。",
+    "verdict": "software"
+  },
+  "gh-1466467176": {
+    "reason": "账务名称不足以验证具体财务操作。",
+    "verdict": "uncertain"
+  },
+  "gh-1467146619": {
+    "reason": "发布方说明社区消息自动汇集与发布。",
+    "verdict": "software"
+  },
+  "gh-1467633702": {
+    "reason": "简介说明职业探索与技能差距分析。",
+    "verdict": "ordinary"
+  },
+  "gh-1468400253": {
+    "reason": "简介定位为学习路线，可按各独立资源功能再查。",
+    "verdict": "ordinary"
+  },
+  "gh-1469813357": {
+    "reason": "公开项目描述是公司作品概览。",
+    "verdict": "ordinary"
+  },
+  "gh-180148083": {
+    "reason": "日文介绍明确为游戏设计课程用仓库。",
+    "verdict": "ordinary"
+  },
+  "gh-213341872": {
+    "reason": "发布方将其定位为政策、标准和原则地图。",
+    "verdict": "reference"
+  },
+  "gh-313800942": {
+    "reason": "介绍现场检查与质量管理工具，现有元数据未说明自动安全决策。",
+    "verdict": "software"
+  },
+  "gh-36579242": {
+    "reason": "公开简介描述课程数据的分类体系。",
+    "verdict": "ordinary"
+  },
+  "gh-404047002": {
+    "reason": "简介仅描述有用资料汇集，子项需逐条判断。",
+    "verdict": "reference"
+  },
+  "gh-404347216": {
+    "reason": "简介说明保存个人关注的仓库链接。",
+    "verdict": "reference"
+  },
+  "gh-45393978": {
+    "reason": "德语简介明确是多人家用账簿。",
+    "verdict": "software"
+  },
+  "gh-469042311": {
+    "reason": "发布方说明源自家庭菜谱项目。",
+    "verdict": "ordinary"
+  },
+  "gh-521572303": {
+    "reason": "简介标明机器学习公开数据集入口。",
+    "verdict": "reference"
+  },
+  "gh-526144414": {
+    "reason": "发布方说明按澳大利亚软件与服务汇编入口。",
+    "verdict": "reference"
+  },
+  "gh-527132001": {
+    "reason": "源简介明确主题为厨艺与收纳练习。",
+    "verdict": "ordinary"
+  },
+  "gh-614155484": {
+    "reason": "缺少独立目录内容和用途说明。",
+    "verdict": "uncertain"
+  },
+  "gh-734573670": {
+    "reason": "源简介定位为医疗数据分析岗位的专业手册。",
+    "verdict": "reference"
+  },
+  "gh-796643964": {
+    "reason": "简介涉及个人健康装置与预测，需核对预测用途和个体化输出。",
+    "verdict": "decision"
+  },
+  "gh-821175770": {
+    "reason": "西班牙语简介说明为食谱主题的大学社交应用项目。",
+    "verdict": "software"
+  },
+  "gh-866172019": {
+    "reason": "发布方明确是基于 PyTorch 的技术学习材料。",
+    "verdict": "ordinary"
+  },
+  "gh-867686535": {
+    "reason": "现有简介未说明助手仅查资料还是处理临床个案。",
+    "verdict": "uncertain"
+  },
+  "gh-915445057": {
+    "reason": "发布方列出界面测试与可访问性检查。",
+    "verdict": "software"
+  },
+  "gh-917416797": {
+    "reason": "发布方使用自述表述，缺少资源功能说明。",
+    "verdict": "uncertain"
+  },
+  "gh-929056440": {
+    "reason": "缺少可区分产品用途的描述。",
+    "verdict": "uncertain"
+  },
+  "gh-951440871": {
+    "reason": "简介说明农村医疗服务平台，临床输出功能尚不明确。",
+    "verdict": "uncertain"
+  },
+  "gh-954846622": {
+    "reason": "仅有医疗聊天和部署名称，缺少输出范围证据。",
+    "verdict": "uncertain"
+  },
+  "gh-964629368": {
+    "reason": "源简介明确为食品追溯教学系统。",
+    "verdict": "software"
+  },
+  "gh-977847057": {
+    "reason": "缺少公开可见的功能描述。",
+    "verdict": "uncertain"
+  },
+  "reference-android-backup": {
+    "reason": "原注册表标明 Android 备份与恢复官方说明。",
+    "verdict": "reference"
+  },
+  "reference-nist-cyber": {
+    "reason": "原注册表明确是网络安全框架。",
+    "verdict": "reference"
+  },
+  "reference-usda-storage": {
+    "reason": "原注册表明确是美国官方食物储藏参考。",
+    "verdict": "reference"
+  },
+  "resource-007ca494e2c73d91a623": {
+    "reason": "可见标题指向 Python 实作学习资源。",
+    "verdict": "ordinary"
+  },
+  "resource-0c816820a7669065132f": {
+    "reason": "可见证据为集合导航标题，应用范围须查父集合。",
+    "verdict": "reference"
+  },
+  "resource-147e049f5e2ce97cb587": {
+    "reason": "可见标题定位学习方法课程。",
+    "verdict": "ordinary"
+  },
+  "resource-240417e47ff3baceed18": {
+    "reason": "可见证据为格式化工具集合的分类标题。",
+    "verdict": "reference"
+  },
+  "resource-31cb1546a0cea67d3dde": {
+    "reason": "集合中的财务素养栏目标题，具体外链需逐项复核。",
+    "verdict": "reference"
+  },
+  "resource-3be73750861640c473fb": {
+    "reason": "父集合中的希腊语版本链接。",
+    "verdict": "reference"
+  },
+  "resource-3ead875830c5df388d8b": {
+    "reason": "集合列出带日期的心理健康讲座，需核对其内容和时效。",
+    "verdict": "reference"
+  },
+  "resource-676747717649916fa82e": {
+    "reason": "集合目录中的栏目标题，具体条目逐项核验。",
+    "verdict": "reference"
+  },
+  "resource-89806737a9af87038740": {
+    "reason": "单一文件或节点标题不能确定功能。",
+    "verdict": "uncertain"
+  },
+  "resource-956a0d3c2cd76eae014d": {
+    "reason": "项目名不足以判断是资源还是软件。",
+    "verdict": "uncertain"
+  },
+  "resource-a528e9aa87bf19375c96": {
+    "reason": "标题明确所指为软件设计学习知识。",
+    "verdict": "ordinary"
+  },
+  "resource-ac8cab3c053598798caa": {
+    "reason": "目录标题为算法及设计模式。",
+    "verdict": "ordinary"
+  },
+  "resource-bdeb3bb57437652546fb": {
+    "reason": "学生目录的奖学金与资助栏目标题。",
+    "verdict": "reference"
+  },
+  "resource-d82ed191970eb1eda18c": {
+    "reason": "父集合的保险主题标题，不能从标题判定个别建议。",
+    "verdict": "reference"
+  },
+  "resource-e69b6602430d47e832a9": {
+    "reason": "NHS 公共健康主题导航，适用范围须按各原文核对。",
+    "verdict": "reference"
+  },
+  "resource-e8d795d6db88ed964741": {
+    "reason": "集合导航中的云存储主题。",
+    "verdict": "reference"
+  },
+  "resource-ea7ac9ea5da2dd436625": {
+    "reason": "MoneySense 公开预算与财务教育入口，适用新加坡。",
+    "verdict": "reference"
+  },
+  "resource-eec0c18e91deaee25c83": {
+    "reason": "父集合中的俄语版本链接。",
+    "verdict": "reference"
+  }
+}

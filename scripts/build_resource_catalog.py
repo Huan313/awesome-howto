@@ -188,7 +188,12 @@ def validate_indexes(root):
     folder = root / CATALOG
     resources = list(read_lines(folder / "resources.jsonl"))
     candidates = list(read_lines(folder / "candidates.jsonl"))
-    for name, content in indexes(resources, candidates).items():
+    render = indexes
+    if resources[0]["schema_version"] == "2.1.1":
+        from scripts.curation_outputs import curation_indexes
+
+        render = curation_indexes
+    for name, content in render(resources, candidates).items():
         existing = (root / "resources" / name).read_text(encoding="utf-8")
         if existing.rstrip("\n") != content.rstrip("\n"):
             raise ValueError(f"stale discovery index: {name}")
@@ -221,6 +226,8 @@ def main():
     if args.dry_run:
         print("Read search.json, expansion.json and links.json. No files will be changed.")
         return
+    if args.publish and (ROOT / "data/curation-runs/v2.1.1/manifest.json").is_file():
+        parser.error("use python -m scripts.refine_resource_catalog --publish for the active V2.1.1 catalog")
     search, expansion, official = (read_json(args.output / name) for name in
                                    ("search.json", "expansion.json", "links.json"))
     legacy = read_registry(ROOT)
