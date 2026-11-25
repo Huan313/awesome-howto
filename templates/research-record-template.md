@@ -9,3 +9,5 @@
 | 待核验 | 待填写 | 待填写 | 待判定 | 待核验 |
 
 列出步骤验收方法、反例、版权与安全审核结果。保留被拒绝来源及理由。
+
+保留真实 topic_id、是否历史、来源 URL 与定位。用 [主张矩阵字段](evidence-matrix-template.csv) 填写出处和适用范围，形成 [Evidence Schema](../schemas/evidence.schema.json) 支持的证据包。

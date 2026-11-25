@@ -5,6 +5,10 @@ description: "扫描过去 7 天或 30 天的热点，生成去重后的需求�
 
 # trend-scout
 
+## 触发条件
+
+需要七天或三十天的公共观测时触发，单篇事实核查用 evidence-researcher。
+
 ## 输入与目标
 
 窗口、目标人群、来源注册表与可选脱敏观测。用报告定位值得继续核验的真实问题。
@@ -20,3 +24,11 @@ description: "扫描过去 7 天或 30 天的热点，生成去重后的需求�
 ## 示例与验收
 
 输入 `$trend-scout 运行七天扫描，找三个关于备份的线索`。验收报告写明时间窗和来源状态；没有匹配时写明样本不足。脚本测试 `python -m unittest discover -s tests -p test_research.py`。
+
+## V2 文件、权限和验收
+
+运行 `python -m scripts.run_research weekly --output out/weekly`，月度用 `monthly --history out/weekly`。只读取经授权公共 SDK/RSS 及脱敏观察。
+
+验收 `selection.json`、`source-cache/` 与 `research/`。活动、需求和证据分别记录，无法比较的增长为 unknown。
+
+回归命令 `python -m unittest discover -s tests -p test_research.py`。

@@ -23,7 +23,13 @@
     "created_at",
     "updated_at",
     "review_due",
-    "sources"
+    "sources",
+    "life_stages",
+    "prerequisites",
+    "last_verified_at",
+    "version",
+    "claim_evidence",
+    "execution_status"
   ],
   "properties": {
     "id": {
@@ -66,7 +72,8 @@
           "25-34",
           "35-44",
           "45-59",
-          "60+"
+          "60+",
+          "unknown"
         ]
       },
       "minItems": 1,
@@ -91,8 +98,15 @@
       "uniqueItems": true
     },
     "region": {
-      "type": "string",
-      "minLength": 1
+      "enum": [
+        "global",
+        "china-mainland",
+        "singapore",
+        "united-states",
+        "eu",
+        "united-kingdom",
+        "unknown"
+      ]
     },
     "difficulty": {
       "enum": [
@@ -113,7 +127,8 @@
       "enum": [
         "A",
         "B",
-        "C"
+        "C",
+        "pending"
       ]
     },
     "content_type": {
@@ -128,10 +143,13 @@
     },
     "status": {
       "enum": [
+        "idea",
+        "needs-research",
         "draft",
-        "review-required",
-        "stable",
+        "editorial-review",
+        "expert-review",
         "published",
+        "needs-update",
         "retired"
       ]
     },
@@ -156,6 +174,216 @@
       },
       "minItems": 1,
       "uniqueItems": true
+    },
+    "life_stages": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "prerequisites": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "last_verified_at": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date"
+        },
+        {
+          "const": "pending"
+        }
+      ]
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+(?:\\.\\d+)?$"
+    },
+    "claim_evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "claim_id",
+          "claim_text",
+          "claim_type",
+          "supporting_source_ids",
+          "support_level",
+          "source_location",
+          "applicable_region",
+          "applicable_version",
+          "limitations",
+          "reviewer_status"
+        ],
+        "properties": {
+          "claim_id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "claim_text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "claim_type": {
+            "enum": [
+              "fact",
+              "recommendation",
+              "experience",
+              "inference",
+              "hypothesis"
+            ]
+          },
+          "supporting_source_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+            },
+            "minItems": 0,
+            "uniqueItems": true
+          },
+          "support_level": {
+            "enum": [
+              "direct",
+              "partial",
+              "indirect",
+              "conflicting",
+              "unsupported"
+            ]
+          },
+          "source_location": {
+            "type": "string",
+            "minLength": 1
+          },
+          "applicable_region": {
+            "enum": [
+              "global",
+              "china-mainland",
+              "singapore",
+              "united-states",
+              "eu",
+              "united-kingdom",
+              "unknown"
+            ]
+          },
+          "applicable_version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "limitations": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reviewer_status": {
+            "enum": [
+              "pending",
+              "editorial-checked",
+              "expert-approved"
+            ]
+          }
+        }
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "execution_status": {
+      "enum": [
+        "pending",
+        "tested"
+      ]
+    },
+    "expert_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "reference"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "pending",
+            "approved"
+          ]
+        },
+        "reference": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uri",
+              "pattern": "^https://"
+            },
+            {
+              "const": "pending"
+            }
+          ]
+        },
+        "reviewed_at": {
+          "type": "string",
+          "format": "date"
+        },
+        "reviewer_role": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "approved"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "reviewer_role",
+              "reviewed_at"
+            ],
+            "properties": {
+              "reference": {
+                "type": "string",
+                "format": "uri",
+                "pattern": "^https://"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "execution_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tested_at",
+        "environment",
+        "result"
+      ],
+      "properties": {
+        "tested_at": {
+          "type": "string",
+          "format": "date"
+        },
+        "environment": {
+          "type": "string",
+          "minLength": 1
+        },
+        "result": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
     }
   },
   "allOf": [
@@ -168,11 +396,16 @@
         }
       },
       "then": {
+        "required": [
+          "expert_review"
+        ],
         "properties": {
           "status": {
             "enum": [
-              "review-required",
-              "retired"
+              "expert-review",
+              "needs-update",
+              "retired",
+              "published"
             ]
           }
         }
@@ -182,10 +415,7 @@
       "if": {
         "properties": {
           "status": {
-            "enum": [
-              "stable",
-              "published"
-            ]
+            "const": "published"
           }
         }
       },
@@ -196,6 +426,61 @@
               "A",
               "B"
             ]
+          },
+          "region": {
+            "not": {
+              "const": "unknown"
+            }
+          },
+          "last_verified_at": {
+            "type": "string",
+            "format": "date"
+          },
+          "execution_status": {
+            "const": "tested"
+          },
+          "claim_evidence": {
+            "items": {
+              "properties": {
+                "reviewer_status": {
+                  "enum": [
+                    "editorial-checked",
+                    "expert-approved"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "execution_record"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "risk_level": {
+            "const": "high"
+          },
+          "status": {
+            "const": "published"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "expert_review": {
+            "properties": {
+              "status": {
+                "const": "approved"
+              },
+              "reference": {
+                "type": "string",
+                "format": "uri",
+                "pattern": "^https://"
+              }
+            }
           }
         }
       }

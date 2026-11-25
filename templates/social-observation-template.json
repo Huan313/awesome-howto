@@ -1,0 +1,18 @@
+[
+  {
+    "platform": "xiaohongshu",
+    "title": "示例·核对设备备份",
+    "url": "https://www.xiaohongshu.com/explore/000000000000000000000000",
+    "query": "示例 自制",
+    "observed_at": "2026-11-25T09:00:00+08:00",
+    "summary": "虚构样本",
+    "task": "核对恢复选项",
+    "sample_limit": "example 默认排除",
+    "region": "unknown",
+    "signal_type": "demand",
+    "metrics": {
+      "comments": 0
+    },
+    "example": true
+  }
+]

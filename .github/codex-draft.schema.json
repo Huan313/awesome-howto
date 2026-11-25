@@ -1,57 +1,31 @@
 {
-  "title": "Codex guide body",
   "type": "object",
   "additionalProperties": false,
+  "required": [
+    "drafts"
+  ],
   "properties": {
-    "intro": {
-      "type": "string"
-    },
-    "audience": {
-      "type": "string"
-    },
-    "prerequisites": {
-      "type": "string"
-    },
-    "materials": {
-      "type": "string"
-    },
-    "steps": {
+    "drafts": {
       "type": "array",
       "items": {
         "type": "object",
         "additionalProperties": false,
+        "required": [
+          "topic_id",
+          "claim_order"
+        ],
         "properties": {
-          "action": {
+          "topic_id": {
             "type": "string"
           },
-          "check": {
-            "type": "string"
+          "claim_order": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
-        },
-        "required": [
-          "action",
-          "check"
-        ]
+        }
       }
-    },
-    "troubleshooting": {
-      "type": "string"
-    },
-    "limits": {
-      "type": "string"
-    },
-    "checklist": {
-      "type": "string"
     }
-  },
-  "required": [
-    "intro",
-    "audience",
-    "prerequisites",
-    "materials",
-    "steps",
-    "troubleshooting",
-    "limits",
-    "checklist"
-  ]
+  }
 }

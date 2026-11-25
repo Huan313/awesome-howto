@@ -16,7 +16,8 @@ from scripts.common import write_json, write_text
 from scripts.deduplicate_topics import cluster
 from scripts.ingest_manual_social_sources import read_records
 from scripts.normalize_topics import normalize
-from scripts.score_topics import metric_growth, score_group
+from scripts.evidence import matching_package, pending_package, reviewed_packages
+from scripts.score_topics import score_group_v2
 from scripts.validate_guides import validate_repository
 
 COLLECTION_ERRORS = (FetchError, ValueError, KeyError, TypeError, OSError, ParseError, DefusedXmlException)
@@ -33,7 +34,7 @@ def collect_observations(start, end, config, root=ROOT):
 
     def fetch(platform, name, getter, *, issues=None, normalized=False):
         count, skipped = 0, 0
-        status = {"platform": platform, "query": name, "status": "ok", "observations": 0}
+        status = {"platform": platform, "query": name, "status": "success", "observations": 0}
         try:
             for raw in getter(client):
                 try:
@@ -74,7 +75,7 @@ def collect_observations(start, end, config, root=ROOT):
                 fetch(platform, name, getter)
         else:
             statuses.append({"platform": platform, "query": "authorized API", "status": "skipped",
-                             "observations": 0, "reason": "not enabled"})
+                             "observations": 0, "reason": "disabled or missing authorized credentials"})
     for platform in config["manual"]["platforms"]:
         path = root / "data/source-cache" / platform / "observations.json"
         if path.is_file():
@@ -113,8 +114,12 @@ def md_url(url):
     return url.replace("(", "%28").replace(")", "%29")
 
 
-def write_report(output, mode, start, end, statuses, observations, guides, history_count):
-    candidates = [(score_group(group, guides), group) for group in cluster(observations)]
+def write_report(output, mode, start, end, statuses, observations, guides, history_count,
+                 *, packages=None, current_ids=None):
+    packages = packages or {}
+    if current_ids is None:
+        current_ids = {row["source_id"] for row in observations}
+    candidates = [(score_group_v2(group, guides, packages=packages), group) for group in cluster(observations)]
     candidates.sort(key=lambda item: (-item[0]["score"], item[0]["topic_id"]))
     decisions = Counter(topic["status"] for topic, _ in candidates)
     queue = [item for item in candidates if item[0]["status"] != "blocked"]
@@ -122,12 +127,14 @@ def write_report(output, mode, start, end, statuses, observations, guides, histo
     target = 10 if mode == "weekly" else 3
     if mode == "monthly":
         selected = [(topic, group) for topic, group in queue if (
-            topic["risk"] == "low" and topic["status"] in RESEARCH_STATUS
-            and (topic["signals"]["evidence"] >= 65 or len({row["platform"] for row in group}) >= 2)
+            topic["risk"] != "high" and topic["status"] in RESEARCH_STATUS
             and topic["category"] != "unclassified"
+            and (topic["demand_refs"] or topic["signals_v2"]["evidence_readiness"] != "unknown"
+                 or (topic["signals_v2"]["actionability"] != "unknown"
+                     and any(row["kind"] in {"official", "research"} for row in group)))
         )][:max_count]
     else:
-        selected = queue[:max_count]
+        selected = [(topic, group) for topic, group in queue if topic['status'] != 'deferred'][:max_count]
     label = "周度候选话题" if mode == "weekly" else "月度专题研究计划"
     date = end.astimezone(SHANGHAI).date().isoformat()
     directory = "weekly" if mode == "weekly" else "monthly"
@@ -135,7 +142,8 @@ def write_report(output, mode, start, end, statuses, observations, guides, histo
         f"# {label} · {date}", "",
         f"采集时间（UTC） {stamp(end)}。观测和事件窗口 {stamp(start)} 至 {stamp(end)}。",
         f"来源观测 {len(observations)} 条，候选聚类 {len(candidates)} 个，"
-        f"风险门槛拦截 {decisions['blocked']} 个。复用周报快照 {history_count} 份。",
+        f"风险门槛拦截 {decisions['blocked']} 个。复用周报快照 {history_count} 份。"
+        f"本轮 {len(current_ids)} 条，仅历史 {len(observations) - len(current_ids)} 条。",
         "", "本报告用于选题。公开讨论和聚合指标仅代表样本，评分需由编辑核对。"
         "参考来源类型用于识别潜在证据，核心事实仍需回到原文逐项验证。", "",
         "## 来源状态", "",
@@ -147,22 +155,48 @@ def write_report(output, mode, start, end, statuses, observations, guides, histo
     report.extend(["", "## 候选与依据", ""])
     if len(selected) < target:
         report.append(f"本期符合条件 {len(selected)} 项，少于目标 {target} 项。")
+    selections = []
     for topic, group in selected:
+        packet = matching_package(topic, group, packages)
+        research = {
+            "topic": topic, "source_refs": topic["source_refs"],
+            "current_refs": sorted(set(topic["source_refs"]) & current_ids),
+            "historical_refs": sorted(set(topic["source_refs"]) - current_ids),
+            "source_urls": sorted({item["url"] for item in group}),
+            "demand_evidence": [{
+                "source_id": item["source_id"], "url": item["url"], "task": item.get("task", "unknown"),
+                "sample_limit": item.get("sample_limit", "仅一条公开观测；样本代表性未知"),
+            } for item in group if item["source_id"] in topic["demand_refs"]],
+            "trend_evidence": topic["growth"],
+            "evidence_gaps": [] if packet else ["核对原始出处、步骤支持范围、地区、成本与受众",
+                                                 "以合成样例验收操作"],
+            "research_status": "editorial-approved" if packet else "needs-research",
+            "research_plan": ["核对可独立复核的公开需求", "定位原始资料和步骤说明", "用虚构输入演练"],
+            "outline": ["使用场景与限制", "前置与材料", "操作与验收", "排查与证据"],
+        }
+        selections.append(research)
+        write_json(output / "research" / f"{topic['topic_id']}.json", research)
+        matrix = packet or pending_package(topic, research["demand_evidence"])
+        write_json(output / "evidence" / f"{topic['topic_id']}.json", matrix)
         report.extend([
             "", f"### {escape(topic['title'])}", "",
             f"- {topic['topic_id']} · {topic['category']} · {topic['score']}/100 · "
             f"{topic['status']}。{topic['decision_reason']}。",
-            "- 分项　" + " / ".join(f"{key} {value}" for key, value in topic["signals"].items()) + "。",
-            f"- 标签　{', '.join(topic['personas'])}。场景 {', '.join(topic['scenarios']) or '待核对'}。",
+            "- V2 分项　" + " / ".join(f"{key} {value}" for key, value in topic["signals_v2"].items()) + "。",
+            f"- 基线 {topic['baseline']['score']}。覆盖度 {topic['coverage']:.0%}，"
+            f"置信度 {topic['confidence']}，独立 URL 样本 {topic['sample_count']}。"
+            f"风险 {topic['risk']}，{topic['risk_reason']}。",
+            f"- 标签　{', '.join(topic['personas'])}。场景 {', '.join(topic['scenarios'])}，地区 {topic['region']}。",
+            f"- 来源域名 {len(topic['unique_domains'])}，观测日期 {len(topic['unique_dates'])}，需求观测 {len(topic['demand_refs'])}。",
             f"- 首次与最近观测　{topic['first_seen']} → {topic['last_seen']}。",
         ])
         if topic["existing_guide"] != "none":
             report.append(f"- 已有指南　{topic['existing_guide']}。")
-        metrics = metric_growth(group)
-        if metrics:
-            report.append("- 同平台可比增长　" + "、".join(
-                f"{platform} {escape(query)} {unit} {growth:+.1f}%"
-                for platform, _, query, unit, growth in metrics[:5]
+        metrics = topic["growth"]
+        if metrics != "unknown":
+            report.append("- 同平台同指标变化　" + "、".join(
+                f"{item['platform']} {escape(item['query'])} {item['unit']} {item['percent']:+.1f}%"
+                for item in metrics[:5]
             ) + "。")
         else:
             report.append("- 缺少可比历史值，无法计算趋势增长。")
@@ -172,7 +206,8 @@ def write_report(output, mode, start, end, statuses, observations, guides, histo
         if mode == "monthly":
             sustained = len({row["observed_at"][:10] for row in group}) > 1
             report.extend([
-                f"- 持续性　{'多个日期有观测，需核对同类样本' if sustained else '单日观测，持续性待核对'}。",
+                f"- 持续性　{'多个日期收录，趋势仍需可比指标' if sustained else '单日观测，持续性待核对'}。",
+                f"- 原始解决方案证据　{'已匹配编辑审核包' if packet else '尚未核验，生成草稿前须补证'}。",
                 "- 证据缺口　确认典型读者、任务频率、原始材料实际支持的步骤，以及地区或版本限制。",
                 "- 研究计划　定位官方文档或原始论文，抽样核对读者问题，用虚构输入实测关键操作。",
                 "- HowTo 提纲　任务与受众 → 前置条件 → 操作与验收 → 故障与停止条件 → 可复查证据。",
@@ -183,7 +218,9 @@ def write_report(output, mode, start, end, statuses, observations, guides, histo
                       key=lambda row: row["source_id"]))
     write_json(output / "source-cache" / "source-status.json", statuses)
     write_json(output / "topic-queue" / f"{mode}-{date}.json", [topic for topic, _ in queue])
-    write_json(output / "selection.json", {"categories": sorted({topic["category"] for topic, _ in selected})})
+    write_json(output / "selection.json", {
+        "schema_version": 2, "window": {"start": stamp(start), "end": stamp(end)}, "topics": selections,
+    })
     write_text(output / directory / f"{date}.md", "\n".join(report) + "\n")
     print(f"{mode}: {len(selected)} selected, {len(queue)} in queue, {decisions['blocked']} blocked.")
     return selected
@@ -205,8 +242,9 @@ def main():
     seen = {row["source_id"]: row for row in history + records}
     guides, _ = validate_repository()
     write_report(args.output, args.mode, start, end, statuses, list(seen.values()),
-                 [item for _, item in guides], count)
-    if not any(item["status"] in {"ok", "partial"} and
+                 [item for _, item in guides], count, packages=reviewed_packages(),
+                 current_ids={row["source_id"] for row in records})
+    if not any(item["status"] in {"success", "partial"} and
                item["platform"] in {"github", "hackernews", "rss"} for item in statuses):
         raise SystemExit("No public collectors succeeded. Read source-cache/source-status.json.")
 

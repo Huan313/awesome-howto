@@ -2,28 +2,28 @@
 
 **Practical Knowledge for Everyday Life, Learning & AI** · [English](README_EN.md)
 
-把生活、学习和工作中的具体问题拆成可执行、可复查的步骤。每篇指南列出前置条件、验收方法和原始来源。
+找得到步骤，也查得到来源。每篇指南写明前置条件、预期结果、适用地区和审核状态。
 
-| 按主题浏览 | 从这里开始 |
+<!-- begin:counts -->
+**22 篇指南** · 20 篇草稿、2 篇待专业审核 · **53 条资源**
+<!-- end:counts -->
+
+## 我想解决什么问题
+
+| 主题 | 开始 |
 | --- | --- |
-| [Life · 生活](guides/index.md#生活) | 识别钓鱼消息，练习手机或电脑备份恢复 |
-| [Learning · 学习](guides/index.md#学习) | 做一次间隔复习，核对论文结论 |
-| [AI Skills · AI 技能](guides/index.md#ai-技能) | 用 Codex 发布项目，核验 AI 给出的引用 |
-| [Digital Skills · 数字技能](guides/index.md#数字技能) | 建立跨设备文件整理流程 |
-| [Work & Growth · 职场成长](guides/index.md#职场成长) | 准备进度汇报，比较课程投入 |
+| [生活](guides/index.md#生活) | Android 换机、家庭备份、核对可疑通知 |
+| [学习](guides/index.md#学习) | 主动回忆、读论文、Zotero |
+| [AI 技能](guides/index.md#ai-技能) | 会议纪要、成人备课、验收 Codex Skill |
+| [数字技能](guides/index.md#数字技能) | Time Machine、共享权限、账号迁移 |
+| [职场成长](guides/index.md#职场成长) | 项目汇报、面试、培训成本 |
 
-[按人群找指南](guides/people.md) · [GitHub 项目资源](resources/awesome-howto-projects.md) · [人群与场景标签](docs/persona-taxonomy.md)
+[人群](guides/people.md) · [年龄](guides/age-groups.md) · [职业](guides/occupations.md) · [人生阶段](guides/life-stages.md) · [场景](guides/scenarios.md) · [地区](guides/regions.md) · [难度](guides/difficulty.md) · [耗时](guides/time.md) · [费用](guides/cost.md) · [复查与状态](guides/review-status.md) · [最近更新](guides/recent.md)
 
-## 周报和月报
+## 原始资料与长期维护
 
-[周报归档](data/weekly/README.md) · [月报归档](data/monthly/README.md) · [选题队列](data/topic-queue/README.md)
+[GitHub 项目资源](resources/awesome-howto-projects.md) · [官方与原始资料](resources/official-resources.md) · [周度候选](data/weekly/README.md) · [每月研究计划](data/monthly/README.md)
 
-打开 GitHub Actions 的对应运行，下载报告 artifact。[运行频率和配置](docs/automation-guide.md)
+在项目根目录打开 Codex，输入 `$` 选择 [项目 Skills](docs/automation-guide.md#本地-codex-skills)。投稿前查看 [贡献流程](CONTRIBUTING.md)、[证据规则](docs/evidence-grading.md) 和 [安全政策](docs/safety-policy.md)。[可选站点](docs/pages-guide.md) · [V2 交付记录](docs/v2-release-report.md)
 
-## 用 Codex 研究或贡献
-
-在仓库根目录打开 Codex，输入 `$trend-scout` 或其他 [项目 Skills](docs/automation-guide.md#本地-codex-skills)。投稿前读 [贡献指南](CONTRIBUTING.md)、[证据分级](docs/evidence-grading.md) 和 [安全政策](docs/safety-policy.md)。索引显示每篇指南的审核状态。
-
-原创代码使用 [MIT](LICENSE)。原创文字使用 [CC BY 4.0](LICENSE-CONTENT)。第三方内容保留原始权利和适用许可。
-
-[首版交付与验证记录](docs/initial-release-report.md)
+原创代码使用 [MIT](LICENSE)。原创文字使用 [CC BY 4.0](LICENSE-CONTENT)。第三方保留原有权利及适用条款。

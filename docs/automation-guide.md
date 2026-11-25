@@ -29,6 +29,8 @@ python -m scripts.run_research monthly --history out/weekly-research --output ou
 | [`$howto-author`](../.agents/skills/howto-author/SKILL.md) | 从证据矩阵写出可验收步骤 |
 | [`$fact-safety-auditor`](../.agents/skills/fact-safety-auditor/SKILL.md) | 检查事实、安全、版权和隐私 |
 | [`$repo-maintainer`](../.agents/skills/repo-maintainer/SKILL.md) | 复核测试、索引、变更和 PR |
+| [`$topic-to-howto-pipeline`](../.agents/skills/topic-to-howto-pipeline/SKILL.md) | 从当期选题与证据创建草稿 |
+| [`$resource-curator`](../.agents/skills/resource-curator/SKILL.md) | 核对资源、许可和受众 |
 
 ## GitHub Actions
 
@@ -48,7 +50,7 @@ python -m scripts.run_research monthly --history out/weekly-research --output ou
 
 | 来源 | 当前接入 | 适用边界 |
 | --- | --- | --- |
-| GitHub、Hacker News、RSS | 默认启用 | GitHub Search、HN Firebase API、GitHub Changelog、Python 与 arXiv RSS；窗口与失败见报告 |
+| GitHub、Hacker News、RSS | 默认启用 | GitHub Search、HN Firebase API、GitHub Changelog、Python、NIST 与 arXiv RSS；窗口与失败见报告 |
 | 小红书 | 公开页面人工查阅，或批准的最小化观察导入 | OAuth 首期仅开放 `basic_info`，`read_notes` 在规划中 |
 | 抖音 | 默认人工导入；可启用应用授权热点 API | `hotsearch` 需要平台审核与对应应用权限 |
 | Reddit | 已批准客户端可用 OAuth adapter | 默认关闭；权限和令牌需由平台批准和维护 |
@@ -59,6 +61,8 @@ python -m scripts.run_research monthly --history out/weekly-research --output ou
 在 `data/source-cache/<platform>/observations.json` 写入 JSON 数组。每项填写 `platform`、公开 HTTPS `url`、自己概括的 `title`、`observed_at`（带时区的 ISO 8601 时间），并可加 `query`、允许发布的 `metrics` 和明确的 `topic_key`。默认方法为 `manual`，授权导出用 `authorized-export`。
 
 先运行 `python -m scripts.ingest_manual_social_sources xiaohongshu INPUT.json --output out/xiaohongshu-observations.json`。人工检查公开性和隐私后，再选取可提交项。采集器移除追踪参数，个别小红书笔记可能因此仍需登录，遇到这种情况可改用公开聚合入口或留作私下线索。API、授权导出与转载分别审批。参阅 [小红书授权范围文档](https://openaccount.xiaohongshu.com/docs/scope)。
+
+小红书还支持 [CSV](../templates/social-observation-template.csv) 和 [JSON](../templates/social-observation-template.json)。执行 `python -m scripts.ingest_social_csv xiaohongshu INPUT.csv --output out/xiaohongshu-observations.json`，核对 URL、指标单位和样本限制。标记 example 的条目跳过。分支手动试跑使用公开源。
 
 ### 抖音应用权限
 
@@ -72,6 +76,8 @@ python -m scripts.run_research monthly --history out/weekly-research --output ou
 
 默认无 API Key，公开采集和报告保持运行。想试用草稿时，添加 Repository Secret `OPENAI_API_KEY` 和 Repository Variable `ENABLE_CODEX_AUTOGEN=true`。如选择让 GITHUB_TOKEN 创建 Draft PR，在 **Settings → Actions → General → Workflow permissions** 启用 **Allow GitHub Actions to create and approve pull requests**；仓库工作流只执行创建。部分由机器人创建的 PR 检查可能需要维护者批准运行。参阅 [GitHub Actions 仓库权限设置](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository)。
 
-月报成功后，从版本控制中的 [编辑简报](../data/editorial-briefs.yaml) 选择相关类别里的首个低风险选题，或在手动运行时指定已批准的简报。未命中或已存在同题指南会跳过。Codex 使用隔离 job 的已核验摘要与固定输出格式。报告、外部网页、帖子、评论和 PR 标题不进入模型提示。模型步骤在 job 末尾并使用 workspace-write 与 drop-sudo。接收结果的另一 job 使用独立工作区，校验结构、来源、链接、指南状态和密钥后创建草稿 PR。模型启用路径支持从简报生成初稿，联网原文研究由编辑流程另行完成。参阅 [OpenAI Codex Action](https://github.com/openai/codex-action)。
+月报以 selection.json 中的具体 topic_id 匹配已审证据包与真实需求 URL。手动可在 draft_topic 输入实际 topic_id、auto 或 none。默认 auto 最多选择三项。证据不完整时照常上传研究计划。历史简报留作人工参考。
+
+模型在隔离 job 里选择和排序已审主张，渲染脚本依据证据填写资料、字段和出处。原始观察、Issue 和评论不进入模型指令。Codex 用 workspace-write 和 drop-sudo，并放在 job 末尾。另一 job 做质量与密钥检查，建立待人工审核的 Draft PR。含 Secret 的作业只在默认分支可用。[证据包](../data/evidence/README.md)
 
 暂停时将变量设为 `false`，并按需删除 Secret。轮换密钥时先关闭开关，替换仓库 Secret，撤销旧密钥，再启用并手动验证。只在仓库 Secret 中填写密钥，避免在 Issues、工作流文件或日志中粘贴。

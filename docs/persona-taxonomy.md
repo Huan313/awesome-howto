@@ -1,10 +1,7 @@
 # 人群、职业和场景
 
-指南的 `personas` 用于读者入口，`occupations` 用于职业或角色筛选，`scenarios` 对应发生问题的任务环境。可以设置多个标签。年龄组只表达适用范围，每个人的技能和需求以实际情况为准。
+读者身份在 personas，职业使用独立词表。例如 student 是身份，education-professional 是职业。无职业要求时用 not-applicable，职责、年龄、阶段或地区未知时用 unknown。年龄表达适用范围。针对儿童的说明面向家长或监护人，0–17 岁相关指南提高风险级别。
 
-- 0–12 标签面向监护人，13–17 涉及未成年人时提升审查要求。
-- 18–24、25–34、35–44、45–59、60+ 供读者筛选。
-- 地区填 `global` 或实际区域。中国大陆制度性内容标注地区、官方来源与核验日期。
-- 性别、职业和年龄相关的需求以可核验样本或明确读者问题为依据。
+同一个场景可以有不同职业和人生阶段。性别只在直接相关且确有证据时记录。地区由产品范围、研究样本或政策辖区决定。FTC 条款和报告使用 united-states。
 
-[人群词表](../data/personas.yaml) · [场景词表](../data/scenarios.yaml) · [主题词表](../data/topic-taxonomy.yaml)
+[人群](../data/personas.yaml) · [职业](../data/occupations.yaml) · [人生阶段](../data/life-stages.yaml) · [地区](../data/regions.yaml) · [场景](../data/scenarios.yaml) · [主题](../data/topic-taxonomy.yaml)

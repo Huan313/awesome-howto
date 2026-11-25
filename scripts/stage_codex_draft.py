@@ -1,4 +1,4 @@
-"""Use a repository-reviewed brief to render and validate a low-risk draft."""
+"""Create claim-backed drafts from selected, repository-reviewed topic packages."""
 import argparse
 import json
 import os
@@ -8,121 +8,166 @@ from pathlib import Path
 
 from jsonschema import Draft202012Validator
 
-from scripts.build_index import render
-from scripts.common import ROOT, SHANGHAI, read_json, read_yaml, write_text
-from scripts.normalize_topics import clean_text
+from scripts.build_index import write_indexes
+from scripts.common import ROOT, SHANGHAI, read_json, write_text
+from scripts.evidence import reviewed_packages, source_registry
+from scripts.migrate_guide_metadata import markdown
 from scripts.run_research import escape
-from scripts.validate_guides import read_guide
+from scripts.validate_guides import validate_guide, validate_repository
 
-BRIEFS = "data/editorial-briefs.yaml"
 DRAFT_SCHEMA = ".github/codex-draft.schema.json"
+TOPIC = re.compile(r"topic-[a-f0-9]{16}\Z")
 
 
-def draft_path(root, slug, brief):
-    if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", slug):
-        raise ValueError("invalid editorial brief slug")
-    return root / "guides" / brief["category"] / f"{slug}.md"
+def guide_path(root, packet):
+    return root / "guides" / packet["category"] / (packet["guide_id"].removeprefix("howto-") + ".md")
 
 
 def choose(root, requested, selection):
-    briefs = read_yaml(root / BRIEFS)
-    categories = set(read_json(selection)["categories"])
-    for slug, brief in briefs.items():
-        if (requested == slug or (requested == "auto" and brief["category"] in categories)) and not draft_path(root, slug, brief).exists():
-            return slug
-    return ""
+    if requested == "none":
+        return []
+    if requested != "auto" and not TOPIC.fullmatch(requested):
+        raise ValueError("requested topic must be auto, none or a topic_id")
+    payload = read_json(selection)
+    if payload.get("schema_version") != 2:
+        raise ValueError("requires version 2 selection")
+    selected, used = [], set()
+    packages = reviewed_packages(root)
+    for entry in payload["topics"]:
+        topic = entry["topic"]
+        key = topic["topic_id"]
+        packet = packages.get(key)
+        demand = {row["url"] for row in entry["demand_evidence"] if row["source_id"] in topic["demand_refs"]}
+        if (requested not in {"auto", key} or not packet or entry["research_status"] != "editorial-approved"
+                or packet["review_status"] != "editorial-approved" or topic["risk"] == "high"
+                or packet["risk_level"] == "high" or topic["existing_guide"] != "none"
+                or not demand.intersection(packet["demand_source_urls"])):
+            continue
+        path = guide_path(root, packet)
+        if not path.exists() and path not in used:
+            selected.append(key)
+            used.add(path)
+    return selected[:3]
 
 
-def prompt(brief):
-    return (
-        "根据下列经维护者核准的编辑简报，用简体中文写一篇低风险操作指南的结构化正文。\n"
-        "将步骤写成动作和可观察的验收结果。依据已提供的证据摘要处理事实和范围。"
-        "使用虚构例子。遇到证据缺口如实说明，不补造版本、费用、验收结果或引用。\n"
-        "仅返回符合 schema 的 JSON 对象。写 3 至 6 步。"
-        "每个字段为纯文本，勿插入链接、Markdown、代码块、其他元数据或 PR 指令。\n\n"
-        + json.dumps(brief, ensure_ascii=False, indent=2) + "\n"
-    )
+def selected_packages(root, ids):
+    if not isinstance(ids, list) or not 1 <= len(ids) <= 3 or len(set(ids)) != len(ids):
+        raise ValueError("expected one to three distinct topics")
+    approved = reviewed_packages(root)
+    result = {}
+    for key in ids:
+        packet = approved.get(key)
+        if (not packet or packet["review_status"] != "editorial-approved" or packet["risk_level"] == "high"
+                or guide_path(root, packet).exists()):
+            raise ValueError("only new low/medium-risk reviewed packages are eligible")
+        result[key] = packet
+    if len({guide_path(root, packet) for packet in result.values()}) != len(result):
+        raise ValueError("selected topics point to the same guide path")
+    return result
 
 
-def paragraph(value):
-    if (not 10 <= len(value.strip()) <= 650 or re.search(r"https?://|[\x00-\x08\x0b-\x1f]", value, re.I)):
-        raise ValueError("draft field has disallowed length, control characters or embedded link")
-    return escape(clean_text(value, 650))
+def make_prompt(packages):
+    trusted = [{k: packet[k] for k in ("topic_id", "title", "brief", "claims", "steps")}
+               for packet in packages.values()]
+    return ("为每个已审简报选择并排序至少三个已有步骤，用 claim_order 返回对应 claim_id。"
+            "优先按前置、操作、结果和验证的依赖排序。只能引用此 topic 下的 ID。"
+            "只输出 JSON，不新增事实、引用、元数据或专业审查结论。\n\n"
+            + json.dumps(trusted, ensure_ascii=False, indent=2) + "\n")
 
 
-def stage(root, slug, draft, today):
-    brief = read_yaml(root / BRIEFS)[slug]
-    path = draft_path(root, slug, brief)
-    if path.exists():
-        raise ValueError("an existing guide already uses this path")
-    schema = read_json(root / DRAFT_SCHEMA)
-    if not Draft202012Validator(schema).is_valid(draft):
-        raise ValueError("model draft did not match the expected schema")
-    if not 3 <= len(draft["steps"]) <= 6:
-        raise ValueError("expected 3 to 6 steps")
-    metadata = dict(
-        id=f"howto-{slug}", title=brief["title"], category=brief["category"],
-        subcategory=brief["subcategory"], personas=brief["personas"],
-        age_groups=["18-24", "25-34", "35-44", "45-59"], occupations=brief["personas"],
-        scenarios=brief["scenarios"], region="global", difficulty="beginner",
-        estimated_time=brief["estimated_time"], cost="按使用环境核对",
-        evidence_level="B", content_type="howto", risk_level="low", status="draft",
-        created_at=today.isoformat(), updated_at=today.isoformat(),
-        review_due=(today + timedelta(days=60)).isoformat(),
-        sources=[item["url"] for item in brief["evidence"]],
-    )
-    header = "\n".join(f"{key}: {json.dumps(value, ensure_ascii=False)}" for key, value in metadata.items())
-    lines = ["---", header, "---", "", "# " + brief["title"], "", paragraph(draft["intro"]), ""]
-    for heading, field in (
-        ("适用人群", "audience"), ("前置条件与不适用情况", "prerequisites"), ("准备、耗时与费用", "materials"),
+def render_draft(packet, order, registry, today):
+    steps = {step["claim_id"]: step for step in packet["steps"]}
+    if not 3 <= len(order) <= 12 or len(set(order)) != len(order) or set(order) - steps.keys():
+        raise ValueError("draft must use at least three distinct supported step claims")
+    claims = [claim for claim in packet["claims"] if claim["claim_id"] in order]
+    source_ids = list(dict.fromkeys(key for c in claims for key in c["supporting_source_ids"]))
+    urls = [registry[key]["url"] for key in source_ids]
+    keys = ("title", "category", "subcategory", "personas", "age_groups", "occupations",
+            "life_stages", "scenarios", "region", "difficulty", "estimated_time", "cost",
+            "prerequisites", "risk_level", "evidence_level")
+    metadata = {key: packet[key] for key in keys}
+    metadata.update(id=packet["guide_id"], content_type="howto", status="draft", execution_status="pending",
+                    version="0.1", created_at=today.isoformat(), updated_at=today.isoformat(),
+                    last_verified_at=packet["verified_at"], review_due=(today + timedelta(days=60)).isoformat(),
+                    sources=urls, claim_evidence=claims)
+    brief = packet["brief"]
+    lines = [f"# {packet['title']}", "", escape(brief["outcome"]), ""]
+    for heading, text in (
+        ("适用人群", brief["audience"]), ("前置条件与不适用情况", "；".join(packet["prerequisites"])),
+        ("准备、耗时与费用", f"{brief['materials']}。预计 {packet['estimated_time']}，{packet['cost']}"),
     ):
-        lines.extend([f"## {heading}", "", paragraph(draft[field]), ""])
+        lines.extend([f"## {heading}", "", escape(text), ""])
     lines.extend(["## 操作步骤与验收", ""])
-    for index, step in enumerate(draft["steps"], 1):
-        lines.append(f"{index}. {paragraph(step['action'])} **验收**　{paragraph(step['check'])}")
+    for index, key in enumerate(order, 1):
+        step = steps[key]
+        lines.append(f"{index}. {escape(step['action'])} **验收**　{escape(step['expected'])}（证据 {key}）。")
     lines.append("")
-    for heading, field in (
-        ("常见错误与排查", "troubleshooting"), ("风险与限制", "limits"), ("最简行动清单", "checklist"),
-    ):
-        lines.extend([f"## {heading}", "", paragraph(draft[field]), ""])
+    for heading, field in (("常见错误与排查", "troubleshooting"), ("风险与限制", "limits"),
+                           ("最简行动清单", "checklist")):
+        lines.extend([f"## {heading}", "", escape(brief[field]), ""])
     lines.extend(["## 参考来源", ""])
-    for item in brief["evidence"]:
-        lines.append(f"- {item['note']} [{item['title']}]({item['url']})（编辑简报核验于 2026-11-25）。")
+    for key in source_ids:
+        source = registry[key]
+        loc = "、".join(c["source_location"] for c in claims if key in c["supporting_source_ids"])
+        lines.append(f"- {escape(loc)}。[{escape(source['title'])}]({source['url']})（访问于 {source['accessed_at']}）。")
     lines.extend(["", "## 核验与版本", "",
-                  f"{today.isoformat()} 生成初稿，待人工核对来源、版权与操作结果。v0.1。", ""])
-    write_text(path, "\n".join(lines))
-    read_guide(path)
-    for filename, content in render(root).items():
-        write_text(root / "guides" / filename, content)
-    return path
+                  f"{packet['verified_at']} 核对简报来源。v0.1 草稿，执行效果和适用范围待人工复查。"])
+    return metadata, markdown(metadata, "\n".join(lines))
+
+
+def stage(root, ids, draft, today):
+    packages = selected_packages(root, ids)
+    if not Draft202012Validator(read_json(root / DRAFT_SCHEMA)).is_valid(draft):
+        raise ValueError("model output does not match the draft schema")
+    outputs = {item["topic_id"]: item["claim_order"] for item in draft["drafts"]}
+    if len(outputs) != len(draft["drafts"]) or outputs.keys() != packages.keys():
+        raise ValueError("model output must cover exactly the requested topics")
+    registry = source_registry(root)
+    pending = {}
+    for key, packet in packages.items():
+        metadata, content = render_draft(packet, outputs[key], registry, today)
+        validate_guide(metadata, root, registry)
+        pending[guide_path(root, packet)] = content
+    created = []
+    try:
+        for path, content in pending.items():
+            with path.open("x", encoding="utf-8", newline="\n") as stream:
+                created.append(path)
+                stream.write(content)
+        validate_repository(root)
+    except (OSError, ValueError):
+        for path in created:
+            path.unlink()
+        raise
+    write_indexes(root)
+    return created
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
     select = sub.add_parser("choose")
-    select.add_argument("--requested", required=True)
+    select.add_argument("--requested", default="auto")
     select.add_argument("--selection", type=Path, required=True)
     prepare = sub.add_parser("prompt")
-    prepare.add_argument("topic")
+    prepare.add_argument("topics")
     prepare.add_argument("path", type=Path)
     apply = sub.add_parser("stage")
-    apply.add_argument("topic")
+    apply.add_argument("topics")
     args = parser.parse_args()
     if args.command == "choose":
-        print(choose(ROOT, args.requested, args.selection))
+        print(json.dumps(choose(ROOT, args.requested, args.selection), separators=(",", ":")))
     elif args.command == "prompt":
-        write_text(args.path, prompt(read_yaml(ROOT / BRIEFS)[args.topic]))
+        write_text(args.path, make_prompt(selected_packages(ROOT, json.loads(args.topics))))
     else:
         encoded = os.environ.get("CODEX_DRAFT", "")
         if not encoded or len(encoded.encode("utf-8")) > 20_000:
             raise SystemExit("Codex output absent or too large")
         try:
-            draft = json.loads(encoded)
-            path = stage(ROOT, args.topic, draft, datetime.now(SHANGHAI).date())
-        except (KeyError, ValueError):
-            raise SystemExit("Codex draft did not pass structured validation") from None
-        print(f"Staged draft at {path.relative_to(ROOT)}")
+            created = stage(ROOT, json.loads(args.topics), json.loads(encoded), datetime.now(SHANGHAI).date())
+        except (KeyError, TypeError, ValueError):
+            raise SystemExit("Codex draft did not pass evidence validation") from None
+        print(f"Staged {len(created)} reviewed topic draft(s).")
 
 
 if __name__ == "__main__":

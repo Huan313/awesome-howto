@@ -9,7 +9,9 @@ TOKEN_URL = "https://open.douyin.com/oauth/client_token/"
 
 
 def units(config, end):
-    if os.getenv(config["enabled_by"]) == "true":
+    credentials = os.getenv("DOUYIN_CLIENT_TOKEN") or (
+        os.getenv("DOUYIN_CLIENT_KEY") and os.getenv("DOUYIN_CLIENT_SECRET"))
+    if os.getenv(config["enabled_by"]) == "true" and credentials:
         yield "实时热点词", lambda client: collect(client, end)
 
 

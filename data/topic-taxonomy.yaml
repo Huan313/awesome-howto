@@ -3,7 +3,12 @@
     "label": "生活",
     "scenarios": [
       "account-safety",
-      "device-backup"
+      "device-backup",
+      "change-smartphone",
+      "back-up-chat-history",
+      "detect-scam",
+      "manage-personal-budget",
+      "household-recovery"
     ],
     "keywords": [
       "scam",
@@ -14,14 +19,38 @@
       "诈骗",
       "备份",
       "家庭",
-      "整理"
+      "整理",
+      "android",
+      "restore",
+      "consumer",
+      "scam",
+      "household",
+      "食品安全"
+    ],
+    "subcategories": [
+      "cooking-and-food",
+      "home-and-household",
+      "personal-care",
+      "family-and-caregiving",
+      "health-literacy",
+      "personal-finance-basics",
+      "consumer-rights",
+      "online-safety",
+      "relationships-and-communication",
+      "travel-and-daily-services",
+      "emergency-preparedness",
+      "organization-and-productivity"
     ]
   },
   "learning": {
     "label": "学习",
     "scenarios": [
       "skill-learning",
-      "paper-reading"
+      "paper-reading",
+      "prepare-for-exam",
+      "review-research-paper",
+      "learn-by-project",
+      "manage-references"
     ],
     "keywords": [
       "spaced repetition",
@@ -31,7 +60,24 @@
       "paper",
       "复习",
       "学习",
-      "论文"
+      "论文",
+      "zotero",
+      "retrieval",
+      "citation",
+      "education"
+    ],
+    "subcategories": [
+      "study-methods",
+      "exam-preparation",
+      "language-learning",
+      "reading-and-research",
+      "critical-thinking",
+      "memory-and-recall",
+      "note-taking",
+      "project-based-learning",
+      "academic-writing",
+      "lifelong-learning",
+      "career-reskilling"
     ]
   },
   "ai": {
@@ -39,7 +85,13 @@
     "scenarios": [
       "ai-productivity",
       "fact-checking",
-      "project-release"
+      "project-release",
+      "create-presentation",
+      "prepare-lesson",
+      "automate-repetitive-task",
+      "publish-github-project",
+      "evaluate-ai",
+      "summarize-meeting"
     ],
     "keywords": [
       "codex",
@@ -49,13 +101,36 @@
       "prompt",
       "chatgpt",
       "人工智能",
-      "引用"
+      "引用",
+      "rag",
+      "inference",
+      "model evaluation",
+      "生成式"
+    ],
+    "subcategories": [
+      "chatgpt-for-everyday",
+      "prompt-and-context",
+      "codex-and-coding-agents",
+      "agent-skills",
+      "workflow-automation",
+      "ai-for-office",
+      "ai-for-teachers",
+      "ai-for-research",
+      "ai-for-creators",
+      "ai-for-small-business",
+      "local-llm",
+      "ai-privacy-and-security",
+      "evaluation-and-reliability",
+      "image-audio-video-ai"
     ]
   },
   "digital": {
     "label": "数字技能",
     "scenarios": [
-      "file-management"
+      "file-management",
+      "recover-lost-account",
+      "share-file",
+      "restore-files"
     ],
     "keywords": [
       "file management",
@@ -64,14 +139,33 @@
       "browser",
       "文件",
       "数字",
-      "存档"
+      "存档",
+      "oneDrive",
+      "backup-and-recovery",
+      "2fa",
+      "版本"
+    ],
+    "subcategories": [
+      "smartphone",
+      "computer-basics",
+      "file-management",
+      "backup-and-recovery",
+      "account-and-passwords",
+      "privacy-and-security",
+      "cloud-storage",
+      "office-software",
+      "browser-and-search",
+      "accessibility-and-digital-literacy"
     ]
   },
   "work": {
     "label": "职场成长",
     "scenarios": [
       "work-reporting",
-      "course-selection"
+      "course-selection",
+      "write-work-report",
+      "practice-interview",
+      "career-planning"
     ],
     "keywords": [
       "work report",
@@ -81,7 +175,23 @@
       "自动化",
       "职场",
       "课程",
-      "汇报"
+      "汇报",
+      "interview",
+      "job search",
+      "meeting",
+      "面试"
+    ],
+    "subcategories": [
+      "job-search",
+      "resume-and-portfolio",
+      "interview",
+      "workplace-communication",
+      "meetings-and-reporting",
+      "project-management",
+      "career-development",
+      "freelancing",
+      "entrepreneurship-basics",
+      "professional-productivity"
     ]
   }
 }

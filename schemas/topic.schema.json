@@ -120,7 +120,8 @@
     "risk": {
       "enum": [
         "low",
-        "high"
+        "high",
+        "medium"
       ]
     },
     "status": {
@@ -140,6 +141,237 @@
     "existing_guide": {
       "type": "string",
       "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "schema_version": {
+      "const": 2
+    },
+    "baseline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "score",
+        "status"
+      ],
+      "properties": {
+        "score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "status": {
+          "type": "string"
+        }
+      }
+    },
+    "region": {
+      "type": "string"
+    },
+    "risk_reason": {
+      "type": "string"
+    },
+    "confidence": {
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "coverage": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "sample_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "unique_domains": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "unique_dates": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "date"
+      },
+      "uniqueItems": true
+    },
+    "source_types": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 1
+      }
+    },
+    "signals_v2": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "demand",
+        "trend",
+        "persona_confidence",
+        "evidence_readiness",
+        "actionability",
+        "novelty"
+      ],
+      "properties": {
+        "demand": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            },
+            {
+              "const": "unknown"
+            }
+          ]
+        },
+        "trend": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            },
+            {
+              "const": "unknown"
+            }
+          ]
+        },
+        "persona_confidence": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            },
+            {
+              "const": "unknown"
+            }
+          ]
+        },
+        "evidence_readiness": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            },
+            {
+              "const": "unknown"
+            }
+          ]
+        },
+        "actionability": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            },
+            {
+              "const": "unknown"
+            }
+          ]
+        },
+        "novelty": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            },
+            {
+              "const": "unknown"
+            }
+          ]
+        }
+      }
+    },
+    "growth": {
+      "anyOf": [
+        {
+          "const": "unknown"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "platform",
+              "unit",
+              "url",
+              "query",
+              "percent"
+            ],
+            "properties": {
+              "platform": {
+                "type": "string"
+              },
+              "unit": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              },
+              "query": {
+                "type": "string"
+              },
+              "percent": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "demand_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "evidence_source_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      },
+      "uniqueItems": true
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {
+        "required": [
+          "schema_version"
+        ]
+      },
+      "then": {
+        "required": [
+          "schema_version",
+          "baseline",
+          "region",
+          "risk_reason",
+          "confidence",
+          "coverage",
+          "sample_count",
+          "unique_domains",
+          "unique_dates",
+          "source_types",
+          "signals_v2",
+          "growth",
+          "demand_refs",
+          "evidence_source_ids"
+        ]
+      }
+    }
+  ]
 }

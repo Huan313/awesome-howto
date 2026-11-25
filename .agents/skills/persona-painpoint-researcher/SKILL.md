@@ -5,6 +5,10 @@ description: "查证特定人群在具体场景中的痛点，产出读者、问
 
 # persona-painpoint-researcher
 
+## 触发条件
+
+核验特定读者在某任务的困难时触发。年龄和职业猜测保留 unknown。
+
 ## 输入与目标
 
 读者群、地区、使用场景以及一组明示需求或可追溯样本。先确定研究问题和纳入标准。
@@ -20,3 +24,11 @@ description: "查证特定人群在具体场景中的痛点，产出读者、问
 ## 示例与验收
 
 输入 `$persona-painpoint-researcher 研究换手机时成年人遇到的验证器转移问题`。只有一条公开讨论的虚构试例必须标为待验证，并指出独立样本缺口。
+
+## V2 文件、权限和验收
+
+读 `data/personas.yaml`、`data/occupations.yaml`、`data/life-stages.yaml`。从事实样本出发，收集读者自述或有出处的调查。
+
+将脱敏记录写入 `data/research/`，每一行注明样本和地区。禁止保存个人账号或推断敏感身份。
+
+回归命令 `python -m unittest discover -s tests -p test_v2_contract.py`。

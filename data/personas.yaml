@@ -16,7 +16,9 @@
     "parent": "家长",
     "caregiver": "照护者",
     "job-seeker": "求职者",
-    "retiree": "退休人士"
+    "retiree": "退休人士",
+    "small-business-owner": "小企业经营者",
+    "unknown": "未核定"
   },
   "age_groups": [
     "0-12",
@@ -25,6 +27,7 @@
     "25-34",
     "35-44",
     "45-59",
-    "60+"
+    "60+",
+    "unknown"
   ]
 }

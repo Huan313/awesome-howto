@@ -2,11 +2,22 @@
 
 **Practical Knowledge for Everyday Life, Learning & AI** · [简体中文](README.md)
 
-A Chinese-first library of practical guides with step-by-step checks and traceable sources. Browse [guides by topic](guides/index.md) or [guides by audience](guides/people.md). Drafts and material awaiting review carry visible status labels.
+A Chinese-first library of practical guides with checkable steps, primary references, regional scope and explicit review status.
 
-- [Public GitHub resource catalog](resources/awesome-howto-projects.md)
-- [Weekly reports](data/weekly/README.md) and [monthly reports](data/monthly/README.md)
-- [Local commands, schedules and six repo-local Codex Skills](docs/automation-guide.md)
-- [Contribution guide](CONTRIBUTING.md), [evidence grades](docs/evidence-grading.md) and [safety policy](docs/safety-policy.md)
+<!-- begin:counts -->
+**22 guides** · 20 drafts, 2 expert review · **53 resources**
+<!-- end:counts -->
 
-Original code is [MIT](LICENSE). Original writing is [CC BY 4.0](LICENSE-CONTENT). Third-party content retains its original rights and terms.
+## Find a guide
+
+[Life](guides/index.md#生活) · [Learning](guides/index.md#学习) · [AI Skills](guides/index.md#ai-技能) · [Digital Skills](guides/index.md#数字技能) · [Work & Growth](guides/index.md#职场成长)
+
+[Audience](guides/people.md) · [Age](guides/age-groups.md) · [Occupation](guides/occupations.md) · [Life stage](guides/life-stages.md) · [Scenario](guides/scenarios.md) · [Region](guides/regions.md) · [Difficulty](guides/difficulty.md) · [Time](guides/time.md) · [Cost](guides/cost.md) · [Review status](guides/review-status.md) · [Recently updated](guides/recent.md)
+
+## Resources and contributing
+
+[GitHub projects](resources/awesome-howto-projects.md) · [Primary and official resources](resources/official-resources.md) · [Weekly scans](data/weekly/README.md) · [Monthly research plans](data/monthly/README.md)
+
+[Contribute](CONTRIBUTING.md) · [Evidence grades](docs/evidence-grading.md) · [Safety](docs/safety-policy.md) · [Codex Skills](docs/automation-guide.md#本地-codex-skills) · [Optional website](docs/pages-guide.md) · [V2 delivery](docs/v2-release-report.md)
+
+Original code is [MIT](LICENSE) and original writing is [CC BY 4.0](LICENSE-CONTENT). Third-party rights and terms apply.

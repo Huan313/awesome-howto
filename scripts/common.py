@@ -109,10 +109,15 @@ class Client:
                         raise FetchError("oversize response")
                     return data
             except HTTPError as error:
-                reason = f"HTTP {error.code}"
-                retryable = error.code in (408, 429, 500, 502, 503, 504)
                 raw_delay = error.headers.get("Retry-After", "")
+                rate_limited = error.code == 429 or (
+                    error.code == 403 and (raw_delay or error.headers.get("X-RateLimit-Remaining") == "0"))
+                reason = f"HTTP {error.code}" + (" (rate limit)" if rate_limited else "")
+                retryable = rate_limited or error.code in (408, 500, 502, 503, 504)
                 retry_after = int(raw_delay) if raw_delay.isdecimal() and len(raw_delay) < 8 else 0
+                reset = error.headers.get("X-RateLimit-Reset", "")
+                if rate_limited and not retry_after and reset.isdecimal() and len(reset) <= 12:
+                    retry_after = max(0, int(reset) - int(time.time()) + 1)
                 error.close()
                 if not retryable or retry_after > 20:
                     raise FetchError(reason) from None

@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "title",
+    "url",
+    "kind",
+    "category",
+    "description",
+    "audience",
+    "editorial_grade",
+    "use_mode",
+    "borrow",
+    "limitations",
+    "checked_at",
+    "github"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://"
+    },
+    "kind": {
+      "enum": [
+        "github",
+        "reference"
+      ]
+    },
+    "category": {
+      "enum": [
+        "life-howto",
+        "cooking-household",
+        "health-safety",
+        "learning-study",
+        "career-work",
+        "digital-security",
+        "ai-everyone",
+        "ai-engineering",
+        "agent-skills",
+        "research-productivity",
+        "official-documentation"
+      ]
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "audience": {
+      "type": "string",
+      "minLength": 1
+    },
+    "editorial_grade": {
+      "enum": [
+        "curated",
+        "useful",
+        "reference-only",
+        "license-unclear"
+      ]
+    },
+    "use_mode": {
+      "enum": [
+        "direct-reference",
+        "review-before-running",
+        "reference-only"
+      ]
+    },
+    "borrow": {
+      "type": "string",
+      "minLength": 1
+    },
+    "limitations": {
+      "type": "string",
+      "minLength": 1
+    },
+    "checked_at": {
+      "type": "string",
+      "format": "date"
+    },
+    "github": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "stars",
+            "forks",
+            "pushed_at",
+            "archived",
+            "license",
+            "license_url"
+          ],
+          "properties": {
+            "stars": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "forks": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "pushed_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "archived": {
+              "type": "boolean"
+            },
+            "license": {
+              "type": "string",
+              "minLength": 1
+            },
+            "license_url": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "string",
+                  "format": "uri",
+                  "pattern": "^https://"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}

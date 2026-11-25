@@ -8,6 +8,7 @@ from pathlib import Path
 from markdown_it import MarkdownIt
 
 from scripts.common import ROOT, read_yaml, validate, validator
+from scripts.evidence import source_registry, validate_claims
 from scripts.normalize_topics import public_url
 
 SECTIONS = (
@@ -16,7 +17,7 @@ SECTIONS = (
 )
 SKILLS = {
     "trend-scout", "persona-painpoint-researcher", "evidence-researcher",
-    "howto-author", "fact-safety-auditor", "repo-maintainer",
+    "howto-author", "fact-safety-auditor", "repo-maintainer", "topic-to-howto-pipeline", "resource-curator",
 }
 MARKDOWN = MarkdownIt("commonmark")
 
@@ -39,25 +40,40 @@ def links(markdown):
     return walk(MARKDOWN.parse(markdown))
 
 
-def validate_guide(metadata):
+def validate_guide(metadata, root=ROOT, registry=None):
     validate("guide", metadata)
     if not (date.fromisoformat(metadata["created_at"]) <= date.fromisoformat(metadata["updated_at"])
             < date.fromisoformat(metadata["review_due"])):
         raise ValueError("dates must satisfy created_at <= updated_at < review_due")
-    for url in metadata["sources"]:
-        public_url(url)
+    verified = metadata["last_verified_at"]
+    if verified != "pending" and not (verified <= metadata["updated_at"]):
+        raise ValueError("verification date cannot follow the last update")
+    registry = source_registry(root) if registry is None else registry
+    urls = validate_claims(metadata["claim_evidence"], registry, metadata["region"],
+                           ready=metadata["status"] == "published")
+    if set(metadata["sources"]) != urls:
+        raise ValueError("all reference URLs must be registered and mapped to claims")
+    expert = metadata.get("expert_review", {})
+    if expert.get("status") == "approved":
+        public_url(expert["reference"])
+        if not (expert["reviewed_at"] <= metadata["updated_at"]):
+            raise ValueError("expert approval date cannot follow the last update")
+        if any(claim["reviewer_status"] != "expert-approved" for claim in metadata["claim_evidence"]):
+            raise ValueError("expert approval requires a complete expert-reviewed matrix")
+    if metadata.get("execution_record", {}).get("tested_at", metadata["updated_at"]) > metadata["updated_at"]:
+        raise ValueError("execution date cannot follow the last update")
     if {"0-12", "13-17"} & set(metadata["age_groups"]) and metadata["risk_level"] != "high":
         raise ValueError("guides targeting minors need high-risk review")
     if "0-12" in metadata["age_groups"] and not {"parent", "caregiver"} & set(metadata["personas"]):
         raise ValueError("guides for ages 0–12 must address a guardian")
 
 
-def read_guide(path):
+def read_guide(path, root=ROOT, registry=None):
     from scripts.common import parse_yaml
 
     header, body = split_frontmatter(path)
     metadata = parse_yaml(header)
-    validate_guide(metadata)
+    validate_guide(metadata, root, registry)
     titles = re.findall(r"^# (.+)$", body, re.M)
     if titles != [metadata["title"]]:
         raise ValueError("expected one H1 matching title")
@@ -77,22 +93,33 @@ def read_guide(path):
 def validate_repository(root=ROOT):
     personas = read_yaml(root / "data/personas.yaml")["personas"]
     scenarios = read_yaml(root / "data/scenarios.yaml")
+    occupations = read_yaml(root / "data/occupations.yaml")
+    stages = read_yaml(root / "data/life-stages.yaml")
+    regions = read_yaml(root / "data/regions.yaml")
+    registry = source_registry(root)
     taxonomy = read_yaml(root / "data/topic-taxonomy.yaml")
     findings, guides, identifiers, titles = [], [], set(), set()
     for path in sorted((root / "guides").glob("*/*.md")):
         try:
-            metadata, _ = read_guide(path)
+            metadata, _ = read_guide(path, root, registry)
             if path.parent.name != metadata["category"] or path.stem != metadata["id"].removeprefix("howto-"):
                 raise ValueError("category or ID does not match the path")
             title = unicodedata.normalize("NFKC", metadata["title"]).casefold()
             if metadata["id"] in identifiers or title in titles:
                 raise ValueError("duplicate ID or title")
-            if set(metadata["personas"] + metadata["occupations"]) - personas.keys():
-                raise ValueError("unknown persona or occupation")
-            if set(metadata["scenarios"]) - set(taxonomy[metadata["category"]]["scenarios"]):
+            for field, vocabulary in (("personas", personas), ("occupations", occupations),
+                                      ("life_stages", stages), ("scenarios", scenarios)):
+                if set(metadata[field]) - vocabulary.keys():
+                    raise ValueError(f"unknown {field} label")
+                if "unknown" in metadata[field] and len(metadata[field]) > 1:
+                    raise ValueError(f"{field} cannot mix unknown and known values")
+            category = taxonomy[metadata["category"]]
+            if metadata["subcategory"] not in category["subcategories"]:
+                raise ValueError("subcategory does not belong to this category")
+            if set(metadata["scenarios"]) - {*category["scenarios"], "unknown"}:
                 raise ValueError("scenario does not belong to this category")
-            if set(metadata["scenarios"]) - scenarios.keys():
-                raise ValueError("unknown scenario")
+            if metadata["region"] not in regions:
+                raise ValueError("unknown region")
             identifiers.add(metadata["id"])
             titles.add(title)
             guides.append((path, metadata))
@@ -129,8 +156,11 @@ def validate_files(root=ROOT):
             content = path.read_text(encoding="utf-8")
             if not content.endswith("\n") or re.search(r"[\x00-\x08\x0b-\x1f]", content):
                 raise ValueError(f"invalid Markdown text: {path.relative_to(root)}")
-    for kind in ("guide", "topic", "source"):
-        validator(kind)
+    for schema in sorted((root / "schemas").glob("*.schema.json")):
+        validator(schema.name.removesuffix(".schema.json"))
+    source_registry(root)
+    from scripts.evidence import reviewed_packages
+    reviewed_packages(root)
     paths = {path.parent.name: path for path in (root / ".agents/skills").glob("*/SKILL.md")}
     if set(paths) != SKILLS:
         raise ValueError("missing or unexpected project skills")
@@ -154,7 +184,7 @@ def main():
     guides, notices = validate_repository(args.root)
     for notice in notices:
         print(notice)
-    print(f"Validated {len(guides)} guides, {len(SKILLS)} skills and 3 schemas.")
+    print(f"Validated {len(guides)} guides, {len(SKILLS)} skills and editorial schemas.")
 
 
 if __name__ == "__main__":

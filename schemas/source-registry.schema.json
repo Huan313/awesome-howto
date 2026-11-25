@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Editorial source registry entry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "source_id",
+    "title",
+    "publisher",
+    "url",
+    "source_type",
+    "region",
+    "published_at",
+    "updated_at",
+    "accessed_at",
+    "reliability_notes",
+    "reuse_note",
+    "enabled",
+    "adapter",
+    "access_method",
+    "limitations"
+  ],
+  "properties": {
+    "source_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "publisher": {
+      "type": "string",
+      "minLength": 1
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://"
+    },
+    "source_type": {
+      "enum": [
+        "official",
+        "primary-research",
+        "systematic-review",
+        "institution",
+        "community",
+        "social"
+      ]
+    },
+    "region": {
+      "enum": [
+        "global",
+        "china-mainland",
+        "singapore",
+        "united-states",
+        "eu",
+        "united-kingdom",
+        "unknown"
+      ]
+    },
+    "published_at": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date"
+        },
+        {
+          "const": "unknown"
+        }
+      ]
+    },
+    "updated_at": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date"
+        },
+        {
+          "const": "unknown"
+        }
+      ]
+    },
+    "accessed_at": {
+      "type": "string",
+      "format": "date"
+    },
+    "reliability_notes": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reuse_note": {
+      "type": "string",
+      "minLength": 1
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "adapter": {
+      "enum": [
+        "manual",
+        "rss",
+        "public-api",
+        "authorized-api"
+      ]
+    },
+    "access_method": {
+      "type": "string",
+      "minLength": 1
+    },
+    "limitations": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}
