@@ -15,8 +15,7 @@ SECTIONS = (
     "常见错误与排查", "风险与限制", "最简行动清单", "参考来源", "核验与版本",
 )
 SKILLS = {
-    "trend-scout", "persona-painpoint-researcher", "evidence-researcher",
-    "howto-author", "fact-safety-auditor", "repo-maintainer",
+    "howto-resource-scout", "howto-resource-auditor", "content-bank-scout",
 }
 MARKDOWN = MarkdownIt("commonmark")
 

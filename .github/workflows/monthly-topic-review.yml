@@ -1,9 +1,6 @@
 name: Monthly topic review
 
 on:
-  schedule:
-    - cron: '0 9 1 * *'
-      timezone: Asia/Shanghai
   workflow_dispatch:
     inputs:
       draft_topic:
