@@ -1,0 +1,9 @@
+{
+  "global": "地区通用",
+  "china-mainland": "中国大陆",
+  "singapore": "新加坡",
+  "united-states": "美国",
+  "eu": "欧盟",
+  "united-kingdom": "英国",
+  "unknown": "适用地区待核验"
+}

@@ -1,0 +1,15 @@
+{
+  "education-professional": "教育从业者",
+  "research-professional": "科研从业者",
+  "software-developer": "软件开发从业者",
+  "health-services-professional": "医疗服务从业者",
+  "administration-professional": "行政及业务从业者",
+  "people-manager": "管理岗位",
+  "design-professional": "设计从业者",
+  "media-specialist": "内容与媒体从业者",
+  "independent-contractor": "独立服务提供者",
+  "business-operator": "企业经营者",
+  "customer-service-professional": "客户服务从业者",
+  "not-applicable": "无职业限制",
+  "unknown": "未核定"
+}

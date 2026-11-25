@@ -123,6 +123,56 @@
     "topic_key": {
       "type": "string",
       "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "signal_type": {
+      "enum": [
+        "demand",
+        "update",
+        "research",
+        "unknown"
+      ]
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 240
+    },
+    "task": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 240
+    },
+    "sample_limit": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 240
+    },
+    "audience": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      },
+      "uniqueItems": true,
+      "maxItems": 5
+    },
+    "audience_basis": {
+      "enum": [
+        "self-described",
+        "documented-sample",
+        "unknown"
+      ]
+    },
+    "region": {
+      "enum": [
+        "global",
+        "china-mainland",
+        "singapore",
+        "united-states",
+        "eu",
+        "united-kingdom",
+        "unknown"
+      ]
     }
   }
 }

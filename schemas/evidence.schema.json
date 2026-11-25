@@ -1,0 +1,349 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Reviewed topic evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "topic_id",
+    "title",
+    "guide_id",
+    "category",
+    "subcategory",
+    "personas",
+    "age_groups",
+    "occupations",
+    "life_stages",
+    "scenarios",
+    "region",
+    "difficulty",
+    "estimated_time",
+    "cost",
+    "prerequisites",
+    "risk_level",
+    "risk_reason",
+    "evidence_level",
+    "review_status",
+    "verified_at",
+    "demand_source_urls",
+    "brief",
+    "claims",
+    "steps"
+  ],
+  "properties": {
+    "topic_id": {
+      "type": "string",
+      "pattern": "^topic-[a-f0-9]{16}$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "guide_id": {
+      "type": "string",
+      "pattern": "^howto-[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "category": {
+      "enum": [
+        "life",
+        "learning",
+        "ai",
+        "digital",
+        "work",
+        "unknown"
+      ]
+    },
+    "subcategory": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "personas": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "age_groups": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "0-12",
+          "13-17",
+          "18-24",
+          "25-34",
+          "35-44",
+          "45-59",
+          "60+",
+          "unknown"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "occupations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "life_stages": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "scenarios": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "region": {
+      "enum": [
+        "global",
+        "china-mainland",
+        "singapore",
+        "united-states",
+        "eu",
+        "united-kingdom",
+        "unknown"
+      ]
+    },
+    "difficulty": {
+      "enum": [
+        "beginner",
+        "intermediate",
+        "advanced",
+        "unknown"
+      ]
+    },
+    "estimated_time": {
+      "type": "string",
+      "minLength": 1
+    },
+    "cost": {
+      "type": "string",
+      "minLength": 1
+    },
+    "prerequisites": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "risk_level": {
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "risk_reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_level": {
+      "enum": [
+        "A",
+        "B",
+        "C",
+        "pending"
+      ]
+    },
+    "review_status": {
+      "enum": [
+        "pending",
+        "editorial-approved"
+      ]
+    },
+    "verified_at": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date"
+        },
+        {
+          "const": "pending"
+        }
+      ]
+    },
+    "demand_source_urls": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri",
+        "pattern": "^https://"
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "brief": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "outcome",
+        "audience",
+        "materials",
+        "troubleshooting",
+        "limits",
+        "checklist"
+      ],
+      "properties": {
+        "outcome": {
+          "type": "string",
+          "minLength": 1
+        },
+        "audience": {
+          "type": "string",
+          "minLength": 1
+        },
+        "materials": {
+          "type": "string",
+          "minLength": 1
+        },
+        "troubleshooting": {
+          "type": "string",
+          "minLength": 1
+        },
+        "limits": {
+          "type": "string",
+          "minLength": 1
+        },
+        "checklist": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "claim_id",
+          "claim_text",
+          "claim_type",
+          "supporting_source_ids",
+          "support_level",
+          "source_location",
+          "applicable_region",
+          "applicable_version",
+          "limitations",
+          "reviewer_status"
+        ],
+        "properties": {
+          "claim_id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "claim_text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "claim_type": {
+            "enum": [
+              "fact",
+              "recommendation",
+              "experience",
+              "inference",
+              "hypothesis"
+            ]
+          },
+          "supporting_source_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+            },
+            "minItems": 0,
+            "uniqueItems": true
+          },
+          "support_level": {
+            "enum": [
+              "direct",
+              "partial",
+              "indirect",
+              "conflicting",
+              "unsupported"
+            ]
+          },
+          "source_location": {
+            "type": "string",
+            "minLength": 1
+          },
+          "applicable_region": {
+            "enum": [
+              "global",
+              "china-mainland",
+              "singapore",
+              "united-states",
+              "eu",
+              "united-kingdom",
+              "unknown"
+            ]
+          },
+          "applicable_version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "limitations": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reviewer_status": {
+            "enum": [
+              "pending",
+              "editorial-checked",
+              "expert-approved"
+            ]
+          }
+        }
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "claim_id",
+          "action",
+          "expected"
+        ],
+        "properties": {
+          "claim_id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "action": {
+            "type": "string",
+            "minLength": 1
+          },
+          "expected": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    }
+  }
+}

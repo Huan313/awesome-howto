@@ -20,7 +20,7 @@ class ResearchTests(unittest.TestCase):
         now = datetime(2026, 11, 25, 1, tzinfo=timezone.utc)
         common = dict(observed_at=now, method="rss", platform="rss", kind="official")
         records = [
-            normalize(dict(common, title="如何备份文件到外置磁盘", url="https://www.microsoft.com/backup")),
+            normalize(dict(common, title="如何备份家庭照片和旧手机", url="https://www.microsoft.com/backup")),
             normalize(dict(common, title="绕过验证码", url="https://github.com/public/example")),
         ]
         with tempfile.TemporaryDirectory() as temp:
@@ -28,6 +28,12 @@ class ResearchTests(unittest.TestCase):
             start = now - timedelta(days=7)
             selected = write_report(root, "weekly", start, now, [], records, [], 0)
             self.assertEqual(len(selected), 1)
+            selection = read_json(root / 'selection.json')
+            self.assertEqual(selection['topics'][0]['source_refs'], [records[0]['source_id']])
+            self.assertEqual(selection['topics'][0]['research_status'], 'needs-research')
+            matrix = next((root / "evidence").glob("*.json"))
+            self.assertEqual(read_json(matrix)["claims"], [])
+            self.assertEqual(read_json(matrix)["review_status"], "pending")
             cache = root / "source-cache/observations.json"
             self.assertEqual(len(read_json(cache)), 1)
             items, count = load_history([cache], start, now)

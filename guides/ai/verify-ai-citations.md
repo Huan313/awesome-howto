@@ -2,10 +2,10 @@
 id: "howto-verify-ai-citations"
 title: "怎样核验 AI 给出的论文和官方引用？"
 category: "ai"
-subcategory: "research"
-personas: ["researcher","student","office-worker"]
-age_groups: ["18-24","25-34","35-44","45-59"]
-occupations: ["researcher","student","office-worker"]
+subcategory: "ai-for-research"
+personas: ["researcher", "student", "office-worker"]
+age_groups: ["unknown"]
+occupations: ["unknown"]
 scenarios: ["fact-checking"]
 region: "global"
 difficulty: "beginner"
@@ -18,7 +18,13 @@ status: "draft"
 created_at: "2026-11-25"
 updated_at: "2026-11-25"
 review_due: "2027-02-25"
-sources: ["https://www.crossref.org/documentation/retrieve-metadata/rest-api/","https://www.crossref.org/services/crossmark/"]
+sources: ["https://www.crossref.org/documentation/retrieve-metadata/rest-api/", "https://www.crossref.org/services/crossmark/"]
+life_stages: ["unknown"]
+prerequisites: ["有可公开研究主张及可核对的引用线索。"]
+last_verified_at: "2026-11-25"
+version: "0.2"
+execution_status: "pending"
+claim_evidence: [{"claim_id": "verify-ai-citations-1", "claim_text": "Crossref 数据用于核对登记元数据和来源身份。", "claim_type": "fact", "supporting_source_ids": ["crossref-api"], "support_level": "direct", "source_location": "REST API overview and metadata", "applicable_region": "global", "applicable_version": "当前 API", "limitations": "结论限于所列文档范围及版本，执行及地区限制见正文。", "reviewer_status": "editorial-checked"}, {"claim_id": "verify-ai-citations-2", "claim_text": "Crossmark 可显示参与出版物登记的更正、版本及撤回信息。", "claim_type": "fact", "supporting_source_ids": ["crossmark"], "support_level": "direct", "source_location": "Crossmark status information", "applicable_region": "global", "applicable_version": "当前 Crossmark", "limitations": "结论限于所列文档范围及版本，执行及地区限制见正文。", "reviewer_status": "editorial-checked"}]
 ---
 
 # 怎样核验 AI 给出的论文和官方引用？
@@ -46,9 +52,13 @@ sources: ["https://www.crossref.org/documentation/retrieve-metadata/rest-api/","
 3. 打开原文，定位字段、段落或表格。比较原文的对象、比较条件和结论。 **验收**　分别标明「来源存在」和「支持主张」的结果。
 4. 去掉无法核验的主张或标记为待核验，记录可复查路径和访问日期。 **验收**　另一位读者可用记录在原文定位。
 
+先用文章题名在出版商或 Crossref 查到 DOI，把 DOI 在 `doi.org` 打开。记录 `存在/无匹配`、`原文位置`、`支持/部分支持/冲突` 三列。若引文只在摘要可达，把支持级别限定为摘要直接写明的内容。
+
 ## 常见错误与排查
 
 标题和 DOI 指向不同论文时，先以出版商页面和登记元数据为准，再确认 AI 所述结论是否来自另一篇文章。
+
+如果 AI 指错章节，把实际的 § 或表号填回记录。DOI 可用只说明某个登记对象存在。出版商警示、撤回或更正优先记录原文状态，再决定是否删除该结论。
 
 ## 风险与限制
 
@@ -65,4 +75,4 @@ Crossref 元数据有覆盖范围。未查询到记录时，应继续用出版�
 
 ## 核验与版本
 
-2026-11-25 核对来源与适用范围。v0.1 · 初稿，待独立复核和实际设备或任务演练。下一次复查 2027-02-25。
+2026-11-25 核对来源与适用范围。v0.2 · 初稿，待独立复核和实际设备或任务演练。下一次复查 2027-02-25。

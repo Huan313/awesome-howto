@@ -10,6 +10,8 @@ def units(config, end):
     if os.getenv(config["enabled_by"]) != "true":
         return
     token = os.getenv("REDDIT_ACCESS_TOKEN")
+    if not token:
+        return
     for community in config["communities"]:
         yield community, lambda client, community=community: collect(client, community, token, end)
 

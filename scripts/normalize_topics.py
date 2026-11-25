@@ -106,5 +106,17 @@ def normalize(raw):
     }
     if raw.get("topic_key"):
         record["topic_key"] = raw["topic_key"]
+    defaults = {"research": "research", "official": "update"}
+    explicit_question = bool(re.search(r"^(ask hn\b|如何|怎么)|[?？]$", title, re.I))
+    record["signal_type"] = raw.get("signal_type") or defaults.get(
+        record["kind"], "update" if platform == "github" else "demand" if explicit_question else "unknown")
+    for key in ("summary", "task", "sample_limit"):
+        if raw.get(key):
+            value = clean_text(raw[key], 240)
+            if value:
+                record[key] = value
+    for key in ("audience", "audience_basis", "region"):
+        if key in raw:
+            record[key] = raw[key]
     validate("source", record)
     return record

@@ -2,10 +2,10 @@
 id: "howto-retrieval-practice"
 title: "怎样用主动回忆和间隔复习学一项新技能？"
 category: "learning"
-subcategory: "study"
-personas: ["student","teacher","general-public"]
-age_groups: ["18-24","25-34","35-44","45-59"]
-occupations: ["student","teacher","general-public"]
+subcategory: "study-methods"
+personas: ["student", "general-public"]
+age_groups: ["unknown"]
+occupations: ["not-applicable"]
 scenarios: ["skill-learning"]
 region: "global"
 difficulty: "beginner"
@@ -18,7 +18,13 @@ status: "draft"
 created_at: "2026-11-25"
 updated_at: "2026-11-25"
 review_due: "2027-02-25"
-sources: ["https://pubmed.ncbi.nlm.nih.gov/18276894/","https://pubmed.ncbi.nlm.nih.gov/16719566/"]
+sources: ["https://pubmed.ncbi.nlm.nih.gov/18276894/", "https://pubmed.ncbi.nlm.nih.gov/16719566/"]
+life_stages: ["lifelong-learning"]
+prerequisites: ["有分段学习材料和能独立核对的答案。"]
+last_verified_at: "2026-11-25"
+version: "0.2"
+execution_status: "pending"
+claim_evidence: [{"claim_id": "retrieval-practice-1", "claim_text": "该原始实验在其学习材料和测验设置下比较了反复提取与延迟回忆。", "claim_type": "fact", "supporting_source_ids": ["retrieval-study"], "support_level": "direct", "source_location": "Abstract / experimental design", "applicable_region": "global", "applicable_version": "2008 研究", "limitations": "结论限于所列文档范围及版本，执行及地区限制见正文。", "reviewer_status": "editorial-checked"}, {"claim_id": "retrieval-practice-2", "claim_text": "综述考察练习间隔与保持间隔的关系，不能推出统一的时间表。", "claim_type": "fact", "supporting_source_ids": ["spacing-review"], "support_level": "direct", "source_location": "Abstract / Effects of varying lag", "applicable_region": "global", "applicable_version": "2006 综述", "limitations": "结论限于所列文档范围及版本，执行及地区限制见正文。", "reviewer_status": "editorial-checked"}]
 ---
 
 # 怎样用主动回忆和间隔复习学一项新技能？
@@ -46,9 +52,13 @@ sources: ["https://pubmed.ncbi.nlm.nih.gov/18276894/","https://pubmed.ncbi.nlm.n
 3. 在第 1、3、7 天用重排题序或换一道相似题的方式回忆。答错时缩短下次间隔，连续答对时可适当拉长。 **验收**　每天记录独立作答结果，至少有一次能在无提示下解释答案。
 4. 用一个没见过的例子做迁移练习。 **验收**　能说明答案依据，并标出还需练习的部分。
 
+用字段 `日期 | 题目 | 不看资料的回答 | 正误 | 下次复习` 建一张表。虚构样例用「同一份数据相同排序键的两行，输出顺序如何核对？」答题后用示例运行结果判定。第 1、3、7 天设为试行安排，最终比较延迟测验。
+
 ## 常见错误与排查
 
 觉得熟悉时，先把材料合上再给自己评分。只背答案顺序时，换一套措辞或例子。
+
+多次答错时先缩小问题、补看反馈，再试一次闭卷。遇到动作技能留一项实作验收，用完成质量与截屏记录，避免仅靠题目命中率。
 
 ## 风险与限制
 
@@ -65,4 +75,4 @@ sources: ["https://pubmed.ncbi.nlm.nih.gov/18276894/","https://pubmed.ncbi.nlm.n
 
 ## 核验与版本
 
-2026-11-25 核对来源与适用范围。v0.1 · 初稿，待独立复核和实际设备或任务演练。下一次复查 2027-02-25。
+2026-11-25 核对来源与适用范围。v0.2 · 初稿，待独立复核和实际设备或任务演练。下一次复查 2027-02-25。

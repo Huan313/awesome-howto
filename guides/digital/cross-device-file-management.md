@@ -2,10 +2,10 @@
 id: "howto-cross-device-file-management"
 title: "怎样让跨设备文件只有一个工作版本？"
 category: "digital"
-subcategory: "files"
-personas: ["general-public","office-worker","creator"]
-age_groups: ["18-24","25-34","35-44","45-59","60+"]
-occupations: ["general-public","office-worker","creator"]
+subcategory: "file-management"
+personas: ["general-public", "office-worker", "creator"]
+age_groups: ["unknown"]
+occupations: ["not-applicable"]
 scenarios: ["file-management"]
 region: "global"
 difficulty: "beginner"
@@ -18,7 +18,13 @@ status: "draft"
 created_at: "2026-11-25"
 updated_at: "2026-11-25"
 review_due: "2027-02-25"
-sources: ["https://support.microsoft.com/en-us/office/restore-a-previous-version-of-a-file-stored-in-onedrive-159cad6d-d76e-4981-88ef-de6e96c93893","https://support.microsoft.com/en-au/windows/experience/backup-recovery/backup-and-restore-with-file-history"]
+sources: ["https://support.microsoft.com/en-us/office/restore-a-previous-version-of-a-file-stored-in-onedrive-159cad6d-d76e-4981-88ef-de6e96c93893", "https://support.microsoft.com/en-au/windows/experience/backup-recovery/backup-and-restore-with-file-history"]
+life_stages: ["unknown"]
+prerequisites: ["两台设备及受授权的同一工作目录。"]
+last_verified_at: "2026-11-25"
+version: "0.2"
+execution_status: "pending"
+claim_evidence: [{"claim_id": "cross-device-file-management-1", "claim_text": "OneDrive 文件可按官方入口查看与恢复受保留规则限制的历史版本。", "claim_type": "fact", "supporting_source_ids": ["onedrive-version"], "support_level": "direct", "source_location": "Use version history", "applicable_region": "global", "applicable_version": "支持版本历史的 OneDrive", "limitations": "结论限于所列文档范围及版本，执行及地区限制见正文。", "reviewer_status": "editorial-checked"}, {"claim_id": "cross-device-file-management-2", "claim_text": "File History 可作 Windows 文件版本恢复的独立练习。", "claim_type": "fact", "supporting_source_ids": ["file-history"], "support_level": "direct", "source_location": "Restore files with File History", "applicable_region": "global", "applicable_version": "Windows", "limitations": "结论限于所列文档范围及版本，执行及地区限制见正文。", "reviewer_status": "editorial-checked"}]
 ---
 
 # 怎样让跨设备文件只有一个工作版本？
@@ -46,9 +52,13 @@ sources: ["https://support.microsoft.com/en-us/office/restore-a-previous-version
 3. 在网页版或支持的客户端打开该文档的版本历史。核对历史时间和内容，必要时保存副本作比较。 **验收**　能够指出一次已知编辑前后的版本。
 4. 约定「草稿、交付件、归档」各放哪里。另查独立恢复路径。 **验收**　每份测试文件能说明用途、当前编辑入口与恢复办法。
 
+虚构文件 `项目A/会议纪要-测试.docx` 首次写入 `状态：草稿 A`。A 端改为 `草稿 B` 并等待同步，B 端从网页版重新打开确认。对测试文档使用右键或省略号中的 Version history，核对早期版本内容与时间戳。
+
 ## 常见错误与排查
 
 两台设备同时编辑而产生冲突时，先保存两份副本、对比差异，再按团队约定合并。
+
+断开网络、文件冲突或出现两个副本时，先另存两份并记录最后修改时间。文件所有者确认同一工作路径后再合并，历史版本保留时间由服务和账户策略决定。
 
 ## 风险与限制
 
@@ -65,4 +75,4 @@ sources: ["https://support.microsoft.com/en-us/office/restore-a-previous-version
 
 ## 核验与版本
 
-2026-11-25 核对来源与适用范围。v0.1 · 初稿，待独立复核和实际设备或任务演练。下一次复查 2027-02-25。
+2026-11-25 核对来源与适用范围。v0.2 · 初稿，待独立复核和实际设备或任务演练。下一次复查 2027-02-25。

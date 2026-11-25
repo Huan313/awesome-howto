@@ -1,0 +1,2 @@
+platform,title,url,query,observed_at,signal_type,summary,task,metric_unit,metric_value,sample_limit,region,audience,audience_basis,example
+xiaohongshu,示例·换手机前需要整理备份,https://www.xiaohongshu.com/explore/000000000000000000000000,示例 自制数据,2026-11-25T09:00:00+08:00,demand,虚构记录,核对备份和恢复,comments,0,虚构例子 默认排除,unknown,,unknown,true

@@ -1,7 +1,8 @@
 """Repository discovery via GitHub's public Search API."""
+import os
 from urllib.parse import urlencode
 
-from scripts.common import stamp
+from scripts.common import FetchError, stamp
 
 
 def units(config, start, end):
@@ -14,10 +15,19 @@ def collect(client, keyword, start, end):
         "q": f"{keyword} is:public archived:false pushed:>={start.date().isoformat()}",
         "sort": "updated", "order": "desc", "per_page": 12,
     })
-    body = client.json("https://api.github.com/search/repositories?" + params,
-                       {"Accept": "application/vnd.github+json"})
+    url = "https://api.github.com/search/repositories?" + params
+    headers = {"Accept": "application/vnd.github+json"}
+    token = os.getenv("HOWTO_GITHUB_TOKEN")
+    if token:
+        try:
+            body = client.json(url, {**headers, "Authorization": f"Bearer {token}"})
+        except FetchError as error:
+            if str(error) not in {"HTTP 401", "HTTP 403"}:
+                raise
+            body = client.json(url, headers)
+    else:
+        body = client.json(url, headers)
     if body.get("incomplete_results"):
-        from scripts.common import FetchError
         raise FetchError("GitHub search returned incomplete_results")
     for item in body["items"]:
         title = item["name"].replace("-", " ").replace("_", " ")

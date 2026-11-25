@@ -6,7 +6,11 @@
       "tutorial in:name,description",
       "topic:llm",
       "topic:learning",
-      "guide in:name"
+      "guide in:name",
+      "topic:education",
+      "topic:backup",
+      "topic:digital-literacy",
+      "interview in:name,description"
     ]
   },
   "hackernews": {
@@ -30,6 +34,11 @@
         "name": "arXiv cs.AI",
         "url": "https://rss.arxiv.org/rss/cs.AI",
         "kind": "research"
+      },
+      {
+        "name": "NIST Cybersecurity Insights",
+        "url": "https://www.nist.gov/blogs/cybersecurity-insights/rss.xml",
+        "kind": "official"
       }
     ]
   },

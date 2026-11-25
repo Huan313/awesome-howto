@@ -6,23 +6,29 @@
 id: howto-unique-slug
 title: 具体问题导向的标题
 category: learning
-subcategory: study
+subcategory: study-methods
 personas: [student]
-age_groups: ["18-24"]
-occupations: [student]
+age_groups: [unknown]
+occupations: [not-applicable]
+life_stages: [unknown]
 scenarios: [skill-learning]
-region: global
+region: unknown
+prerequisites: []
 difficulty: beginner
 estimated_time: 30 分钟
 cost: 免费
-evidence_level: B
+evidence_level: pending
 content_type: howto
 risk_level: low
 status: draft
 created_at: YYYY-MM-DD
 updated_at: YYYY-MM-DD
 review_due: YYYY-MM-DD
+last_verified_at: pending
+version: '0.1'
+execution_status: pending
 sources: []
+claim_evidence: []
 ```
 
 # 与元数据一致的标题

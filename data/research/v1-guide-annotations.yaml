@@ -1,0 +1,583 @@
+{
+  "howto-device-backup-restore": {
+    "category": "life",
+    "subcategory": "home-and-household",
+    "personas": [
+      "general-public"
+    ],
+    "age_groups": [
+      "unknown"
+    ],
+    "occupations": [
+      "not-applicable"
+    ],
+    "life_stages": [
+      "unknown"
+    ],
+    "scenarios": [
+      "device-backup"
+    ],
+    "region": "global",
+    "prerequisites": [
+      "能访问设备与对应账户，并有足够存储空间。"
+    ],
+    "last_verified_at": "2026-11-25",
+    "version": "0.2",
+    "execution_status": "pending",
+    "claim_evidence": [
+      {
+        "claim_id": "device-backup-restore-1",
+        "claim_text": "iCloud 与电脑备份的纳入范围不同，恢复时先确定数据由哪个路径保存。",
+        "claim_type": "fact",
+        "supporting_source_ids": [
+          "apple-iphone"
+        ],
+        "support_level": "direct",
+        "source_location": "iCloud backups / Backups from your computer",
+        "applicable_region": "global",
+        "applicable_version": "当前 Apple 支持范围",
+        "limitations": "结论限于所列文档范围及版本，执行及地区限制见正文。",
+        "reviewer_status": "editorial-checked"
+      },
+      {
+        "claim_id": "device-backup-restore-2",
+        "claim_text": "Windows Backup 以选定的 OneDrive 文件夹和设置为主要对象。",
+        "claim_type": "fact",
+        "supporting_source_ids": [
+          "windows-backup"
+        ],
+        "support_level": "direct",
+        "source_location": "What is backed up",
+        "applicable_region": "global",
+        "applicable_version": "Windows 11",
+        "limitations": "结论限于所列文档范围及版本，执行及地区限制见正文。",
+        "reviewer_status": "editorial-checked"
+      },
+      {
+        "claim_id": "device-backup-restore-3",
+        "claim_text": "File History 可用于核对和恢复以前的文件版本。",
+        "claim_type": "fact",
+        "supporting_source_ids": [
+          "file-history"
+        ],
+        "support_level": "direct",
+        "source_location": "Restore files with File History",
+        "applicable_region": "global",
+        "applicable_version": "支持 File History 的 Windows",
+        "limitations": "结论限于所列文档范围及版本，执行及地区限制见正文。",
+        "reviewer_status": "editorial-checked"
+      }
+    ]
+  },
+  "howto-phishing-message-check": {
+    "category": "life",
+    "subcategory": "online-safety",
+    "personas": [
+      "general-public"
+    ],
+    "age_groups": [
+      "unknown"
+    ],
+    "occupations": [
+      "not-applicable"
+    ],
+    "life_stages": [
+      "unknown"
+    ],
+    "scenarios": [
+      "account-safety",
+      "detect-scam"
+    ],
+    "region": "united-states",
+    "prerequisites": [
+      "知道美国服务机构的独立官方入口，并使用虚构消息练习。"
+    ],
+    "last_verified_at": "2026-11-25",
+    "version": "0.2",
+    "execution_status": "pending",
+    "claim_evidence": [
+      {
+        "claim_id": "phishing-message-check-1",
+        "claim_text": "FTC 建议通过自己已知可信的号码或网站联系机构核对可疑请求。",
+        "claim_type": "fact",
+        "supporting_source_ids": [
+          "ftc-phishing"
+        ],
+        "support_level": "direct",
+        "source_location": "How To Recognize Phishing / What To Do if You Suspect a Phishing Attack",
+        "applicable_region": "united-states",
+        "applicable_version": "美国 FTC 指引",
+        "limitations": "结论限于所列文档范围及版本，执行及地区限制见正文。",
+        "reviewer_status": "editorial-checked"
+      }
+    ],
+    "expert_review": {
+      "status": "pending",
+      "reference": "pending"
+    }
+  },
+  "howto-retrieval-practice": {
+    "category": "learning",
+    "subcategory": "study-methods",
+    "personas": [
+      "student",
+      "general-public"
+    ],
+    "age_groups": [
+      "unknown"
+    ],
+    "occupations": [
+      "not-applicable"
+    ],
+    "life_stages": [
+      "lifelong-learning"
+    ],
+    "scenarios": [
+      "skill-learning"
+    ],
+    "region": "global",
+    "prerequisites": [
+      "有分段学习材料和能独立核对的答案。"
+    ],
+    "last_verified_at": "2026-11-25",
+    "version": "0.2",
+    "execution_status": "pending",
+    "claim_evidence": [
+      {
+        "claim_id": "retrieval-practice-1",
+        "claim_text": "该原始实验在其学习材料和测验设置下比较了反复提取与延迟回忆。",
+        "claim_type": "fact",
+        "supporting_source_ids": [
+          "retrieval-study"
+        ],
+        "support_level": "direct",
+        "source_location": "Abstract / experimental design",
+        "applicable_region": "global",
+        "applicable_version": "2008 研究",
+        "limitations": "结论限于所列文档范围及版本，执行及地区限制见正文。",
+        "reviewer_status": "editorial-checked"
+      },
+      {
+        "claim_id": "retrieval-practice-2",
+        "claim_text": "综述考察练习间隔与保持间隔的关系，不能推出统一的时间表。",
+        "claim_type": "fact",
+        "supporting_source_ids": [
+          "spacing-review"
+        ],
+        "support_level": "direct",
+        "source_location": "Abstract / Effects of varying lag",
+        "applicable_region": "global",
+        "applicable_version": "2006 综述",
+        "limitations": "结论限于所列文档范围及版本，执行及地区限制见正文。",
+        "reviewer_status": "editorial-checked"
+      }
+    ]
+  },
+  "howto-read-research-paper": {
+    "category": "learning",
+    "subcategory": "reading-and-research",
+    "personas": [
+      "student",
+      "researcher",
+      "teacher"
+    ],
+    "age_groups": [
+      "unknown"
+    ],
+    "occupations": [
+      "unknown"
+    ],
+    "life_stages": [
+      "university"
+    ],
+    "scenarios": [
+      "paper-reading",
+      "review-research-paper"
+    ],
+    "region": "global",
+    "prerequisites": [
+      "取得论文和可公开获取的补充材料。"
+    ],
+    "last_verified_at": "2026-11-25",
+    "version": "0.2",
+    "execution_status": "pending",
+    "claim_evidence": [
+      {
+        "claim_id": "read-research-paper-1",
+        "claim_text": "分遍阅读法先识别问题，再追踪图表与方法细节。",
+        "claim_type": "fact",
+        "supporting_source_ids": [
+          "keshav-paper"
+        ],
+        "support_level": "direct",
+        "source_location": "Three-pass approach",
+        "applicable_region": "global",
+        "applicable_version": "2007 文章",
+        "limitations": "结论限于所列文档范围及版本，执行及地区限制见正文。",
+        "reviewer_status": "editorial-checked"
+      },
+      {
+        "claim_id": "read-research-paper-2",
+        "claim_text": "Crossref 登记元数据可核对题名、DOI 和已登记的更新关系。",
+        "claim_type": "fact",
+        "supporting_source_ids": [
+          "crossref-api"
+        ],
+        "support_level": "direct",
+        "source_location": "Metadata and retrieval",
+        "applicable_region": "global",
+        "applicable_version": "REST API",
+        "limitations": "结论限于所列文档范围及版本，执行及地区限制见正文。",
+        "reviewer_status": "editorial-checked"
+      }
+    ]
+  },
+  "howto-codex-github-release": {
+    "category": "ai",
+    "subcategory": "codex-and-coding-agents",
+    "personas": [
+      "software-engineer",
+      "student"
+    ],
+    "age_groups": [
+      "unknown"
+    ],
+    "occupations": [
+      "software-developer"
+    ],
+    "life_stages": [
+      "unknown"
+    ],
+    "scenarios": [
+      "project-release",
+      "publish-github-project"
+    ],
+    "region": "global",
+    "prerequisites": [
+      "有目标仓库写权限，使用独立目录与可访问的 Git 工具。"
+    ],
+    "last_verified_at": "2026-11-25",
+    "version": "0.2",
+    "execution_status": "pending",
+    "claim_evidence": [
+      {
+        "claim_id": "codex-github-release-1",
+        "claim_text": "Codex CLI 在指定项目目录运行，权限取决于环境配置。",
+        "claim_type": "fact",
+        "supporting_source_ids": [
+          "codex-cli"
+        ],
+        "support_level": "direct",
+        "source_location": "CLI overview",
+        "applicable_region": "global",
+        "applicable_version": "版本以执行前为准",
+        "limitations": "结论限于所列文档范围及版本，执行及地区限制见正文。",
+        "reviewer_status": "editorial-checked"
+      },
+      {
+        "claim_id": "codex-github-release-2",
+        "claim_text": "GitHub CLI 提供源目录、远端、公开性和推送参数。",
+        "claim_type": "fact",
+        "supporting_source_ids": [
+          "gh-cli-create"
+        ],
+        "support_level": "direct",
+        "source_location": "Options / --source --remote --push",
+        "applicable_region": "global",
+        "applicable_version": "gh CLI",
+        "limitations": "结论限于所列文档范围及版本，执行及地区限制见正文。",
+        "reviewer_status": "editorial-checked"
+      },
+      {
+        "claim_id": "codex-github-release-3",
+        "claim_text": "创建 GitHub 仓库时需确认所有者和可见性。",
+        "claim_type": "fact",
+        "supporting_source_ids": [
+          "gh-repository"
+        ],
+        "support_level": "direct",
+        "source_location": "Creating a new repository",
+        "applicable_region": "global",
+        "applicable_version": "GitHub.com",
+        "limitations": "结论限于所列文档范围及版本，执行及地区限制见正文。",
+        "reviewer_status": "editorial-checked"
+      }
+    ]
+  },
+  "howto-verify-ai-citations": {
+    "category": "ai",
+    "subcategory": "ai-for-research",
+    "personas": [
+      "researcher",
+      "student",
+      "office-worker"
+    ],
+    "age_groups": [
+      "unknown"
+    ],
+    "occupations": [
+      "unknown"
+    ],
+    "life_stages": [
+      "unknown"
+    ],
+    "scenarios": [
+      "fact-checking"
+    ],
+    "region": "global",
+    "prerequisites": [
+      "有可公开研究主张及可核对的引用线索。"
+    ],
+    "last_verified_at": "2026-11-25",
+    "version": "0.2",
+    "execution_status": "pending",
+    "claim_evidence": [
+      {
+        "claim_id": "verify-ai-citations-1",
+        "claim_text": "Crossref 数据用于核对登记元数据和来源身份。",
+        "claim_type": "fact",
+        "supporting_source_ids": [
+          "crossref-api"
+        ],
+        "support_level": "direct",
+        "source_location": "REST API overview and metadata",
+        "applicable_region": "global",
+        "applicable_version": "当前 API",
+        "limitations": "结论限于所列文档范围及版本，执行及地区限制见正文。",
+        "reviewer_status": "editorial-checked"
+      },
+      {
+        "claim_id": "verify-ai-citations-2",
+        "claim_text": "Crossmark 可显示参与出版物登记的更正、版本及撤回信息。",
+        "claim_type": "fact",
+        "supporting_source_ids": [
+          "crossmark"
+        ],
+        "support_level": "direct",
+        "source_location": "Crossmark status information",
+        "applicable_region": "global",
+        "applicable_version": "当前 Crossmark",
+        "limitations": "结论限于所列文档范围及版本，执行及地区限制见正文。",
+        "reviewer_status": "editorial-checked"
+      }
+    ]
+  },
+  "howto-automate-list-reminder": {
+    "category": "ai",
+    "subcategory": "workflow-automation",
+    "personas": [
+      "office-worker",
+      "manager"
+    ],
+    "age_groups": [
+      "unknown"
+    ],
+    "occupations": [
+      "administration-professional"
+    ],
+    "life_stages": [
+      "unknown"
+    ],
+    "scenarios": [
+      "ai-productivity",
+      "automate-repetitive-task"
+    ],
+    "region": "global",
+    "prerequisites": [
+      "有 Microsoft Lists 测试清单和发送测试通知的权限。"
+    ],
+    "last_verified_at": "2026-11-25",
+    "version": "0.2",
+    "execution_status": "pending",
+    "claim_evidence": [
+      {
+        "claim_id": "automate-list-reminder-1",
+        "claim_text": "Lists 可对特定清单变更创建通知规则并查看管理入口。",
+        "claim_type": "fact",
+        "supporting_source_ids": [
+          "lists-rule"
+        ],
+        "support_level": "direct",
+        "source_location": "Create a rule / Manage rules",
+        "applicable_region": "global",
+        "applicable_version": "Microsoft Lists Web",
+        "limitations": "结论限于所列文档范围及版本，执行及地区限制见正文。",
+        "reviewer_status": "editorial-checked"
+      },
+      {
+        "claim_id": "automate-list-reminder-2",
+        "claim_text": "Power Automate 流程可从清单或文档库入口进入。",
+        "claim_type": "fact",
+        "supporting_source_ids": [
+          "lists-flow"
+        ],
+        "support_level": "direct",
+        "source_location": "Create a flow",
+        "applicable_region": "global",
+        "applicable_version": "Microsoft 365 组织许可",
+        "limitations": "结论限于所列文档范围及版本，执行及地区限制见正文。",
+        "reviewer_status": "editorial-checked"
+      }
+    ]
+  },
+  "howto-cross-device-file-management": {
+    "category": "digital",
+    "subcategory": "file-management",
+    "personas": [
+      "general-public",
+      "office-worker",
+      "creator"
+    ],
+    "age_groups": [
+      "unknown"
+    ],
+    "occupations": [
+      "not-applicable"
+    ],
+    "life_stages": [
+      "unknown"
+    ],
+    "scenarios": [
+      "file-management"
+    ],
+    "region": "global",
+    "prerequisites": [
+      "两台设备及受授权的同一工作目录。"
+    ],
+    "last_verified_at": "2026-11-25",
+    "version": "0.2",
+    "execution_status": "pending",
+    "claim_evidence": [
+      {
+        "claim_id": "cross-device-file-management-1",
+        "claim_text": "OneDrive 文件可按官方入口查看与恢复受保留规则限制的历史版本。",
+        "claim_type": "fact",
+        "supporting_source_ids": [
+          "onedrive-version"
+        ],
+        "support_level": "direct",
+        "source_location": "Use version history",
+        "applicable_region": "global",
+        "applicable_version": "支持版本历史的 OneDrive",
+        "limitations": "结论限于所列文档范围及版本，执行及地区限制见正文。",
+        "reviewer_status": "editorial-checked"
+      },
+      {
+        "claim_id": "cross-device-file-management-2",
+        "claim_text": "File History 可作 Windows 文件版本恢复的独立练习。",
+        "claim_type": "fact",
+        "supporting_source_ids": [
+          "file-history"
+        ],
+        "support_level": "direct",
+        "source_location": "Restore files with File History",
+        "applicable_region": "global",
+        "applicable_version": "Windows",
+        "limitations": "结论限于所列文档范围及版本，执行及地区限制见正文。",
+        "reviewer_status": "editorial-checked"
+      }
+    ]
+  },
+  "howto-compare-paid-courses": {
+    "category": "work",
+    "subcategory": "career-development",
+    "personas": [
+      "job-seeker",
+      "student",
+      "general-public"
+    ],
+    "age_groups": [
+      "unknown"
+    ],
+    "occupations": [
+      "not-applicable"
+    ],
+    "life_stages": [
+      "career-transition"
+    ],
+    "scenarios": [
+      "course-selection"
+    ],
+    "region": "united-states",
+    "prerequisites": [
+      "有美国面向成人的课程大纲、报价和书面条款。"
+    ],
+    "last_verified_at": "2026-11-25",
+    "version": "0.2",
+    "execution_status": "pending",
+    "claim_evidence": [
+      {
+        "claim_id": "compare-paid-courses-1",
+        "claim_text": "FTC 列出美国职业培训应核对的费用、资格、学校认可与就业宣传。",
+        "claim_type": "fact",
+        "supporting_source_ids": [
+          "ftc-training"
+        ],
+        "support_level": "direct",
+        "source_location": "Costs / Accreditation and Licensing / Job Placement",
+        "applicable_region": "united-states",
+        "applicable_version": "美国职业培训",
+        "limitations": "结论限于所列文档范围及版本，执行及地区限制见正文。",
+        "reviewer_status": "editorial-checked"
+      }
+    ]
+  },
+  "howto-write-project-status-update": {
+    "category": "work",
+    "subcategory": "meetings-and-reporting",
+    "personas": [
+      "office-worker",
+      "manager"
+    ],
+    "age_groups": [
+      "unknown"
+    ],
+    "occupations": [
+      "administration-professional"
+    ],
+    "life_stages": [
+      "unknown"
+    ],
+    "scenarios": [
+      "work-reporting",
+      "write-work-report"
+    ],
+    "region": "global",
+    "prerequisites": [
+      "有汇报时段、可核对的任务状态和需要读者处理的决定。"
+    ],
+    "last_verified_at": "2026-11-25",
+    "version": "0.2",
+    "execution_status": "pending",
+    "claim_evidence": [
+      {
+        "claim_id": "write-project-status-update-1",
+        "claim_text": "重点前置和可扫读结构是 GOV.UK 的写作建议。",
+        "claim_type": "fact",
+        "supporting_source_ids": [
+          "govuk-writing"
+        ],
+        "support_level": "direct",
+        "source_location": "Create a clear structure",
+        "applicable_region": "global",
+        "applicable_version": "公开写作指导，组织规定另查",
+        "limitations": "结论限于所列文档范围及版本，执行及地区限制见正文。",
+        "reviewer_status": "editorial-checked"
+      },
+      {
+        "claim_id": "write-project-status-update-2",
+        "claim_text": "ONS 内容手册建议用较短段落和以任务为中心的结构。",
+        "claim_type": "fact",
+        "supporting_source_ids": [
+          "ons-writing"
+        ],
+        "support_level": "direct",
+        "source_location": "Frontload your content",
+        "applicable_region": "global",
+        "applicable_version": "写作方法",
+        "limitations": "结论限于所列文档范围及版本，执行及地区限制见正文。",
+        "reviewer_status": "editorial-checked"
+      }
+    ]
+  }
+}
