@@ -1,12 +1,14 @@
 # Awesome-HowTo
 
-**Practical Knowledge for Everyday Life, Learning & AI** · [简体中文](README.md)
+Chinese-first guides for everyday technology and AI-assisted work. [简体中文](README.md)
 
-A Chinese-first library of practical guides with step-by-step checks and traceable sources. Browse [guides by topic](guides/index.md) or [guides by audience](guides/people.md). Drafts and material awaiting review carry visible status labels.
+- [Consider which files to clean when Windows storage is low](howto/digital-life/device-and-data/windows-storage-cleanup.md)
+- [Choose between migrating, backing up and restoring WeChat chats](howto/digital-life/device-and-data/wechat-chat-backup.md)
+- [Use AI to read a PDF and verify answers against source pages](howto/ai-productivity/study-and-office/verify-pdf-with-ai.md)
+- [Get started with one ten-minute task](howto/life-mind/daily-efficiency/start-a-task.md)
 
-- [Public GitHub resource catalog](resources/awesome-howto-projects.md)
-- [Weekly reports](data/weekly/README.md) and [monthly reports](data/monthly/README.md)
-- [Local commands, schedules and six repo-local Codex Skills](docs/automation-guide.md)
-- [Contribution guide](CONTRIBUTING.md), [evidence grades](docs/evidence-grading.md) and [safety policy](docs/safety-policy.md)
+The guides record demand, primary evidence and the scope of practical verification. Begin with the simplest usable method. Add an AI tool or automation when the work benefits from it.
 
-Original code is [MIT](LICENSE). Original writing is [CC BY 4.0](LICENSE-CONTENT). Third-party content retains its original rights and terms.
+[Task index](howto/README.md) · [Official sources](references/official-sources.md) · [Archive](archive/legacy-v3-0/README.md) · [Contribution guide](CONTRIBUTING.md)
+
+Original code is [MIT](LICENSE) and original writing is [CC BY 4.0](LICENSE-CONTENT).

@@ -15,8 +15,7 @@ SECTIONS = (
     "常见错误与排查", "风险与限制", "最简行动清单", "参考来源", "核验与版本",
 )
 SKILLS = {
-    "trend-scout", "persona-painpoint-researcher", "evidence-researcher",
-    "howto-author", "fact-safety-auditor", "repo-maintainer",
+    "topic-scout", "howto-writer", "howto-auditor",
 }
 MARKDOWN = MarkdownIt("commonmark")
 
@@ -108,6 +107,8 @@ def validate_repository(root=ROOT):
 def repo_files(root=ROOT):
     excluded = {".venv", ".git", "__pycache__", "out", ".pytest_cache"}
     for directory, children, files in root.walk():
+        if directory == root and "local-studio" in children:
+            children.remove("local-studio")
         children[:] = sorted(name for name in children if name not in excluded)
         for file in sorted(files):
             yield directory / file

@@ -1,0 +1,14 @@
+domains:
+  life-home: 生活与家庭
+  health-safety: 健康与安全
+  finance-law-consumer: 财务、法律与消费
+  learning-research: 学习与研究
+  career-work: 职业与工作
+  digital-life: 数字生活
+  ai-productivity: AI 与效率
+  family-relationships-care: 家庭、关系与照护
+  creativity-hobbies: 兴趣、创作与技能
+  travel-public-services: 出行与公共服务
+types: [HowTo, HowTo 系列, 手册, 课程, 学习路径, 参考, 官方入口, Awesome List]
+languages: [中文, 英文, 中英双语]
+regions: [中国大陆, 全球, 美国, 欧盟, 英国, 北京]

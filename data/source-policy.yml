@@ -1,0 +1,15 @@
+source_priority:
+  - 优先原始政府、监管、大学、标准组织或产品官方文档
+  - 实操手册与开源教程须能核验作者、内容和适用范围
+  - 社区与社交帖子只用来发现问题或补充经验
+states: [candidate, machine-screened, human-reviewed, needs-update, rejected]
+protected_topics: [health-safety, finance-law-consumer]
+public_entry_hosts:
+  gov_suffixes: [gov.cn]
+  exact: [www.12306.cn, www.12315.cn, flk.npc.gov.cn]
+high_risk:
+  region: 中国大陆
+  required_labels: [高风险, 已人工复核]
+  date_label: 核验
+  review_label: 审核记录
+rights: 默认索引原始页面与原创摘要，引用或复用第三方作品前单独核对许可

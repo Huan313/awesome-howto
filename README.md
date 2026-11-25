@@ -1,29 +1,22 @@
 # Awesome-HowTo
 
-**Practical Knowledge for Everyday Life, Learning & AI** · [English](README_EN.md)
+**年轻人的数字生活与 AI 效率指南。** 让复杂的事简单一点，让好用的方法人人都能学会。[English](README_EN.md)
 
-把生活、学习和工作中的具体问题拆成可执行、可复查的步骤。每篇指南列出前置条件、验收方法和原始来源。
+## 按主题浏览
 
-| 按主题浏览 | 从这里开始 |
+| 你遇到的问题 | 从这里开始 |
 | --- | --- |
-| [Life · 生活](guides/index.md#生活) | 识别钓鱼消息，练习手机或电脑备份恢复 |
-| [Learning · 学习](guides/index.md#学习) | 做一次间隔复习，核对论文结论 |
-| [AI Skills · AI 技能](guides/index.md#ai-技能) | 用 Codex 发布项目，核验 AI 给出的引用 |
-| [Digital Skills · 数字技能](guides/index.md#数字技能) | 建立跨设备文件整理流程 |
-| [Work & Growth · 职场成长](guides/index.md#职场成长) | 准备进度汇报，比较课程投入 |
+| C 盘空间不足，先检查什么？ | [检查存储并清理确认过的项目](howto/digital-life/device-and-data/windows-storage-cleanup.md) |
+| 换手机，微信记录选迁移还是恢复？ | [按目标选择微信聊天记录流程](howto/digital-life/device-and-data/wechat-chat-backup.md) |
+| AI 读完 PDF，怎样知道它有没有说错？ | [用页码和原文核对每条结论](howto/ai-productivity/study-and-office/verify-pdf-with-ai.md) |
+| 任务堆着没开始，怎样先做一步？ | [用十分钟产生一个小结果](howto/life-mind/daily-efficiency/start-a-task.md) |
 
-[按人群找指南](guides/people.md) · [GitHub 项目资源](resources/awesome-howto-projects.md) · [人群与场景标签](docs/persona-taxonomy.md)
+[按问题查找](howto/README.md) · [推荐项目](references/recommended-projects.md) · [官方资料](references/official-sources.md) · [中国大陆政策入口](references/policy-sources.md)
 
-## 周报和月报
+## 怎么读这套指南
 
-[周报归档](data/weekly/README.md) · [月报归档](data/monthly/README.md) · [选题队列](data/topic-queue/README.md)
+每个问题分别记录需求、事实和实操证据。先看基础档，适用时再用国产 AI 增强，或把验证过的重复操作做成自动化。每篇指南有可观察的完成标准，并写清实际测试到了哪一步。[证据政策](docs/evidence-policy.md)
 
-打开 GitHub Actions 的对应运行，下载报告 artifact。[运行频率和配置](docs/automation-guide.md)
+[贡献指南](CONTRIBUTING.md) · [历史目录](archive/legacy-v3-0/README.md) · [安全政策](docs/safety-policy.md)
 
-## 用 Codex 研究或贡献
-
-在仓库根目录打开 Codex，输入 `$trend-scout` 或其他 [项目 Skills](docs/automation-guide.md#本地-codex-skills)。投稿前读 [贡献指南](CONTRIBUTING.md)、[证据分级](docs/evidence-grading.md) 和 [安全政策](docs/safety-policy.md)。索引显示每篇指南的审核状态。
-
-原创代码使用 [MIT](LICENSE)。原创文字使用 [CC BY 4.0](LICENSE-CONTENT)。第三方内容保留原始权利和适用许可。
-
-[首版交付与验证记录](docs/initial-release-report.md)
+原创代码使用 [MIT](LICENSE)，原创文字使用 [CC BY 4.0](LICENSE-CONTENT)。第三方内容适用原发布方条款。

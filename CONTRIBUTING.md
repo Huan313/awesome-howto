@@ -1,9 +1,8 @@
 # 贡献指南
 
-1. 搜索 [现有指南](guides/index.md) 和 [候选选题](data/topic-queue/README.md)，优先更新已有文章。
-2. 用 [研究记录模板](templates/research-record-template.md) 整理真实问题、读者、主张与证据，再按 [指南模板](templates/howto-template.md) 起草。
-3. 只提交必要的文件。示例使用明确标注的虚构数据。提交即确认你拥有所提交材料的权利或相应授权。
-4. 按 [编辑政策](docs/editorial-policy.md) 标记证据等级和风险，运行 [本地质量检查](docs/automation-guide.md#本地运行)。
-5. 在 PR 中给出来源、步骤验收和待核验项。记录 AI 辅助内容的人工事实与版权审核情况。维护者审核后决定是否合并。
+1. 查[问题索引](howto/README.md)和[历史目录](archive/legacy-v3-0/README.md)，把需求写成能看到完成结果的问题。
+2. 按[指南模板](templates/howto-template.md)先写基础方法，并在[研究](templates/research-template.md)和[验证记录](templates/verification-template.md)中写清证据与实际测试。
+3. 标出地区、版本、费用与风险。涉及医疗、法律、财税或可能造成数据损失的操作，按[安全政策](docs/safety-policy.md)送人工复核。
+4. 运行 `python -m scripts.validate_catalog` 和 `python -m scripts.check_links`。在 PR 说明来源、试验范围及剩余风险。
 
-原创代码以 MIT 提交，原创文字以 CC BY 4.0 提交。第三方内容保留原许可，引用须注明作者、出处及适用条款。
+修订旧指南时用[旧模板](archive/legacy-v3-0/howto-template.md)。版权参见 [MIT](LICENSE) 和 [CC BY 4.0](LICENSE-CONTENT)。

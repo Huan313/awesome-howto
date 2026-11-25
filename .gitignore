@@ -11,3 +11,4 @@ auth.json
 *.p12
 *.har
 out/
+/local-studio/

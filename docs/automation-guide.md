@@ -10,6 +10,7 @@ python -m pip install -r requirements.txt
 python -m unittest discover -s tests
 python -m scripts.validate_guides
 python -m scripts.build_index --check
+python -m scripts.validate_catalog
 python -m scripts.check_links --external --strict
 python -m scripts.run_research weekly --output out/weekly-research
 python -m scripts.run_research monthly --history out/weekly-research --output out/monthly-research
@@ -19,24 +20,21 @@ python -m scripts.run_research monthly --history out/weekly-research --output ou
 
 ## 本地 Codex Skills
 
-从本仓库根目录打开 Codex 桌面项目或 Codex CLI。输入 `$` 后选择 Skill，或直接写出名称加任务。CLI 批处理前，先在你的终端用 `codex --version` 和 `codex login status` 核对安装与认证；例如 `codex exec '$repo-maintainer 检查当前变更'`。普通终端找不到 Codex 时仍可在 Desktop 中使用项目级 Skill。参阅 [Codex CLI](https://learn.chatgpt.com/docs/codex/cli) 和 [Skill 构建文档](https://learn.chatgpt.com/docs/build-skills)。
+从本仓库根目录打开 Codex。输入 `$` 后选择 Skill，或直接写出名称和具体任务。旧版 Skill 的内容在[历史归档](../archive/legacy-v1/README.md)。
 
 | 调用 | 用途 |
 | --- | --- |
-| [`$trend-scout`](../.agents/skills/trend-scout/SKILL.md) | 扫描七天或三十天候选话题 |
-| [`$persona-painpoint-researcher`](../.agents/skills/persona-painpoint-researcher/SKILL.md) | 核验某类读者在实际场景中的痛点 |
-| [`$evidence-researcher`](../.agents/skills/evidence-researcher/SKILL.md) | 为核心主张核对原始证据 |
-| [`$howto-author`](../.agents/skills/howto-author/SKILL.md) | 从证据矩阵写出可验收步骤 |
-| [`$fact-safety-auditor`](../.agents/skills/fact-safety-auditor/SKILL.md) | 检查事实、安全、版权和隐私 |
-| [`$repo-maintainer`](../.agents/skills/repo-maintainer/SKILL.md) | 复核测试、索引、变更和 PR |
+| [`$topic-scout`](../.agents/skills/topic-scout/SKILL.md) | 查证真实问题和候选证据 |
+| [`$howto-writer`](../.agents/skills/howto-writer/SKILL.md) | 写带验收条件的指南和本地内容 |
+| [`$howto-auditor`](../.agents/skills/howto-auditor/SKILL.md) | 核验来源、实操、版权和审批 |
 
 ## GitHub Actions
 
 | 工作流 | 上海时间与入口 | 产出 |
 | --- | --- | --- |
-| [Weekly topic scan](../.github/workflows/weekly-topic-scan.yml) | 周一 09:00；可手动 | 七日候选、来源状态、队列与结构化观测 |
-| [Monthly topic review](../.github/workflows/monthly-topic-review.yml) | 每月 1 日 09:00；可手动 | 三十日专题计划；复用可取得的已成功周报快照 |
-| [Guide quality](../.github/workflows/guide-quality.yml) | push、PR 或手动 | 测试、Schema、Markdown、索引、链接以及 Gitleaks |
+| [Weekly topic scan](../.github/workflows/weekly-topic-scan.yml) | 手动 | 旧版七日研究和候选 artifact |
+| [Monthly topic review](../.github/workflows/monthly-topic-review.yml) | 手动 | 旧版三十日专题计划，可复用周报 artifact |
+| [Guide quality](../.github/workflows/guide-quality.yml) | push、PR 或手动 | 测试、目录格式、PR 路径、链接和敏感信息检查 |
 | [Link check](../.github/workflows/link-check.yml) | 周一 09:12；可手动 | 外链状态报告 |
 | [Dependency review](../.github/workflows/dependency-review.yml) | PR 或指定基准手动运行 | 依赖差异和严重性门禁 |
 
@@ -75,3 +73,5 @@ python -m scripts.run_research monthly --history out/weekly-research --output ou
 月报成功后，从版本控制中的 [编辑简报](../data/editorial-briefs.yaml) 选择相关类别里的首个低风险选题，或在手动运行时指定已批准的简报。未命中或已存在同题指南会跳过。Codex 使用隔离 job 的已核验摘要与固定输出格式。报告、外部网页、帖子、评论和 PR 标题不进入模型提示。模型步骤在 job 末尾并使用 workspace-write 与 drop-sudo。接收结果的另一 job 使用独立工作区，校验结构、来源、链接、指南状态和密钥后创建草稿 PR。模型启用路径支持从简报生成初稿，联网原文研究由编辑流程另行完成。参阅 [OpenAI Codex Action](https://github.com/openai/codex-action)。
 
 暂停时将变量设为 `false`，并按需删除 Secret。轮换密钥时先关闭开关，替换仓库 Secret，撤销旧密钥，再启用并手动验证。只在仓库 Secret 中填写密钥，避免在 Issues、工作流文件或日志中粘贴。
+
+本地运营素材由维护者保管。仓库根目录的 `local-studio/` 使用 Git 忽略规则，目录差异检查也会拒绝提交其中的文件。发布平台的审核、确认和发布由维护者手动完成。
