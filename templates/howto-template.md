@@ -1,52 +1,28 @@
-# HowTo 指南模板
+# 用户遇到的具体问题
 
-复制下面字段到指南顶端，使用三个连字符包围元数据。由作者填写实际来源，元数据的来源须在正文逐条列出。
+一句话解法：写出最短且可回查的路径。
 
-```yaml
-id: howto-unique-slug
-title: 具体问题导向的标题
-category: learning
-subcategory: study
-personas: [student]
-age_groups: ["18-24"]
-occupations: [student]
-scenarios: [skill-learning]
-region: global
-difficulty: beginner
-estimated_time: 30 分钟
-cost: 免费
-evidence_level: B
-content_type: howto
-risk_level: low
-status: draft
-created_at: YYYY-MM-DD
-updated_at: YYYY-MM-DD
-review_due: YYYY-MM-DD
-sources: []
-```
+## 适用与准备
 
-# 与元数据一致的标题
+读者、版本、地区、费用、备份和停止条件。
 
-一句话说明读者完成后可以检查的结果。
+## 基础档
 
-## 适用人群
+1. 给出入口与详细操作。
+2. 写清读者应看到的结果，以及如何排查或恢复。
 
-## 前置条件与不适用情况
+## AI 增强档
 
-## 准备、耗时与费用
+适用时补充已核实的国产模型、完整提示词、费用差异和核对步骤。
 
-## 操作步骤与验收
+## 进阶档
 
-逐步写清操作及预期结果。
+有合理重复需求时再写 Skills、Agent 或自动化的权限和回退方法。
 
-## 常见错误与排查
+## 成功检查
 
-## 风险与限制
+列出可观察的验收结果、常见错误和安全注意事项。
 
-## 最简行动清单
+## 证据与核验
 
-## 参考来源
-
-记录发布日期或访问日期，并指明支持哪条主张及其章节。
-
-## 核验与版本
+列出需求、原始事实、核验日期、实际操作和待查项。按日期记录更新。

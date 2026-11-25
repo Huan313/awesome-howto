@@ -54,3 +54,8 @@ class CatalogTests(unittest.TestCase):
         with patch("scripts.validate_catalog.subprocess.check_output", return_value="catalog/candidates.jsonl\0"):
             with self.assertRaisesRegex(ValueError, "keep candidate data"):
                 check_catalog_diff(ROOT, "a" * 40)
+
+    def test_diff_guard_rejects_private_studio(self):
+        with patch("scripts.validate_catalog.subprocess.check_output", return_value="local-studio/xiaohongshu/private.md\0"):
+            with self.assertRaisesRegex(ValueError, "keep candidate data"):
+                check_catalog_diff(ROOT, "a" * 40)

@@ -24,9 +24,9 @@ python -m scripts.run_research monthly --history out/weekly-research --output ou
 
 | 调用 | 用途 |
 | --- | --- |
-| [`$howto-resource-scout`](../.agents/skills/howto-resource-scout/SKILL.md) | 按任务查找原始资源 |
-| [`$howto-resource-auditor`](../.agents/skills/howto-resource-auditor/SKILL.md) | 核对内容、地区、许可和重复 |
-| [`$content-bank-scout`](../.agents/skills/content-bank-scout/SKILL.md) | 收集可追溯的选题线索和公开来源 |
+| [`$topic-scout`](../.agents/skills/topic-scout/SKILL.md) | 查证真实问题和候选证据 |
+| [`$howto-writer`](../.agents/skills/howto-writer/SKILL.md) | 写带验收条件的指南和本地内容 |
+| [`$howto-auditor`](../.agents/skills/howto-auditor/SKILL.md) | 核验来源、实操、版权和审批 |
 
 ## GitHub Actions
 
@@ -73,3 +73,5 @@ python -m scripts.run_research monthly --history out/weekly-research --output ou
 月报成功后，从版本控制中的 [编辑简报](../data/editorial-briefs.yaml) 选择相关类别里的首个低风险选题，或在手动运行时指定已批准的简报。未命中或已存在同题指南会跳过。Codex 使用隔离 job 的已核验摘要与固定输出格式。报告、外部网页、帖子、评论和 PR 标题不进入模型提示。模型步骤在 job 末尾并使用 workspace-write 与 drop-sudo。接收结果的另一 job 使用独立工作区，校验结构、来源、链接、指南状态和密钥后创建草稿 PR。模型启用路径支持从简报生成初稿，联网原文研究由编辑流程另行完成。参阅 [OpenAI Codex Action](https://github.com/openai/codex-action)。
 
 暂停时将变量设为 `false`，并按需删除 Secret。轮换密钥时先关闭开关，替换仓库 Secret，撤销旧密钥，再启用并手动验证。只在仓库 Secret 中填写密钥，避免在 Issues、工作流文件或日志中粘贴。
+
+本地运营素材由维护者保管。仓库根目录的 `local-studio/` 使用 Git 忽略规则，目录差异检查也会拒绝提交其中的文件。发布平台的审核、确认和发布由维护者手动完成。

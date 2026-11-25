@@ -1,43 +1,22 @@
 # Awesome-HowTo
 
-中文优先的实用指南索引。按你想完成的任务，找到可直接打开的操作说明、系列、手册和课程。[English](README_EN.md)
-
-## 从一个任务开始
-
-- [做一顿家常饭](catalog/life-home.md#家常饭) · 从炒煎入门、滑蛋和煮饭选一个练习。
-- [换手机之前备份](catalog/digital-life.md#换机与备份) · 按 iPhone、Android 或 Mac 查官方说明。
-- [整理文献和检查 DOI](catalog/learning-research.md#查找和整理资料) · 查 Zotero 的导入、合并与 Crossref 查询。
-- [准备一场面试](catalog/career-work.md#面试与简历) · 找行为题练习和简历制作入口。
+**年轻人的数字生活与 AI 效率指南。** 让复杂的事简单一点，让好用的方法人人都能学会。[English](README_EN.md)
 
 ## 按主题浏览
 
-| 主题 | 可以做什么 |
+| 你遇到的问题 | 从这里开始 |
 | --- | --- |
-| [生活与家庭](catalog/life-home.md) | 做饭、安排厨房和收纳 |
-| [健康与安全](catalog/health-safety.md) | 查医疗机构、疾控公告和医保入口 |
-| [财务、法律与消费](catalog/finance-law-consumer.md) | 查税收文件、法规和消费投诉渠道 |
-| [学习与研究](catalog/learning-research.md) | 检索论文、整理文献和核对 DOI |
-| [职业与工作](catalog/career-work.md) | 准备面试、制作简历和协作评审 |
-| [数字生活](catalog/digital-life.md) | 迁移设备、备份资料、整理文件 |
-| [AI 与效率](catalog/ai-productivity.md) | 上传文件、分析表格和写清提示 |
-| [家庭、关系与照护](catalog/family-relationships-care.md) | 找亲子游戏和养老服务 |
-| [兴趣、创作与技能](catalog/creativity-hobbies.md) | 缩放图片、录音、折纸和园艺 |
-| [出行与公共服务](catalog/travel-public-services.md) | 查铁路车次、出境提醒和办事入口 |
+| C 盘空间不足，先检查什么？ | [检查存储并清理确认过的项目](howto/digital-life/device-and-data/windows-storage-cleanup.md) |
+| 换手机，微信记录选迁移还是恢复？ | [按目标选择微信聊天记录流程](howto/digital-life/device-and-data/wechat-chat-backup.md) |
+| AI 读完 PDF，怎样知道它有没有说错？ | [用页码和原文核对每条结论](howto/ai-productivity/study-and-office/verify-pdf-with-ai.md) |
+| 任务堆着没开始，怎样先做一步？ | [用十分钟产生一个小结果](howto/life-mind/daily-efficiency/start-a-task.md) |
 
-[按人群、人生阶段和技能水平查找](people/README.md)
+[按问题查找](howto/README.md) · [推荐项目](references/recommended-projects.md) · [官方资料](references/official-sources.md) · [中国大陆政策入口](references/policy-sources.md)
 
-## HowTo 系列
+## 怎么读这套指南
 
-- [HowToCook](collections/howto-series.md#生活与设备) · 以家常菜和厨房基本操作组织食谱。
-- [iFixit Guides](collections/howto-series.md#生活与设备) · 按设备和型号找维修说明。
-- [HowToGetAlong](collections/howto-series.md#学习与工作) · 按校园与初入职场的情境找沟通经验。
+每个问题分别记录需求、事实和实操证据。先看基础档，适用时再用国产 AI 增强，或把验证过的重复操作做成自动化。每篇指南有可观察的完成标准，并写清实际测试到了哪一步。[证据政策](docs/evidence-policy.md)
 
-[手册与课程](collections/handbooks-and-courses.md) · [Awesome Lists](collections/awesome-indexes.md)
+[贡献指南](CONTRIBUTING.md) · [历史目录](archive/legacy-v3-0/README.md) · [安全政策](docs/safety-policy.md)
 
-## 收录与贡献
-
-优先收录能完成一个具体任务、可打开原文、用途和范围明确的资源。每条资源保留一个主入口，其他主题按需引用。欢迎提供原始链接或修正适用范围。[贡献指南](CONTRIBUTING.md)
-
-涉及中国大陆的医疗、法律、财税和公共安全操作，使用当前主管部门依据并经人工复核。地区敏感资源须按标注范围使用，个人决策由适当的专业人员判断。
-
-原创代码使用 [MIT](LICENSE)，原创文字使用 [CC BY 4.0](LICENSE-CONTENT)。第三方内容适用原发布者的许可和条款。
+原创代码使用 [MIT](LICENSE)，原创文字使用 [CC BY 4.0](LICENSE-CONTENT)。第三方内容适用原发布方条款。

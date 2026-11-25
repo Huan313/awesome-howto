@@ -141,8 +141,9 @@ def validate_catalog(root):
     domains = taxonomy["domains"]
     registered = {}
     counts, by_type, languages = {}, Counter(), Counter()
-    paths = [(f"catalog/{name}.md", name, TOPIC_TYPES) for name in domains]
-    paths += [(f"collections/{name}.md", name, kinds) for name, kinds in COLLECTIONS.items()]
+    archive = "archive/legacy-v3-0/"
+    paths = [(f"{archive}catalog/{name}.md", name, TOPIC_TYPES) for name in domains]
+    paths += [(f"{archive}collections/{name}.md", name, kinds) for name, kinds in COLLECTIONS.items()]
     for path, domain, kinds in paths:
         count = 0
         for key, kind, language, line in read_index(root / path, domain, kinds, taxonomy, policy):
@@ -153,7 +154,23 @@ def validate_catalog(root):
             by_type[kind] += 1
             languages[language] += 1
         counts[domain] = count
+    migrated = set()
+    for name in ("official-sources", "recommended-projects", "policy-sources"):
+        path = root / "references" / f"{name}.md"
+        for key, _, _, line in read_index(path, name, set(taxonomy["types"]), taxonomy, policy):
+            if key in migrated or key not in registered:
+                raise ValueError(f"{path.name}:{line}: expected a unique retained source")
+            migrated.add(key)
+    guides = sorted((root / "howto").glob("*/*/*.md"))
+    if {guide.parent.parent.name for guide in guides} != {"digital-life", "ai-productivity", "life-mind"}:
+        raise ValueError("missing a focused guide section")
+    for guide in guides:
+        body = guide.read_text(encoding="utf-8")
+        for heading in ("适用与准备", "基础档", "成功检查", "证据与核验"):
+            if f"\n## {heading}\n" not in body:
+                raise ValueError(f"{guide.name}: missing {heading}")
     return {"pages": counts, "types": dict(by_type), "languages": dict(languages),
+            "focused_guides": len(guides), "retained_sources": len(migrated),
             "topics": validate_bank(root / "content-bank/topics.csv", domains, registered, policy)}
 
 
@@ -165,10 +182,10 @@ def check_catalog_diff(root, base):
     ).split("\0")
     domains = read_yaml(root / "data/taxonomy.yml")["domains"]
     allowed = {f"catalog/{name}.md" for name in domains} | {f"collections/{name}.md" for name in COLLECTIONS}
-    allowed |= {"people/README.md", "content-bank/README.md", "content-bank/topics.csv",
+    allowed |= {"people/README.md", "content-bank/README.md", "content-bank/topics.csv", "content-bank/topic-schema.md",
                 "data/source-policy.yml", "data/taxonomy.yml"}
     public_prefixes = ("catalog/", "collections/", "people/", "content-bank/")
-    private_prefixes = ("out/", "reports/", "data/reviews/", "data/discovery-runs/")
+    private_prefixes = ("local-studio/", "out/", "reports/", "data/reviews/", "data/discovery-runs/")
     for path in paths:
         if path.startswith(private_prefixes) or path.endswith((".jsonl", ".ndjson")):
             raise ValueError(f"keep candidate data and run logs out of the PR: {path}")
@@ -187,6 +204,7 @@ def main():
     print("Pages:", result["pages"])
     print("Types:", result["types"])
     print("Languages:", result["languages"])
+    print("Focused guides:", result["focused_guides"], "Retained sources:", result["retained_sources"])
 
 
 if __name__ == "__main__":
