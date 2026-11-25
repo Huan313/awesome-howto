@@ -57,6 +57,7 @@ jobs:
           fi
       - name: Plan topics from the last thirty days
         env:
+          HOWTO_GITHUB_TOKEN: ${{ github.token }}
           ENABLE_DOUYIN: ${{ github.ref_name == github.event.repository.default_branch && vars.ENABLE_DOUYIN || '' }}
           DOUYIN_CLIENT_KEY: ${{ github.ref_name == github.event.repository.default_branch && secrets.DOUYIN_CLIENT_KEY || '' }}
           DOUYIN_CLIENT_SECRET: ${{ github.ref_name == github.event.repository.default_branch && secrets.DOUYIN_CLIENT_SECRET || '' }}

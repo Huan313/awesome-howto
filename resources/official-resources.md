@@ -45,7 +45,7 @@
 
 - [FTC · Choosing a vocational school or certificate program](https://consumer.ftc.gov/articles/choosing-vocational-school-or-certificate-program) · curated / direct-reference。美国职业培训费用、资格和声称的就业结果。 受众为对应主题读者。 核验 2026-11-25。
   可借鉴 用原始说明核对措辞、时间及适用范围。 限制 范围 united-states。站点链接可用于参考，转载按发布者条款。
-- [CareerOneStop · Get ready to interview](https://cloudfront.careeronestop.org/JobSearch/Interview/get-ready.aspx) · curated / direct-reference。准备岗位问题和行为面试练习，美国求职服务入口。 受众为对应主题读者。 核验 2026-11-25。
+- [MIT CAPD · STAR 行为面试](https://capd.mit.edu/resources/the-star-method-for-behavioral-interviews/) · curated / direct-reference。行为面试的 STAR 框架、回答练习及样表。 受众为对应主题读者。 核验 2026-11-25。
   可借鉴 用原始说明核对措辞、时间及适用范围。 限制 范围 united-states。站点链接可用于参考，转载按发布者条款。
 
 ## 数字技能与安全

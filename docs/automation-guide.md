@@ -42,7 +42,7 @@ python -m scripts.run_research monthly --history out/weekly-research --output ou
 | [Link check](../.github/workflows/link-check.yml) | 周一 09:12；可手动 | 外链状态报告 |
 | [Dependency review](../.github/workflows/dependency-review.yml) | PR 或指定基准手动运行 | 依赖差异和严重性门禁 |
 
-定时器使用 IANA `Asia/Shanghai`。GitHub 可能延迟调度。打开仓库 **Actions**，选中工作流后点 **Run workflow**，选择默认分支。从运行详情页下载报告 artifact，保留期 45 天。周报与月报默认仅上传 artifact，审核者可另行归档；全体公开采集失败会留下诊断并使运行失败。参阅 [GitHub 工作流语法](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax)。
+定时器使用 IANA `Asia/Shanghai`。GitHub 可能延迟调度。打开仓库 **Actions**，选中工作流后点 **Run workflow**，选择默认分支。从运行详情页下载报告 artifact，保留期 45 天。周报与月报默认仅上传 artifact，审核者可另行归档；全体公开采集失败会留下诊断并使运行失败。Actions 向 GitHub Search 使用其自动签发的只读短期令牌，本地无配置时用匿名公开搜索。参阅 [GitHub 工作流语法](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax)。
 
 公开仓库连续 60 天没有活动时，GitHub 会停用定时工作流。可从 Actions 页重新启用。[管理工作流](https://docs.github.com/en/actions/how-tos/manage-workflow-runs/disable-and-enable-workflows)
 

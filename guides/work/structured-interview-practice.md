@@ -23,8 +23,8 @@ last_verified_at: "2026-11-25"
 review_due: "2027-02-25"
 version: "0.1"
 execution_status: "pending"
-sources: ["https://cloudfront.careeronestop.org/JobSearch/Interview/get-ready.aspx"]
-claim_evidence: [{"claim_id":"structured-interview-practice-1","claim_text":"CareerOneStop 建议事先研究岗位、准备可能的问题并练习回答。","claim_type":"fact","supporting_source_ids":["job-interview"],"support_level":"direct","source_location":"Get ready / Practice interviews","applicable_region":"united-states","applicable_version":"美国求职服务","limitations":"结论限于所列文档范围及版本，执行及地区限制见正文。","reviewer_status":"editorial-checked"}]
+sources: ["https://capd.mit.edu/resources/the-star-method-for-behavioral-interviews/"]
+claim_evidence: [{"claim_id":"structured-interview-practice-1","claim_text":"MIT 职业中心说明如何用情境、任务、行动和结果组织行为面试回答。","claim_type":"fact","supporting_source_ids":["job-interview"],"support_level":"direct","source_location":"The STAR method / Interview tips","applicable_region":"united-states","applicable_version":"MIT Career Advising","limitations":"结论限于所列文档范围及版本，执行及地区限制见正文。","reviewer_status":"editorial-checked"}]
 ---
 
 # 怎样用三段可核对经历准备结构化面试？
@@ -63,7 +63,7 @@ claim_evidence: [{"claim_id":"structured-interview-practice-1","claim_text":"Car
 
 ## 参考来源
 
-- CareerOneStop 建议事先研究岗位、准备可能的问题并练习回答。 定位 Get ready / Practice interviews。[CareerOneStop · Get ready to interview](https://cloudfront.careeronestop.org/JobSearch/Interview/get-ready.aspx)（2026-11-25 核对）。
+- MIT 职业中心说明如何用情境、任务、行动和结果组织行为面试回答。 定位 The STAR method / Interview tips。[MIT CAPD · Using the STAR method](https://capd.mit.edu/resources/the-star-method-for-behavioral-interviews/)（2026-11-25 核对）。
 
 ## 核验与版本
 

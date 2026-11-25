@@ -4,11 +4,11 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from scripts import collect_douyin, collect_reddit
+from scripts import collect_douyin, collect_github, collect_reddit
 from scripts.build_index import render
 from scripts.build_resource_index import read_registry
 from scripts.build_site import stage_site
-from scripts.common import ROOT, timestamp
+from scripts.common import FetchError, ROOT, timestamp
 from scripts.ingest_social_csv import parse_rows
 from scripts.migrate_guide_metadata import migrate
 from scripts.normalize_topics import normalize
@@ -43,6 +43,24 @@ class ContractTests(unittest.TestCase):
                 list(parse_rows(io.StringIO(mutated), "xiaohongshu"))
         with self.assertRaises(ValueError):
             list(parse_rows(io.StringIO(actual + actual.splitlines(keepends=True)[1]), "xiaohongshu"))
+
+    def test_github_read_token_falls_back_without_forwarding_auth(self):
+        now = timestamp("2026-11-25T01:00:00Z")
+        requests = []
+
+        class Client:
+            def json(self, url, headers):
+                requests.append((url, headers))
+                if "Authorization" in headers:
+                    raise FetchError("HTTP 403")
+                return {"items": []}
+
+        with patch.dict("os.environ", {"HOWTO_GITHUB_TOKEN": "fake-test-credential"}):
+            self.assertEqual(list(collect_github.collect(Client(), "topic:backup", now, now)), [])
+        self.assertEqual(len(requests), 2)
+        self.assertTrue(all(url.startswith("https://api.github.com/search/repositories?") for url, _ in requests))
+        self.assertIn("Authorization", requests[0][1])
+        self.assertNotIn("Authorization", requests[1][1])
 
     def test_missing_platform_credentials_skip(self):
         now = timestamp("2026-11-25T01:00:00Z")
